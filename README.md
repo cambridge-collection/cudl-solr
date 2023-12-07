@@ -1,6 +1,6 @@
 # Instructions
 
-1. Place solr json files in ./data/solr/
+1. Place solr json files in ./data/json/
 1. docker compose up -d --build
 1. Index files, e.g. `find /var/json -name '*.json' -exec /opt/solr/bin/post -c cdcp -params "split=/pages" {} \;` to index everything. This will likely take about 25 minutes. MS-ADD-*.xml makes a nice sample to do. It contains a wide variety of items but indexes quickly enough.
 

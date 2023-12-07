@@ -3,7 +3,7 @@ services:
   solr:
     build:
       dockerfile: ./solr/Dockerfile
-    container_name: cdcp-solr
+    container_name: solr
     ports:
       - 8983:8983 # Do not expose port
     #command:
