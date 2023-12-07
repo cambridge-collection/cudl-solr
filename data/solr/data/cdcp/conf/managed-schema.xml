@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
+<schema name="default-config" version="1.6">
+  <uniqueKey>id</uniqueKey>
+  <fieldType name="_nest_path_" class="solr.NestPathField" maxCharsForDocValues="-1" omitNorms="true" omitTermFreqAndPositions="true" stored="false" multiValued="false"/>
+  <fieldType name="ancestor_path" class="solr.TextField">
+    <analyzer type="index">
+      <tokenizer name="keyword"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="pathHierarchy" delimiter="/"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="binary" class="solr.BinaryField"/>
+  <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+  <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" multiValued="true"/>
+  <fieldType name="delimited_payloads_float" class="solr.TextField" indexed="true" stored="false">
+    <analyzer>
+      <tokenizer name="whitespace"/>
+      <filter encoder="float" name="delimitedPayload"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="delimited_payloads_int" class="solr.TextField" indexed="true" stored="false">
+    <analyzer>
+      <tokenizer name="whitespace"/>
+      <filter encoder="integer" name="delimitedPayload"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="delimited_payloads_string" class="solr.TextField" indexed="true" stored="false">
+    <analyzer>
+      <tokenizer name="whitespace"/>
+      <filter encoder="identity" name="delimitedPayload"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="descendent_path" class="solr.TextField">
+    <analyzer type="index">
+      <tokenizer name="pathHierarchy" delimiter="/"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="keyword"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="ignored" class="solr.StrField" indexed="false" stored="false" multiValued="true"/>
+  <fieldType name="location" class="solr.LatLonPointSpatialField" docValues="true"/>
+  <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType" geo="true" maxDistErr="0.001" distErrPct="0.025" distanceUnits="kilometers"/>
+  <fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="keyword"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="pdate" class="solr.DatePointField" docValues="true"/>
+  <fieldType name="pdates" class="solr.DatePointField" docValues="true" multiValued="true"/>
+  <fieldType name="pdouble" class="solr.DoublePointField" docValues="true"/>
+  <fieldType name="pdoubles" class="solr.DoublePointField" docValues="true" multiValued="true"/>
+  <fieldType name="pfloat" class="solr.FloatPointField" docValues="true"/>
+  <fieldType name="pfloats" class="solr.FloatPointField" docValues="true" multiValued="true"/>
+  <fieldType name="phonetic_en" class="solr.TextField" indexed="true" stored="false">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter inject="false" name="doubleMetaphone"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
+  <fieldType name="pints" class="solr.IntPointField" docValues="true" multiValued="true"/>
+  <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
+  <fieldType name="plongs" class="solr.LongPointField" docValues="true" multiValued="true"/>
+  <fieldType name="point" class="solr.PointType" subFieldSuffix="_d" dimension="2"/>
+  <fieldType name="random" class="solr.RandomSortField" indexed="true"/>
+  <fieldType name="rank" class="solr.RankField"/>
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+  <fieldType name="strings" class="solr.StrField" sortMissingLast="true" docValues="true" multiValued="true"/>
+  <fieldType name="text_ar" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_ar.txt"/>
+      <filter name="arabicNormalization"/>
+      <filter name="arabicStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_bg" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_bg.txt"/>
+      <filter name="bulgarianStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ca" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="elision" ignoreCase="true" articles="lang/contractions_ca.txt"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_ca.txt"/>
+      <filter language="Catalan" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_cjk" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="CJKWidth"/>
+      <filter name="lowercase"/>
+      <filter name="CJKBigram"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_cz" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_cz.txt"/>
+      <filter name="czechStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_da" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_da.txt" name="stop"/>
+      <filter language="Danish" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_de" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_de.txt" name="stop"/>
+      <filter name="germanNormalization"/>
+      <filter name="germanLightStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_el" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="greekLowercase"/>
+      <filter name="stop" ignoreCase="false" words="lang/stopwords_el.txt"/>
+      <filter name="greekStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
+      <filter name="lowercase"/>
+      <filter name="englishPossessive"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
+      <filter name="lowercase"/>
+      <filter name="englishPossessive"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_en_splitting" class="solr.TextField" autoGeneratePhraseQueries="true" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer name="whitespace"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
+      <filter catenateNumbers="1" catenateWords="1" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph" splitOnCaseChange="1"/>
+      <filter name="lowercase"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+      <filter name="flattenGraph"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="whitespace"/>
+      <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
+      <filter catenateNumbers="0" catenateWords="0" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph" splitOnCaseChange="1"/>
+      <filter name="lowercase"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_en_splitting_tight" class="solr.TextField" autoGeneratePhraseQueries="true" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer name="whitespace"/>
+      <filter expand="false" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
+      <filter generateWordParts="0" catenateNumbers="1" catenateWords="1" name="wordDelimiterGraph" generateNumberParts="0" catenateAll="0"/>
+      <filter name="lowercase"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="englishMinimalStem"/>
+      <filter name="removeDuplicates"/>
+      <filter name="flattenGraph"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="whitespace"/>
+      <filter expand="false" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
+      <filter generateWordParts="0" catenateNumbers="1" catenateWords="1" name="wordDelimiterGraph" generateNumberParts="0" catenateAll="0"/>
+      <filter name="lowercase"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="englishMinimalStem"/>
+      <filter name="removeDuplicates"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_es" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_es.txt" name="stop"/>
+      <filter name="spanishLightStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_et" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_et.txt"/>
+      <filter language="Estonian" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_eu" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_eu.txt"/>
+      <filter language="Basque" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_fa" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <charFilter name="persian"/>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="arabicNormalization"/>
+      <filter name="persianNormalization"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_fa.txt"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_fi" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_fi.txt" name="stop"/>
+      <filter language="Finnish" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_fr" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="elision" ignoreCase="true" articles="lang/contractions_fr.txt"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_fr.txt" name="stop"/>
+      <filter name="frenchLightStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ga" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="elision" ignoreCase="true" articles="lang/contractions_ga.txt"/>
+      <filter name="stop" ignoreCase="true" words="lang/hyphenations_ga.txt"/>
+      <filter name="irishLowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_ga.txt"/>
+      <filter language="Irish" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100" multiValued="true">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter name="lowercase"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+    <analyzer type="index">
+      <charFilter class="solr.HTMLStripCharFilterFactory"/><!-- ADDED -->
+      <tokenizer name="standard"/>
+      <filter class="solr.ASCIIFoldingFilterFactory" preserveOriginal="true" />
+      <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter name="lowercase"/>
+      <filter name="porterStem"/><!-- To ignore pluralisation/singular -->
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter class="solr.ASCIIFoldingFilterFactory" preserveOriginal="true" />
+      <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
+      <filter name="lowercase"/>
+      <filter name="porterStem"/><!-- To ignore pluralisation/singular -->
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter name="lowercase"/>
+      <filter maxFractionAsterisk="0.33" name="reversedWildcard" maxPosQuestion="2" withOriginal="true" maxPosAsterisk="3"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
+      <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_gl" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_gl.txt"/>
+      <filter name="galicianStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_hi" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="indicNormalization"/>
+      <filter name="hindiNormalization"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_hi.txt"/>
+      <filter name="hindiStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_hu" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_hu.txt" name="stop"/>
+      <filter language="Hungarian" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_hy" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_hy.txt"/>
+      <filter language="Armenian" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_id" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_id.txt"/>
+      <filter stemDerivational="true" name="indonesianStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_it" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="elision" ignoreCase="true" articles="lang/contractions_it.txt"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_it.txt" name="stop"/>
+      <filter name="italianLightStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ja" class="solr.TextField" autoGeneratePhraseQueries="false" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer mode="search" name="japanese"/>
+      <filter name="japaneseBaseForm"/>
+      <filter tags="lang/stoptags_ja.txt" name="japanesePartOfSpeechStop"/>
+      <filter name="cjkWidth"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_ja.txt"/>
+      <filter minimumLength="4" name="japaneseKatakanaStem"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ko" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="korean" decompoundMode="discard" outputUnknownUnigrams="false"/>
+      <filter name="koreanPartOfSpeechStop"/>
+      <filter name="koreanReadingForm"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_lv" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_lv.txt"/>
+      <filter name="latvianStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_nl" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_nl.txt" name="stop"/>
+      <filter name="stemmerOverride" ignoreCase="false" dictionary="lang/stemdict_nl.txt"/>
+      <filter language="Dutch" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_no" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_no.txt" name="stop"/>
+      <filter language="Norwegian" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_pt" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_pt.txt" name="stop"/>
+      <filter name="portugueseLightStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ro" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_ro.txt"/>
+      <filter language="Romanian" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ru" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_ru.txt" name="stop"/>
+      <filter language="Russian" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_sv" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+      <filter format="snowball" ignoreCase="true" words="lang/stopwords_sv.txt" name="stop"/>
+      <filter language="Swedish" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_th" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="thai"/>
+      <filter name="lowercase"/>
+      <filter name="stop" ignoreCase="true" words="lang/stopwords_th.txt"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_tr" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="standard"/>
+      <filter name="turkishLowercase"/>
+      <filter name="stop" ignoreCase="false" words="lang/stopwords_tr.txt"/>
+      <filter language="Turkish" name="snowballPorter"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer name="whitespace"/>
+    </analyzer>
+  </fieldType>
+  <field name="_nest_path_" type="_nest_path_"/>
+  <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
+  <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
+  <field name="_version_" type="plong" indexed="false" stored="false"/>
+  <field name="collection" type="text_general" multiValued="true" indexed="true"/>
+  <field name="creations-century" type="text_general" multiValued="true" indexed="true"/>
+  <field name="descriptiveMetadata.ID" type="text_general"/>
+  <field name="descriptiveMetadata.abstract" type="text_general"/>
+  <field name="descriptiveMetadata.abstract.display" type="booleans"/>
+  <field name="descriptiveMetadata.abstract.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.abstract.label" type="text_general"/>
+  <field name="descriptiveMetadata.abstract.seq" type="plongs"/>
+  <field name="descriptiveMetadata.accMats.display" type="booleans"/>
+  <field name="descriptiveMetadata.accMats.label" type="text_general"/>
+  <field name="descriptiveMetadata.accMats.seq" type="plongs"/>
+  <field name="descriptiveMetadata.accMats.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.accMats.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.accMats.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.acquisitionTexts.display" type="booleans"/>
+  <field name="descriptiveMetadata.acquisitionTexts.label" type="text_general"/>
+  <field name="descriptiveMetadata.acquisitionTexts.seq" type="plongs"/>
+  <field name="descriptiveMetadata.acquisitionTexts.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.acquisitionTexts.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.acquisitionTexts.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.acquisitions.display" type="booleans"/>
+  <field name="descriptiveMetadata.acquisitions.seq" type="plongs"/>
+  <field name="descriptiveMetadata.acquisitions.value.dateDisplay.display" type="booleans"/>
+  <field name="descriptiveMetadata.acquisitions.value.dateDisplay.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.acquisitions.value.dateDisplay.label" type="text_general"/>
+  <field name="descriptiveMetadata.acquisitions.value.dateDisplay.seq" type="plongs"/>
+  <field name="descriptiveMetadata.acquisitions.value.dateEnd" type="text_general"/>
+  <field name="descriptiveMetadata.acquisitions.value.dateStart" type="text_general"/>
+  <field name="descriptiveMetadata.acquisitions.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.additions.display" type="booleans"/>
+  <field name="descriptiveMetadata.additions.label" type="text_general"/>
+  <field name="descriptiveMetadata.additions.seq" type="plongs"/>
+  <field name="descriptiveMetadata.additions.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.additions.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.additions.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.altIdentifiers.display" type="booleans"/>
+  <field name="descriptiveMetadata.altIdentifiers.label" type="text_general"/>
+  <field name="descriptiveMetadata.altIdentifiers.seq" type="plongs"/>
+  <field name="descriptiveMetadata.altIdentifiers.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.altIdentifiers.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.altIdentifiers.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.alternativeTitles.display" type="booleans"/>
+  <field name="descriptiveMetadata.alternativeTitles.label" type="text_general"/>
+  <field name="descriptiveMetadata.alternativeTitles.seq" type="plongs"/>
+  <field name="descriptiveMetadata.alternativeTitles.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.alternativeTitles.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.alternativeTitles.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.associated" type="text_general"/>
+  <field name="descriptiveMetadata.associated.display" type="booleans"/>
+  <field name="descriptiveMetadata.associated.label" type="text_general"/>
+  <field name="descriptiveMetadata.associated.listDisplay" type="text_general"/>
+  <field name="descriptiveMetadata.associated.seq" type="plongs"/>
+  <field name="descriptiveMetadata.associated.value.authority" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.authorityURI" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.associated.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.role" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.associated.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.associated.value.valueURI" type="text_general"/>
+  <field name="descriptiveMetadata.authors" type="text_general"/>
+  <field name="descriptiveMetadata.authors.display" type="booleans"/>
+  <field name="descriptiveMetadata.authors.label" type="text_general"/>
+  <field name="descriptiveMetadata.authors.listDisplay" type="text_general"/>
+  <field name="descriptiveMetadata.authors.seq" type="plongs"/>
+  <field name="descriptiveMetadata.authors.value.authority" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.authorityURI" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.authors.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.role" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.authors.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.authors.value.valueURI" type="text_general"/>
+  <field name="descriptiveMetadata.bibliographies.display" type="booleans"/>
+  <field name="descriptiveMetadata.bibliographies.label" type="text_general"/>
+  <field name="descriptiveMetadata.bibliographies.seq" type="plongs"/>
+  <field name="descriptiveMetadata.bibliographies.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.bibliographies.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.bibliographies.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.bindings.display" type="booleans"/>
+  <field name="descriptiveMetadata.bindings.label" type="text_general"/>
+  <field name="descriptiveMetadata.bindings.seq" type="plongs"/>
+  <field name="descriptiveMetadata.bindings.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.bindings.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.bindings.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.calendarnum.display" type="booleans"/>
+  <field name="descriptiveMetadata.calendarnum.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.calendarnum.label" type="text_general"/>
+  <field name="descriptiveMetadata.calendarnum.seq" type="plongs"/>
+  <field name="descriptiveMetadata.collation.display" type="booleans"/>
+  <field name="descriptiveMetadata.collation.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.collation.label" type="text_general"/>
+  <field name="descriptiveMetadata.collation.seq" type="plongs"/>
+  <field name="descriptiveMetadata.conditions.display" type="booleans"/>
+  <field name="descriptiveMetadata.conditions.label" type="text_general"/>
+  <field name="descriptiveMetadata.conditions.seq" type="plongs"/>
+  <field name="descriptiveMetadata.conditions.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.conditions.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.conditions.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.creations-dateDisplay" type="text_general"/>
+  <field name="descriptiveMetadata.creations-places" type="text_general"/>
+  <field name="descriptiveMetadata.creations.display" type="booleans"/>
+  <field name="descriptiveMetadata.creations.seq" type="plongs"/>
+  <field name="descriptiveMetadata.creations.value.dateDisplay.display" type="booleans"/>
+  <field name="descriptiveMetadata.creations.value.dateDisplay.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.dateDisplay.label" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.dateDisplay.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.dateDisplay.seq" type="plongs"/>
+  <field name="descriptiveMetadata.creations.value.dateEnd" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.dateStart" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.places.display" type="booleans"/>
+  <field name="descriptiveMetadata.creations.value.places.label" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.places.seq" type="plongs"/>
+  <field name="descriptiveMetadata.creations.value.places.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.creations.value.places.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.places.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.places.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.places.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.creations.value.places.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.dataRevisions.display" type="booleans"/>
+  <field name="descriptiveMetadata.dataRevisions.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.dataRevisions.label" type="text_general"/>
+  <field name="descriptiveMetadata.dataRevisions.seq" type="plongs"/>
+  <field name="descriptiveMetadata.dataSources.display" type="booleans"/>
+  <field name="descriptiveMetadata.dataSources.label" type="text_general"/>
+  <field name="descriptiveMetadata.dataSources.seq" type="plongs"/>
+  <field name="descriptiveMetadata.dataSources.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.dataSources.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.dataSources.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.decorations.display" type="booleans"/>
+  <field name="descriptiveMetadata.decorations.label" type="text_general"/>
+  <field name="descriptiveMetadata.decorations.seq" type="plongs"/>
+  <field name="descriptiveMetadata.decorations.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.decorations.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.decorations.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.descriptiveTitles.display" type="booleans"/>
+  <field name="descriptiveMetadata.descriptiveTitles.label" type="text_general"/>
+  <field name="descriptiveMetadata.descriptiveTitles.seq" type="plongs"/>
+  <field name="descriptiveMetadata.descriptiveTitles.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.descriptiveTitles.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.descriptiveTitles.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.displayImageRights" type="text_general"/>
+  <field name="descriptiveMetadata.docAuthority" type="text_general"/>
+  <field name="descriptiveMetadata.donors" type="text_general"/>
+  <field name="descriptiveMetadata.donors.display" type="booleans"/>
+  <field name="descriptiveMetadata.donors.label" type="text_general"/>
+  <field name="descriptiveMetadata.donors.seq" type="plongs"/>
+  <field name="descriptiveMetadata.donors.value.authority" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.authorityURI" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.donors.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.role" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.donors.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.donors.value.valueURI" type="text_general"/>
+  <field name="descriptiveMetadata.downloadImageRights" type="text_general"/>
+  <field name="descriptiveMetadata.excerpts.display" type="booleans"/>
+  <field name="descriptiveMetadata.excerpts.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.excerpts.label" type="text_general"/>
+  <field name="descriptiveMetadata.excerpts.seq" type="plongs"/>
+  <field name="descriptiveMetadata.extent" type="text_general"/>
+  <field name="descriptiveMetadata.extent.display" type="booleans"/>
+  <field name="descriptiveMetadata.extent.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.extent.label" type="text_general"/>
+  <field name="descriptiveMetadata.extent.seq" type="plongs"/>
+  <field name="descriptiveMetadata.filiations.display" type="booleans"/>
+  <field name="descriptiveMetadata.filiations.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.filiations.label" type="text_general"/>
+  <field name="descriptiveMetadata.filiations.seq" type="plongs"/>
+  <field name="descriptiveMetadata.foliation.display" type="booleans"/>
+  <field name="descriptiveMetadata.foliation.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.foliation.label" type="text_general"/>
+  <field name="descriptiveMetadata.foliation.seq" type="plongs"/>
+  <field name="descriptiveMetadata.form.display" type="booleans"/>
+  <field name="descriptiveMetadata.form.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.form.label" type="text_general"/>
+  <field name="descriptiveMetadata.form.seq" type="plongs"/>
+  <field name="descriptiveMetadata.formerOwners.display" type="booleans"/>
+  <field name="descriptiveMetadata.formerOwners.label" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.seq" type="plongs"/>
+  <field name="descriptiveMetadata.formerOwners.value.authority" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.authorityURI" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.formerOwners.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.role" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.formerOwners.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.formerOwners.value.valueURI" type="text_general"/>
+  <field name="descriptiveMetadata.fundings.display" type="booleans"/>
+  <field name="descriptiveMetadata.fundings.label" type="text_general"/>
+  <field name="descriptiveMetadata.fundings.seq" type="plongs"/>
+  <field name="descriptiveMetadata.fundings.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.fundings.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.fundings.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.imageReproPageURL" type="text_general"/>
+  <field name="descriptiveMetadata.languageCodes" type="text_general"/>
+  <field name="descriptiveMetadata.languageStrings" type="text_general"/>
+  <field name="descriptiveMetadata.languageStrings.display" type="booleans"/>
+  <field name="descriptiveMetadata.languageStrings.label" type="text_general"/>
+  <field name="descriptiveMetadata.languageStrings.seq" type="plongs"/>
+  <field name="descriptiveMetadata.languageStrings.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.languageStrings.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.languageStrings.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.layouts.display" type="booleans"/>
+  <field name="descriptiveMetadata.layouts.label" type="text_general"/>
+  <field name="descriptiveMetadata.layouts.seq" type="plongs"/>
+  <field name="descriptiveMetadata.layouts.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.layouts.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.layouts.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.material" type="text_general"/>
+  <field name="descriptiveMetadata.material.display" type="booleans"/>
+  <field name="descriptiveMetadata.material.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.material.label" type="text_general"/>
+  <field name="descriptiveMetadata.material.seq" type="plongs"/>
+  <field name="descriptiveMetadata.metadataRights" type="text_general"/>
+  <field name="descriptiveMetadata.musicNotations.display" type="booleans"/>
+  <field name="descriptiveMetadata.musicNotations.label" type="text_general"/>
+  <field name="descriptiveMetadata.musicNotations.seq" type="plongs"/>
+  <field name="descriptiveMetadata.musicNotations.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.musicNotations.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.musicNotations.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.notes.display" type="booleans"/>
+  <field name="descriptiveMetadata.notes.label" type="text_general"/>
+  <field name="descriptiveMetadata.notes.seq" type="plongs"/>
+  <field name="descriptiveMetadata.notes.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.notes.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.notes.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.origins.display" type="booleans"/>
+  <field name="descriptiveMetadata.origins.label" type="text_general"/>
+  <field name="descriptiveMetadata.origins.seq" type="plongs"/>
+  <field name="descriptiveMetadata.origins.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.origins.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.origins.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.pdfRights" type="text_general"/>
+  <field name="descriptiveMetadata.physdesc.display" type="booleans"/>
+  <field name="descriptiveMetadata.physdesc.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.physdesc.label" type="text_general"/>
+  <field name="descriptiveMetadata.physdesc.seq" type="plongs"/>
+  <field name="descriptiveMetadata.physicalLocation" type="text_general"/>
+  <field name="descriptiveMetadata.physicalLocation.display" type="booleans"/>
+  <field name="descriptiveMetadata.physicalLocation.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.physicalLocation.label" type="text_general"/>
+  <field name="descriptiveMetadata.physicalLocation.seq" type="plongs"/>
+  <field name="descriptiveMetadata.places.display" type="booleans"/>
+  <field name="descriptiveMetadata.places.label" type="text_general"/>
+  <field name="descriptiveMetadata.places.seq" type="plongs"/>
+  <field name="descriptiveMetadata.places.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.places.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.places.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.places.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.places.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.provenances" type="text_general"/>
+  <field name="descriptiveMetadata.provenances.display" type="booleans"/>
+  <field name="descriptiveMetadata.provenances.label" type="text_general"/>
+  <field name="descriptiveMetadata.provenances.seq" type="plongs"/>
+  <field name="descriptiveMetadata.provenances.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.provenances.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.provenances.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.publications.display" type="booleans"/>
+  <field name="descriptiveMetadata.publications.seq" type="plongs"/>
+  <field name="descriptiveMetadata.publications.value.dateDisplay.display" type="booleans"/>
+  <field name="descriptiveMetadata.publications.value.dateDisplay.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.dateDisplay.label" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.dateDisplay.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.dateDisplay.seq" type="plongs"/>
+  <field name="descriptiveMetadata.publications.value.dateEnd" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.dateStart" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.places.display" type="booleans"/>
+  <field name="descriptiveMetadata.publications.value.places.label" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.places.seq" type="plongs"/>
+  <field name="descriptiveMetadata.publications.value.places.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.publications.value.places.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.places.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.places.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.places.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.publications.value.places.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.publishers.display" type="booleans"/>
+  <field name="descriptiveMetadata.publications.value.publishers.label" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.publishers.seq" type="plongs"/>
+  <field name="descriptiveMetadata.publications.value.publishers.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.publications.value.publishers.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.publications.value.publishers.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.publications.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.display" type="booleans"/>
+  <field name="descriptiveMetadata.recipients.label" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.listDisplay" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.seq" type="plongs"/>
+  <field name="descriptiveMetadata.recipients.value.authority" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.authorityURI" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.recipients.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.role" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.recipients.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.recipients.value.valueURI" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.display" type="booleans"/>
+  <field name="descriptiveMetadata.scribes.label" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.listDisplay" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.seq" type="plongs"/>
+  <field name="descriptiveMetadata.scribes.value.authority" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.authorityURI" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.scribes.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.role" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.scribes.value.shortForm" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.scribes.value.valueURI" type="text_general"/>
+  <field name="descriptiveMetadata.scripts.display" type="booleans"/>
+  <field name="descriptiveMetadata.scripts.label" type="text_general"/>
+  <field name="descriptiveMetadata.scripts.seq" type="plongs"/>
+  <field name="descriptiveMetadata.scripts.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.scripts.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.scripts.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.shelfLocator" type="text_general"/>
+  <field name="descriptiveMetadata.shelfLocator.display" type="booleans"/>
+  <field name="descriptiveMetadata.shelfLocator.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.shelfLocator.label" type="text_general"/>
+  <field name="descriptiveMetadata.shelfLocator.seq" type="plongs"/>
+  <field name="descriptiveMetadata.subjects" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.display" type="booleans"/>
+  <field name="descriptiveMetadata.subjects.label" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.listDisplay" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.seq" type="plongs"/>
+  <field name="descriptiveMetadata.subjects.value.authority" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.value.authorityURI" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.value.display" type="booleans"/>
+  <field name="descriptiveMetadata.subjects.value.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.value.fullForm" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.value.linktype" type="text_general"/>
+  <field name="descriptiveMetadata.subjects.value.seq" type="plongs"/>
+  <field name="descriptiveMetadata.subjects.value.valueURI" type="text_general"/>
+  <field name="descriptiveMetadata.thumbnailOrientation" type="text_general"/>
+  <field name="descriptiveMetadata.thumbnailUrl" type="text_general"/>
+  <field name="descriptiveMetadata.title" type="text_general"/>
+  <field name="descriptiveMetadata.title.display" type="booleans"/>
+  <field name="descriptiveMetadata.title.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.title.label" type="text_general"/>
+  <field name="descriptiveMetadata.title.seq" type="plongs"/>
+  <field name="descriptiveMetadata.uniformTitle.display" type="booleans"/>
+  <field name="descriptiveMetadata.uniformTitle.displayForm" type="text_general"/>
+  <field name="descriptiveMetadata.uniformTitle.label" type="text_general"/>
+  <field name="descriptiveMetadata.uniformTitle.seq" type="plongs"/>
+  <field name="descriptiveMetadata.watermarkStatement" type="text_general"/>
+  <field name="displayForm" type="text_general"/>
+  <field name="embeddable" type="booleans"/>
+  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="listItemPages.dmdID" type="text_general"/>
+  <field name="listItemPages.fileID" type="text_general"/>
+  <field name="listItemPages.listItemText" type="text_general"/>
+  <field name="listItemPages.startPage" type="plongs"/>
+  <field name="listItemPages.startPageLabel" type="text_general"/>
+  <field name="listItemPages.title" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.children.descriptiveMetadataID" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.children.endPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.children.endPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.children.children.children.children.label" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.children.startPageID" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.children.startPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.children.startPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.children.children.children.descriptiveMetadataID" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.endPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.endPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.children.children.children.label" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.startPageID" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.startPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.children.children.startPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.children.children.descriptiveMetadataID" type="text_general"/>
+  <field name="logicalStructures.children.children.children.endPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.children.endPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.children.children.label" type="text_general"/>
+  <field name="logicalStructures.children.children.children.startPageID" type="text_general"/>
+  <field name="logicalStructures.children.children.children.startPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.children.startPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.children.descriptiveMetadataID" type="text_general"/>
+  <field name="logicalStructures.children.children.endPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.endPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.children.label" type="text_general"/>
+  <field name="logicalStructures.children.children.startPageID" type="text_general"/>
+  <field name="logicalStructures.children.children.startPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.children.startPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.descriptiveMetadataID" type="text_general"/>
+  <field name="logicalStructures.children.endPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.endPagePosition" type="plongs"/>
+  <field name="logicalStructures.children.label" type="text_general"/>
+  <field name="logicalStructures.children.startPageID" type="text_general"/>
+  <field name="logicalStructures.children.startPageLabel" type="text_general"/>
+  <field name="logicalStructures.children.startPagePosition" type="plongs"/>
+  <field name="logicalStructures.descriptiveMetadataID" type="text_general"/>
+  <field name="logicalStructures.endPageLabel" type="text_general"/>
+  <field name="logicalStructures.endPagePosition" type="plongs"/>
+  <field name="logicalStructures.label" type="text_general"/>
+  <field name="logicalStructures.startPageID" type="text_general"/>
+  <field name="logicalStructures.startPageLabel" type="text_general"/>
+  <field name="logicalStructures.startPagePosition" type="plongs"/>
+  <field name="numberOfPages" type="plongs"/>
+  <field name="pages.IIIFImageURL" type="text_general"/>
+  <field name="pages.abstract" type="text_general"/>
+  <field name="pages.accMats" type="text_general"/>
+  <field name="pages.acquisitionTexts" type="text_general"/>
+  <field name="pages.acquisitions-dateDisplay" type="text_general"/>
+  <field name="pages.additions" type="text_general"/>
+  <field name="pages.altIdentifiers" type="text_general"/>
+  <field name="pages.alternativeTitles" type="text_general" multiValued="true" indexed="true"/><!-- create generic titles field -->
+  <field name="pages.associated" type="text_general"/>
+  <field name="pages.authors" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.bibliographies" type="text_general"/>
+  <field name="pages.bindings" type="text_general"/>
+  <field name="pages.calendarnum" type="text_general"/>
+  <field name="pages.collation" type="text_general"/>
+  <field name="pages.conditions" type="text_general"/>
+  <field name="pages.creations-century" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.creations-dateDisplay" type="text_general"/>
+  <!-- create year field -->
+  <field name="pages.creations-places" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.dataRevisions" type="text_general"/>
+  <field name="pages.dataSources" type="text_general"/>
+  <field name="pages.decorations" type="text_general"/>
+  <field name="pages.descriptiveTitles" type="text_general"/>
+  <field name="pages.donors" type="text_general"/>
+  <field name="pages.excerpts" type="text_general"/>
+  <field name="pages.extent" type="text_general"/>
+  <field name="pages.filiations" type="text_general"/>
+  <field name="pages.foliation" type="text_general"/>
+  <field name="pages.form" type="text_general"/>
+  <field name="pages.formerOwners" type="text_general"/>
+  <field name="pages.fundings" type="text_general"/>
+  <field name="pages.imageHeight" type="plongs"/>
+  <field name="pages.imageWidth" type="plongs"/>
+  <field name="pages.label" type="text_general"/>
+  <field name="pages.languageStrings" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.layouts" type="text_general"/>
+  <field name="pages.material" type="text_general"/>
+  <field name="pages.musicNotations" type="text_general"/>
+  <field name="pages.notes" type="text_general"/>
+  <field name="pages.origins" type="text_general"/>
+  <field name="pages.physID" type="text_general"/>
+  <field name="pages.physdesc" type="text_general"/>
+  <field name="pages.physicalLocation" type="text_general"/>
+  <field name="pages.places" type="text_general"/>
+  <field name="pages.provenances" type="text_general"/>
+  <field name="pages.publications-dateDisplay" type="text_general"/>
+  <field name="pages.publications-places" type="text_general"/>
+  <field name="pages.publications-publishers" type="text_general"/>
+  <field name="pages.recipients" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.scribes" type="text_general"/>
+  <field name="pages.scripts" type="text_general"/>
+  <field name="pages.sequence" type="plongs"/>
+  <field name="pages.shelfLocator" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.subjects" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.surfaceID" type="text_general"/>
+  <field name="pages.thumbnailImageOrientation" type="text_general"/>
+  <field name="pages.title" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.transcriptionDiplomaticURL" type="text_general"/>
+  <field name="pages.transcription_content" type="text_general" multiValued="false" indexed="true"/><!-- large="true" ? -->
+  <field name="pages.translationURL" type="text_general"/>
+  <field name="pages.translation_content" type="text_general" multiValued="false" indexed="true"/><!-- large="true" ? -->
+  <field name="pages.uniformTitle" type="text_general" multiValued="true" indexed="true"/>
+  <field name="sourceData" type="text_general"/>
+  <field name="textDirection" type="text_general"/>
+  <field name="useDiplomaticTranscriptions" type="booleans"/>
+  <field name="useTranscriptions" type="booleans"/>
+  <field name="useTranslations" type="booleans"/>
+  <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
+  <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
+  <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_en_split" type="text_en_splitting" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_sort" type="text_gen_sort" indexed="true" stored="true"/>
+  <dynamicField name="ignored_*" type="ignored"/>
+  <dynamicField name="*_txt_rev" type="text_general_rev" indexed="true" stored="true"/>
+  <dynamicField name="*_phon_en" type="phonetic_en" indexed="true" stored="true"/>
+  <dynamicField name="*_s_lower" type="lowercase" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_cjk" type="text_cjk" indexed="true" stored="true"/>
+  <dynamicField name="random_*" type="random"/>
+  <dynamicField name="*_t_sort" type="text_gen_sort" multiValued="false" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_en" type="text_en" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_ar" type="text_ar" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_bg" type="text_bg" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_ca" type="text_ca" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_cz" type="text_cz" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_da" type="text_da" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_de" type="text_de" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_el" type="text_el" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_es" type="text_es" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_et" type="text_et" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_eu" type="text_eu" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_fa" type="text_fa" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_fi" type="text_fi" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_fr" type="text_fr" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_ga" type="text_ga" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_gl" type="text_gl" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_hi" type="text_hi" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_hu" type="text_hu" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_hy" type="text_hy" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_id" type="text_id" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_it" type="text_it" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_ja" type="text_ja" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_ko" type="text_ko" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_lv" type="text_lv" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_nl" type="text_nl" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_no" type="text_no" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_pt" type="text_pt" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_ro" type="text_ro" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_ru" type="text_ru" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_sv" type="text_sv" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_th" type="text_th" indexed="true" stored="true"/>
+  <dynamicField name="*_txt_tr" type="text_tr" indexed="true" stored="true"/>
+  <dynamicField name="*_point" type="point" indexed="true" stored="true"/>
+  <dynamicField name="*_srpt" type="location_rpt" indexed="true" stored="true"/>
+  <dynamicField name="attr_*" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <dynamicField name="*_dts" type="pdates" indexed="true" stored="true"/>
+  <dynamicField name="*_txt" type="text_general" indexed="true" stored="true"/>
+  <dynamicField name="*_str" type="strings" docValues="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
+  <dynamicField name="*_dpf" type="delimited_payloads_float" indexed="true" stored="true"/>
+  <dynamicField name="*_dpi" type="delimited_payloads_int" indexed="true" stored="true"/>
+  <dynamicField name="*_dps" type="delimited_payloads_string" indexed="true" stored="true"/>
+  <dynamicField name="*_is" type="pints" indexed="true" stored="true"/>
+  <dynamicField name="*_ss" type="strings" indexed="true" stored="true"/>
+  <dynamicField name="*_ls" type="plongs" indexed="true" stored="true"/>
+  <dynamicField name="*_bs" type="booleans" indexed="true" stored="true"/>
+  <dynamicField name="*_fs" type="pfloats" indexed="true" stored="true"/>
+  <dynamicField name="*_ds" type="pdoubles" indexed="true" stored="true"/>
+  <dynamicField name="*_dt" type="pdate" indexed="true" stored="true"/>
+  <dynamicField name="*_ws" type="text_ws" indexed="true" stored="true"/>
+  <dynamicField name="*_i" type="pint" indexed="true" stored="true"/>
+  <dynamicField name="*_s" type="string" indexed="true" stored="true"/>
+  <dynamicField name="*_l" type="plong" indexed="true" stored="true"/>
+  <dynamicField name="*_b" type="boolean" indexed="true" stored="true"/>
+  <dynamicField name="*_f" type="pfloat" indexed="true" stored="true"/>
+  <dynamicField name="*_d" type="pdouble" indexed="true" stored="true"/>
+  <dynamicField name="*_t" type="text_general" multiValued="false" indexed="true" stored="true"/>
+  <dynamicField name="*_p" type="location" indexed="true" stored="true"/>
+
+  <!-- Copy fields into _text_ to be findable with generic keyword search -->
+
+  <copyField source="pages.abstract" dest="_text_" type="text_general"/>
+  <copyField source="pages.acquisitionTexts" dest="_text_" type="text_general"/>
+  <copyField source="pages.acquisitions-dateDisplay" dest="_text_" type="text_general"/>
+  <copyField source="pages.additions" dest="_text_" type="text_general"/>
+  <copyField source="pages.altIdentifiers" dest="_text_" type="text_general"/>
+  <copyField source="pages.alternativeTitles" dest="_text_" type="text_general"/>
+  <copyField source="pages.associated" dest="_text_" type="text_general"/>
+  <copyField source="pages.authors" dest="_text_" type="text_general"/>
+  <copyField source="pages.bibliographies" dest="_text_" type="text_general"/>
+  <copyField source="pages.bindings" dest="_text_" type="text_general"/>
+  <copyField source="pages.calendarnum" dest="_text_" type="text_general"/>
+  <copyField source="pages.collation" dest="_text_" type="text_general"/>
+  <copyField source="pages.conditions" dest="_text_" type="text_general"/>
+  <copyField source="pages.creations-dateDisplay" dest="_text_" type="text_general"/>
+  <copyField source="pages.creations-places" dest="_text_" type="text_general"/>
+  <copyField source="pages.decorations" dest="_text_" type="text_general"/>
+  <copyField source="pages.descriptiveTitles" dest="_text_" type="text_general"/>
+  <copyField source="pages.donors" dest="_text_" type="text_general"/>
+  <copyField source="pages.excerpts" dest="_text_" type="text_general"/>
+  <copyField source="pages.extent" dest="_text_" type="text_general"/>
+  <copyField source="pages.filiations" dest="_text_" type="text_general"/>
+  <copyField source="pages.foliation" dest="_text_" type="text_general"/>
+  <copyField source="pages.form" dest="_text_" type="text_general"/>
+  <copyField source="pages.formerOwners" dest="_text_" type="text_general"/>
+  <!--<copyField source="pages.fundings" dest="_text_" type="text_general"/>--><!-- Not indexed in XTF -->
+  <!--<copyField source="pages.label" dest="_text_" maxChars="256"/>-->
+  <copyField source="pages.languageStrings" dest="_text_" type="text_general"/>
+  <copyField source="pages.layouts" dest="_text_" type="text_general"/>
+  <copyField source="pages.material" dest="_text_" type="text_general"/>
+  <copyField source="pages.musicNotations" dest="_text_" type="text_general"/>
+  <copyField source="pages.notes" dest="_text_" type="text_general"/>
+  <copyField source="pages.origins" dest="_text_" type="text_general"/>
+  <copyField source="pages.physdesc" dest="_text_" type="text_general"/>
+  <copyField source="pages.physicalLocation" dest="_text_" type="text_general"/>
+  <copyField source="pages.places" dest="_text_" type="text_general"/>
+  <copyField source="pages.provenances" dest="_text_" type="text_general"/>
+  <copyField source="pages.publications-dateDisplay" dest="_text_" type="text_general"/>
+  <copyField source="pages.publications-places" dest="_text_" type="text_general"/>
+  <copyField source="pages.publications-publishers" dest="_text_" type="text_general"/>
+  <copyField source="pages.recipients" dest="_text_" type="text_general"/>
+  <copyField source="pages.scribes" dest="_text_" type="text_general"/>
+  <copyField source="pages.scripts" dest="_text_" type="text_general"/>
+  <copyField source="pages.shelfLocator" dest="_text_" type="text_general"/>
+  <copyField source="pages.subjects" dest="_text_" type="text_general"/>
+  <copyField source="pages.title" dest="_text_" type="text_general"/>
+  <copyField source="pages.transcription_content" dest="_text_" maxChars="256000"/>
+  <copyField source="pages.translation_content" dest="_text_" maxChars="256000"/>
+  <copyField source="pages.uniformTitle" dest="_text_" type="text_general"/>
+  
+  <copyField source="descriptiveMetadata.associated.value.valueURI" dest="descriptiveMetadata.associated.value.valueURI_str" maxChars="256"/>
+  <copyField source="pages.label" dest="pages.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.title.displayForm" dest="descriptiveMetadata.title.displayForm_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.startPageLabel" dest="logicalStructures.children.startPageLabel_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.authorityURI" dest="descriptiveMetadata.associated.value.authorityURI_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.label" dest="logicalStructures.children.label_str" maxChars="256"/>
+  <copyField source="logicalStructures.endPageLabel" dest="logicalStructures.endPageLabel_str" maxChars="256"/>
+  <copyField source="pages.transcriptionDiplomaticURL" dest="pages.transcriptionDiplomaticURL_str" maxChars="256"/>
+  <copyField source="pages.physID" dest="pages.physID_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.languageStrings.value.displayForm" dest="descriptiveMetadata.languageStrings.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.dateDisplay.label" dest="descriptiveMetadata.creations.value.dateDisplay.label_str" maxChars="256"/>
+  <copyField source="pages.IIIFImageURL" dest="pages.IIIFImageURL_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.listDisplay" dest="descriptiveMetadata.associated.listDisplay_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.role" dest="descriptiveMetadata.associated.value.role_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.thumbnailOrientation" dest="descriptiveMetadata.thumbnailOrientation_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.displayImageRights" dest="descriptiveMetadata.displayImageRights_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.shelfLocator.label" dest="descriptiveMetadata.shelfLocator.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.label" dest="descriptiveMetadata.associated.label_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.startPageID" dest="logicalStructures.children.startPageID_str" maxChars="256"/>
+  <copyField source="logicalStructures.startPageLabel" dest="logicalStructures.startPageLabel_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.fundings.label" dest="descriptiveMetadata.fundings.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.imageReproPageURL" dest="descriptiveMetadata.imageReproPageURL_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.languageStrings.label" dest="descriptiveMetadata.languageStrings.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.thumbnailUrl" dest="descriptiveMetadata.thumbnailUrl_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.endPageLabel" dest="logicalStructures.children.endPageLabel_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.authority" dest="descriptiveMetadata.associated.value.authority_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.dataRevisions.displayForm" dest="descriptiveMetadata.dataRevisions.displayForm_str" maxChars="256"/>
+  <copyField source="logicalStructures.startPageID" dest="logicalStructures.startPageID_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.downloadImageRights" dest="descriptiveMetadata.downloadImageRights_str" maxChars="256"/>
+  <copyField source="logicalStructures.descriptiveMetadataID" dest="logicalStructures.descriptiveMetadataID_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.displayForm" dest="descriptiveMetadata.associated.value.displayForm_str" maxChars="256"/>
+  <copyField source="logicalStructures.label" dest="logicalStructures.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.watermarkStatement" dest="descriptiveMetadata.watermarkStatement_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.dateDisplay.displayForm" dest="descriptiveMetadata.creations.value.dateDisplay.displayForm_str" maxChars="256"/>
+  <copyField source="pages.thumbnailImageOrientation" dest="pages.thumbnailImageOrientation_str" maxChars="256"/>
+  <copyField source="textDirection" dest="textDirection_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.ID" dest="descriptiveMetadata.ID_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.shortForm" dest="descriptiveMetadata.associated.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.type" dest="descriptiveMetadata.creations.value.type_str" maxChars="256"/>
+  <copyField source="sourceData" dest="sourceData_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.languageCodes" dest="descriptiveMetadata.languageCodes_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.linktype" dest="descriptiveMetadata.associated.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.dateDisplay.linktype" dest="descriptiveMetadata.creations.value.dateDisplay.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.fullForm" dest="descriptiveMetadata.associated.value.fullForm_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.descriptiveMetadataID" dest="logicalStructures.children.descriptiveMetadataID_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.metadataRights" dest="descriptiveMetadata.metadataRights_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.dataRevisions.label" dest="descriptiveMetadata.dataRevisions.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.physicalLocation.displayForm" dest="descriptiveMetadata.physicalLocation.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.physicalLocation.label" dest="descriptiveMetadata.physicalLocation.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.title.label" dest="descriptiveMetadata.title.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.shelfLocator.displayForm" dest="descriptiveMetadata.shelfLocator.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.value.valueURI" dest="descriptiveMetadata.subjects.value.valueURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.value.authority" dest="descriptiveMetadata.subjects.value.authority_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.listDisplay" dest="descriptiveMetadata.subjects.listDisplay_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.notes.label" dest="descriptiveMetadata.notes.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.value.displayForm" dest="descriptiveMetadata.subjects.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.value.fullForm" dest="descriptiveMetadata.subjects.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.notes.value.displayForm" dest="descriptiveMetadata.notes.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.label" dest="descriptiveMetadata.subjects.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.value.linktype" dest="descriptiveMetadata.subjects.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.subjects.value.authorityURI" dest="descriptiveMetadata.subjects.value.authorityURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.label" dest="descriptiveMetadata.donors.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.provenances.label" dest="descriptiveMetadata.provenances.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.abstract.displayForm" dest="descriptiveMetadata.abstract.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.fullForm" dest="descriptiveMetadata.donors.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.places.value.linktype" dest="descriptiveMetadata.creations.value.places.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.displayForm" dest="descriptiveMetadata.authors.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.label" dest="descriptiveMetadata.authors.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.material.displayForm" dest="descriptiveMetadata.material.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.role" dest="descriptiveMetadata.donors.value.role_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.fullForm" dest="descriptiveMetadata.authors.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.places.value.shortForm" dest="descriptiveMetadata.creations.value.places.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.extent.displayForm" dest="descriptiveMetadata.extent.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.extent.label" dest="descriptiveMetadata.extent.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.linktype" dest="descriptiveMetadata.donors.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.valueURI" dest="descriptiveMetadata.donors.value.valueURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.authority" dest="descriptiveMetadata.donors.value.authority_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.authorityURI" dest="descriptiveMetadata.donors.value.authorityURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.material.label" dest="descriptiveMetadata.material.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.authorityURI" dest="descriptiveMetadata.authors.value.authorityURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.shortForm" dest="descriptiveMetadata.donors.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.places.value.fullForm" dest="descriptiveMetadata.creations.value.places.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.displayForm" dest="descriptiveMetadata.donors.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.abstract.label" dest="descriptiveMetadata.abstract.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.provenances.value.displayForm" dest="descriptiveMetadata.provenances.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.listDisplay" dest="descriptiveMetadata.authors.listDisplay_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.valueURI" dest="descriptiveMetadata.authors.value.valueURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.linktype" dest="descriptiveMetadata.authors.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.authority" dest="descriptiveMetadata.authors.value.authority_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.places.value.displayForm" dest="descriptiveMetadata.creations.value.places.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.places.label" dest="descriptiveMetadata.creations.value.places.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.shortForm" dest="descriptiveMetadata.authors.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.role" dest="descriptiveMetadata.authors.value.role_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.label" dest="logicalStructures.children.children.label_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.endPageLabel" dest="logicalStructures.children.children.endPageLabel_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.startPageID" dest="logicalStructures.children.children.startPageID_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.descriptiveMetadataID" dest="logicalStructures.children.children.descriptiveMetadataID_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.startPageLabel" dest="logicalStructures.children.children.startPageLabel_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.bibliographies.value.displayForm" dest="descriptiveMetadata.bibliographies.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.bibliographies.label" dest="descriptiveMetadata.bibliographies.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scripts.value.displayForm" dest="descriptiveMetadata.scripts.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.decorations.label" dest="descriptiveMetadata.decorations.label_str" maxChars="256"/>
+  <copyField source="listItemPages.title" dest="listItemPages.title_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.layouts.value.displayForm" dest="descriptiveMetadata.layouts.value.displayForm_str" maxChars="256"/>
+  <copyField source="listItemPages.dmdID" dest="listItemPages.dmdID_str" maxChars="256"/>
+  <copyField source="listItemPages.listItemText" dest="listItemPages.listItemText_str" maxChars="256"/>
+  <copyField source="listItemPages.startPageLabel" dest="listItemPages.startPageLabel_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.decorations.value.displayForm" dest="descriptiveMetadata.decorations.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scripts.label" dest="descriptiveMetadata.scripts.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.layouts.label" dest="descriptiveMetadata.layouts.label_str" maxChars="256"/>
+  <copyField source="listItemPages.fileID" dest="listItemPages.fileID_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.additions.value.displayForm" dest="descriptiveMetadata.additions.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.uniformTitle.label" dest="descriptiveMetadata.uniformTitle.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.uniformTitle.displayForm" dest="descriptiveMetadata.uniformTitle.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.donors.value.type" dest="descriptiveMetadata.donors.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.excerpts.displayForm" dest="descriptiveMetadata.excerpts.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.bindings.value.displayForm" dest="descriptiveMetadata.bindings.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.dataSources.value.displayForm" dest="descriptiveMetadata.dataSources.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.form.label" dest="descriptiveMetadata.form.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.acquisitionTexts.value.displayForm" dest="descriptiveMetadata.acquisitionTexts.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.alternativeTitles.value.displayForm" dest="descriptiveMetadata.alternativeTitles.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.dataSources.label" dest="descriptiveMetadata.dataSources.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.additions.label" dest="descriptiveMetadata.additions.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.acquisitions.value.type" dest="descriptiveMetadata.acquisitions.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.associated.value.type" dest="descriptiveMetadata.associated.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.bindings.label" dest="descriptiveMetadata.bindings.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.form.displayForm" dest="descriptiveMetadata.form.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.fundings.value.displayForm" dest="descriptiveMetadata.fundings.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.alternativeTitles.label" dest="descriptiveMetadata.alternativeTitles.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.acquisitions.value.dateDisplay.label" dest="descriptiveMetadata.acquisitions.value.dateDisplay.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.acquisitionTexts.label" dest="descriptiveMetadata.acquisitionTexts.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.excerpts.label" dest="descriptiveMetadata.excerpts.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.descriptiveTitles.value.displayForm" dest="descriptiveMetadata.descriptiveTitles.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.descriptiveTitles.label" dest="descriptiveMetadata.descriptiveTitles.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.conditions.value.displayForm" dest="descriptiveMetadata.conditions.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.shortForm" dest="descriptiveMetadata.formerOwners.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.type" dest="descriptiveMetadata.formerOwners.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.displayForm" dest="descriptiveMetadata.formerOwners.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.role" dest="descriptiveMetadata.formerOwners.value.role_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.linktype" dest="descriptiveMetadata.formerOwners.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.label" dest="descriptiveMetadata.formerOwners.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.fullForm" dest="descriptiveMetadata.formerOwners.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.conditions.label" dest="descriptiveMetadata.conditions.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.fullForm" dest="descriptiveMetadata.scribes.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.listDisplay" dest="descriptiveMetadata.scribes.listDisplay_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.displayForm" dest="descriptiveMetadata.scribes.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.shortForm" dest="descriptiveMetadata.scribes.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.role" dest="descriptiveMetadata.scribes.value.role_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.label" dest="descriptiveMetadata.scribes.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.linktype" dest="descriptiveMetadata.scribes.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.type" dest="descriptiveMetadata.scribes.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.foliation.displayForm" dest="descriptiveMetadata.foliation.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.foliation.label" dest="descriptiveMetadata.foliation.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.authors.value.type" dest="descriptiveMetadata.authors.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.filiations.label" dest="descriptiveMetadata.filiations.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.collation.label" dest="descriptiveMetadata.collation.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.valueURI" dest="descriptiveMetadata.formerOwners.value.valueURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.authority" dest="descriptiveMetadata.formerOwners.value.authority_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.filiations.displayForm" dest="descriptiveMetadata.filiations.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.formerOwners.value.authorityURI" dest="descriptiveMetadata.formerOwners.value.authorityURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.origins.value.displayForm" dest="descriptiveMetadata.origins.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.altIdentifiers.label" dest="descriptiveMetadata.altIdentifiers.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.origins.label" dest="descriptiveMetadata.origins.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.altIdentifiers.value.displayForm" dest="descriptiveMetadata.altIdentifiers.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.collation.displayForm" dest="descriptiveMetadata.collation.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.physdesc.label" dest="descriptiveMetadata.physdesc.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.physdesc.displayForm" dest="descriptiveMetadata.physdesc.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.authorityURI" dest="descriptiveMetadata.scribes.value.authorityURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.authority" dest="descriptiveMetadata.scribes.value.authority_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.scribes.value.valueURI" dest="descriptiveMetadata.scribes.value.valueURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.accMats.value.displayForm" dest="descriptiveMetadata.accMats.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.accMats.label" dest="descriptiveMetadata.accMats.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.musicNotations.value.displayForm" dest="descriptiveMetadata.musicNotations.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.musicNotations.label" dest="descriptiveMetadata.musicNotations.label_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.label" dest="logicalStructures.children.children.children.label_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.startPageLabel" dest="logicalStructures.children.children.children.startPageLabel_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.descriptiveMetadataID" dest="logicalStructures.children.children.children.descriptiveMetadataID_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.startPageID" dest="logicalStructures.children.children.children.startPageID_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.endPageLabel" dest="logicalStructures.children.children.children.endPageLabel_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.fullForm" dest="descriptiveMetadata.recipients.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.shortForm" dest="descriptiveMetadata.recipients.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.role" dest="descriptiveMetadata.recipients.value.role_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.listDisplay" dest="descriptiveMetadata.recipients.listDisplay_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.label" dest="descriptiveMetadata.recipients.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.linktype" dest="descriptiveMetadata.recipients.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.displayForm" dest="descriptiveMetadata.recipients.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.pdfRights" dest="descriptiveMetadata.pdfRights_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.authorityURI" dest="descriptiveMetadata.recipients.value.authorityURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.authority" dest="descriptiveMetadata.recipients.value.authority_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.valueURI" dest="descriptiveMetadata.recipients.value.valueURI_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.places.value.linktype" dest="descriptiveMetadata.places.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.places.label" dest="descriptiveMetadata.places.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.places.value.fullForm" dest="descriptiveMetadata.places.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.places.value.displayForm" dest="descriptiveMetadata.places.value.displayForm_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.startPageID" dest="logicalStructures.children.children.children.children.startPageID_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.startPageLabel" dest="logicalStructures.children.children.children.children.startPageLabel_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.label" dest="logicalStructures.children.children.children.children.label_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.endPageLabel" dest="logicalStructures.children.children.children.children.endPageLabel_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.descriptiveMetadataID" dest="logicalStructures.children.children.children.children.descriptiveMetadataID_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.children.startPageLabel" dest="logicalStructures.children.children.children.children.children.startPageLabel_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.children.endPageLabel" dest="logicalStructures.children.children.children.children.children.endPageLabel_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.children.label" dest="logicalStructures.children.children.children.children.children.label_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.children.descriptiveMetadataID" dest="logicalStructures.children.children.children.children.children.descriptiveMetadataID_str" maxChars="256"/>
+  <copyField source="logicalStructures.children.children.children.children.children.startPageID" dest="logicalStructures.children.children.children.children.children.startPageID_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.docAuthority" dest="descriptiveMetadata.docAuthority_str" maxChars="256"/>
+  <copyField source="pages.translationURL" dest="pages.translationURL_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.calendarnum.label" dest="descriptiveMetadata.calendarnum.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.recipients.value.type" dest="descriptiveMetadata.recipients.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.publishers.label" dest="descriptiveMetadata.publications.value.publishers.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.dateDisplay.label" dest="descriptiveMetadata.publications.value.dateDisplay.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.dateDisplay.displayForm" dest="descriptiveMetadata.publications.value.dateDisplay.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.publishers.value.displayForm" dest="descriptiveMetadata.publications.value.publishers.value.displayForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.dateDisplay.linktype" dest="descriptiveMetadata.publications.value.dateDisplay.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.type" dest="descriptiveMetadata.publications.value.type_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.places.value.shortForm" dest="descriptiveMetadata.publications.value.places.value.shortForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.places.label" dest="descriptiveMetadata.publications.value.places.label_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.places.value.linktype" dest="descriptiveMetadata.publications.value.places.value.linktype_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.places.value.fullForm" dest="descriptiveMetadata.publications.value.places.value.fullForm_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.publications.value.places.value.displayForm" dest="descriptiveMetadata.publications.value.places.value.displayForm_str" maxChars="256"/>
+  <copyField source="displayForm" dest="displayForm_str" maxChars="256"/>
+  <copyField source="pages.fundings" dest="pages.fundings_str" maxChars="256"/>
+  <copyField source="pages.altIdentifiers" dest="pages.altIdentifiers_str" maxChars="256"/>
+  <copyField source="pages.physicalLocation" dest="pages.physicalLocation_str" maxChars="256"/>
+  <copyField source="pages.shelfLocator" dest="pages.shelfLocator_str" maxChars="256"/>
+  <copyField source="pages.title" dest="pages.title_str" maxChars="256"/>
+  <copyField source="pages.donors" dest="pages.donors_str" maxChars="256"/>
+  <copyField source="pages.authors" dest="pages.authors_str" maxChars="256"/>
+  <copyField source="pages.languageStrings" dest="pages.languageStrings_str" maxChars="256"/>
+  <copyField source="pages.creations-places" dest="pages.creations-places_str" maxChars="256"/>
+  <copyField source="pages.extent" dest="pages.extent_str" maxChars="256"/>
+  <copyField source="pages.notes" dest="pages.notes_str" maxChars="256"/>
+  <copyField source="pages.abstract" dest="pages.abstract_str" maxChars="256"/>
+  <copyField source="pages.associated" dest="pages.associated_str" maxChars="256"/>
+  <copyField source="pages.subjects" dest="pages.subjects_str" indexed="true" maxChars="256"/>
+  <copyField source="pages.dataRevisions" dest="pages.dataRevisions_str" maxChars="256"/>
+  <copyField source="pages.bibliographies" dest="pages.bibliographies_str" maxChars="256"/>
+  <copyField source="pages.material" dest="pages.material_str" maxChars="256"/>
+  <copyField source="pages.scripts" dest="pages.scripts_str" maxChars="256"/>
+  <copyField source="pages.decorations" dest="pages.decorations_str" maxChars="256"/>
+  <copyField source="pages.layouts" dest="pages.layouts_str" maxChars="256"/>
+  <copyField source="pages.provenances" dest="pages.provenances_str" maxChars="256"/>
+  <copyField source="pages.acquisitionTexts" dest="pages.acquisitionTexts_str" maxChars="256"/>
+  <copyField source="pages.additions" dest="pages.additions_str" maxChars="256"/>
+  <copyField source="pages.bindings" dest="pages.bindings_str" maxChars="256"/>
+  <copyField source="pages.dataSources" dest="pages.dataSources_str" maxChars="256"/>
+  <copyField source="pages.form" dest="pages.form_str" maxChars="256"/>
+  <copyField source="pages.excerpts" dest="pages.excerpts_str" maxChars="256"/>
+  <copyField source="pages.uniformTitle" dest="pages.uniformTitle_str" maxChars="256"/>
+  <copyField source="pages.alternativeTitles" dest="pages.alternativeTitles_str" maxChars="256"/>
+  <copyField source="pages.descriptiveTitles" dest="pages.descriptiveTitles_str" maxChars="256"/>
+  <copyField source="pages.formerOwners" dest="pages.formerOwners_str" maxChars="256"/>
+  <copyField source="pages.conditions" dest="pages.conditions_str" maxChars="256"/>
+  <copyField source="pages.scribes" dest="pages.scribes_str" maxChars="256"/>
+  <copyField source="pages.foliation" dest="pages.foliation_str" maxChars="256"/>
+  <copyField source="pages.collation" dest="pages.collation_str" maxChars="256"/>
+  <copyField source="pages.origins" dest="pages.origins_str" maxChars="256"/>
+  <copyField source="pages.filiations" dest="pages.filiations_str" maxChars="256"/>
+  <copyField source="pages.physdesc" dest="pages.physdesc_str" maxChars="256"/>
+  <copyField source="pages.accMats" dest="pages.accMats_str" maxChars="256"/>
+  <copyField source="pages.musicNotations" dest="pages.musicNotations_str" maxChars="256"/>
+  <copyField source="pages.recipients" dest="pages.recipients_str" maxChars="256"/>
+  <copyField source="pages.places" dest="pages.places_str" maxChars="256"/>
+  <copyField source="pages.publications-publishers" dest="pages.publications-publishers_str" maxChars="256"/>
+  <copyField source="pages.publications-places" dest="pages.publications-places_str" maxChars="256"/>
+  <copyField source="collection" dest="collection_str" indexed="true" maxChars="256" />
+  <copyField source="pages.creations-century" dest="pages.creations-century_str" indexed="true" maxChars="256"/>
+  <copyField source="creations-century" dest="creations-century_str" indexed="true" maxChars="256"/>
+</schema>
