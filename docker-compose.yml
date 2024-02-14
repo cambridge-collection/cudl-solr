@@ -3,14 +3,8 @@ services:
   solr:
     build:
       dockerfile: ./solr/Dockerfile
-    container_name: solr
+    container_name: sandboxf-cudl-solr
     ports:
-      - 8983:8983 # Do not expose port
-    #command:
-    #  - solr-precreate
-    #  - core
-    networks:
-      - solr_net
-
-networks:
-  solr_net:
+      - 8983:8983
+    volumes:
+      - ./data/solr:/var/solr

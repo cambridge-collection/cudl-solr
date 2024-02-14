@@ -1,5 +1,5 @@
 .DS_Store
 /.idea
 /data/solr/logs
-
+/data/solr/data/cdcp/data
 

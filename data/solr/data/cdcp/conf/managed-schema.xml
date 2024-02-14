@@ -8,7 +8,7 @@
       <tokenizer name="keyword"/>
     </analyzer>
     <analyzer type="query">
-      <tokenizer name="pathHierarchy" delimiter="/"/>
+      <tokenizer delimiter="/" name="pathHierarchy"/>
     </analyzer>
   </fieldType>
   <fieldType name="binary" class="solr.BinaryField"/>
@@ -17,24 +17,24 @@
   <fieldType name="delimited_payloads_float" class="solr.TextField" indexed="true" stored="false">
     <analyzer>
       <tokenizer name="whitespace"/>
-      <filter encoder="float" name="delimitedPayload"/>
+      <filter name="delimitedPayload" encoder="float"/>
     </analyzer>
   </fieldType>
   <fieldType name="delimited_payloads_int" class="solr.TextField" indexed="true" stored="false">
     <analyzer>
       <tokenizer name="whitespace"/>
-      <filter encoder="integer" name="delimitedPayload"/>
+      <filter name="delimitedPayload" encoder="integer"/>
     </analyzer>
   </fieldType>
   <fieldType name="delimited_payloads_string" class="solr.TextField" indexed="true" stored="false">
     <analyzer>
       <tokenizer name="whitespace"/>
-      <filter encoder="identity" name="delimitedPayload"/>
+      <filter name="delimitedPayload" encoder="identity"/>
     </analyzer>
   </fieldType>
   <fieldType name="descendent_path" class="solr.TextField">
     <analyzer type="index">
-      <tokenizer name="pathHierarchy" delimiter="/"/>
+      <tokenizer delimiter="/" name="pathHierarchy"/>
     </analyzer>
     <analyzer type="query">
       <tokenizer name="keyword"/>
@@ -58,7 +58,7 @@
   <fieldType name="phonetic_en" class="solr.TextField" indexed="true" stored="false">
     <analyzer>
       <tokenizer name="standard"/>
-      <filter inject="false" name="doubleMetaphone"/>
+      <filter name="doubleMetaphone" inject="false"/>
     </analyzer>
   </fieldType>
   <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
@@ -93,7 +93,7 @@
       <filter name="elision" ignoreCase="true" articles="lang/contractions_ca.txt"/>
       <filter name="lowercase"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_ca.txt"/>
-      <filter language="Catalan" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Catalan"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_cjk" class="solr.TextField" positionIncrementGap="100">
@@ -117,7 +117,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter format="snowball" ignoreCase="true" words="lang/stopwords_da.txt" name="stop"/>
-      <filter language="Danish" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Danish"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_de" class="solr.TextField" positionIncrementGap="100">
@@ -143,7 +143,7 @@
       <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
       <filter name="lowercase"/>
       <filter name="englishPossessive"/>
-      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="keywordMarker" protected="protwords.txt"/>
       <filter name="porterStem"/>
     </analyzer>
     <analyzer type="query">
@@ -152,7 +152,7 @@
       <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
       <filter name="lowercase"/>
       <filter name="englishPossessive"/>
-      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="keywordMarker" protected="protwords.txt"/>
       <filter name="porterStem"/>
     </analyzer>
   </fieldType>
@@ -160,9 +160,9 @@
     <analyzer type="index">
       <tokenizer name="whitespace"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-      <filter catenateNumbers="1" catenateWords="1" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph" splitOnCaseChange="1"/>
+      <filter splitOnCaseChange="1" catenateNumbers="1" catenateWords="1" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph"/>
       <filter name="lowercase"/>
-      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="keywordMarker" protected="protwords.txt"/>
       <filter name="porterStem"/>
       <filter name="flattenGraph"/>
     </analyzer>
@@ -170,9 +170,9 @@
       <tokenizer name="whitespace"/>
       <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-      <filter catenateNumbers="0" catenateWords="0" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph" splitOnCaseChange="1"/>
+      <filter splitOnCaseChange="1" catenateNumbers="0" catenateWords="0" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph"/>
       <filter name="lowercase"/>
-      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="keywordMarker" protected="protwords.txt"/>
       <filter name="porterStem"/>
     </analyzer>
   </fieldType>
@@ -183,7 +183,7 @@
       <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
       <filter generateWordParts="0" catenateNumbers="1" catenateWords="1" name="wordDelimiterGraph" generateNumberParts="0" catenateAll="0"/>
       <filter name="lowercase"/>
-      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="keywordMarker" protected="protwords.txt"/>
       <filter name="englishMinimalStem"/>
       <filter name="removeDuplicates"/>
       <filter name="flattenGraph"/>
@@ -194,7 +194,7 @@
       <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
       <filter generateWordParts="0" catenateNumbers="1" catenateWords="1" name="wordDelimiterGraph" generateNumberParts="0" catenateAll="0"/>
       <filter name="lowercase"/>
-      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="keywordMarker" protected="protwords.txt"/>
       <filter name="englishMinimalStem"/>
       <filter name="removeDuplicates"/>
     </analyzer>
@@ -212,7 +212,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_et.txt"/>
-      <filter language="Estonian" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Estonian"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_eu" class="solr.TextField" positionIncrementGap="100">
@@ -220,7 +220,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_eu.txt"/>
-      <filter language="Basque" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Basque"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_fa" class="solr.TextField" positionIncrementGap="100">
@@ -238,7 +238,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter format="snowball" ignoreCase="true" words="lang/stopwords_fi.txt" name="stop"/>
-      <filter language="Finnish" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Finnish"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_fr" class="solr.TextField" positionIncrementGap="100">
@@ -257,7 +257,7 @@
       <filter name="stop" ignoreCase="true" words="lang/hyphenations_ga.txt"/>
       <filter name="irishLowercase"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_ga.txt"/>
-      <filter language="Irish" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Irish"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100" multiValued="true">
@@ -275,20 +275,20 @@
   </fieldType>
   <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
     <analyzer type="index">
-      <charFilter class="solr.HTMLStripCharFilterFactory"/><!-- ADDED -->
+      <charFilter class="solr.HTMLStripCharFilterFactory"/>
       <tokenizer name="standard"/>
-      <filter class="solr.ASCIIFoldingFilterFactory" preserveOriginal="true" />
+      <filter class="solr.ASCIIFoldingFilterFactory" preserveOriginal="true"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
       <filter name="lowercase"/>
-      <filter name="porterStem"/><!-- To ignore pluralisation/singular -->
+      <filter name="porterStem"/>
     </analyzer>
     <analyzer type="query">
       <tokenizer name="standard"/>
-      <filter class="solr.ASCIIFoldingFilterFactory" preserveOriginal="true" />
+      <filter class="solr.ASCIIFoldingFilterFactory" preserveOriginal="true"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
       <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
       <filter name="lowercase"/>
-      <filter name="porterStem"/><!-- To ignore pluralisation/singular -->
+      <filter name="porterStem"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
@@ -296,7 +296,7 @@
       <tokenizer name="standard"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
       <filter name="lowercase"/>
-      <filter maxFractionAsterisk="0.33" name="reversedWildcard" maxPosQuestion="2" withOriginal="true" maxPosAsterisk="3"/>
+      <filter withOriginal="true" maxPosAsterisk="3" maxFractionAsterisk="0.33" name="reversedWildcard" maxPosQuestion="2"/>
     </analyzer>
     <analyzer type="query">
       <tokenizer name="standard"/>
@@ -328,7 +328,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter format="snowball" ignoreCase="true" words="lang/stopwords_hu.txt" name="stop"/>
-      <filter language="Hungarian" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Hungarian"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_hy" class="solr.TextField" positionIncrementGap="100">
@@ -336,7 +336,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_hy.txt"/>
-      <filter language="Armenian" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Armenian"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_id" class="solr.TextField" positionIncrementGap="100">
@@ -344,7 +344,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_id.txt"/>
-      <filter stemDerivational="true" name="indonesianStem"/>
+      <filter name="indonesianStem" stemDerivational="true"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_it" class="solr.TextField" positionIncrementGap="100">
@@ -358,12 +358,12 @@
   </fieldType>
   <fieldType name="text_ja" class="solr.TextField" autoGeneratePhraseQueries="false" positionIncrementGap="100">
     <analyzer>
-      <tokenizer mode="search" name="japanese"/>
+      <tokenizer name="japanese" mode="search"/>
       <filter name="japaneseBaseForm"/>
-      <filter tags="lang/stoptags_ja.txt" name="japanesePartOfSpeechStop"/>
+      <filter name="japanesePartOfSpeechStop" tags="lang/stoptags_ja.txt"/>
       <filter name="cjkWidth"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_ja.txt"/>
-      <filter minimumLength="4" name="japaneseKatakanaStem"/>
+      <filter name="japaneseKatakanaStem" minimumLength="4"/>
       <filter name="lowercase"/>
     </analyzer>
   </fieldType>
@@ -389,7 +389,7 @@
       <filter name="lowercase"/>
       <filter format="snowball" ignoreCase="true" words="lang/stopwords_nl.txt" name="stop"/>
       <filter name="stemmerOverride" ignoreCase="false" dictionary="lang/stemdict_nl.txt"/>
-      <filter language="Dutch" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Dutch"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_no" class="solr.TextField" positionIncrementGap="100">
@@ -397,7 +397,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter format="snowball" ignoreCase="true" words="lang/stopwords_no.txt" name="stop"/>
-      <filter language="Norwegian" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Norwegian"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_pt" class="solr.TextField" positionIncrementGap="100">
@@ -413,7 +413,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter name="stop" ignoreCase="true" words="lang/stopwords_ro.txt"/>
-      <filter language="Romanian" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Romanian"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_ru" class="solr.TextField" positionIncrementGap="100">
@@ -421,7 +421,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter format="snowball" ignoreCase="true" words="lang/stopwords_ru.txt" name="stop"/>
-      <filter language="Russian" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Russian"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_sv" class="solr.TextField" positionIncrementGap="100">
@@ -429,7 +429,7 @@
       <tokenizer name="standard"/>
       <filter name="lowercase"/>
       <filter format="snowball" ignoreCase="true" words="lang/stopwords_sv.txt" name="stop"/>
-      <filter language="Swedish" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Swedish"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_th" class="solr.TextField" positionIncrementGap="100">
@@ -444,7 +444,7 @@
       <tokenizer name="standard"/>
       <filter name="turkishLowercase"/>
       <filter name="stop" ignoreCase="false" words="lang/stopwords_tr.txt"/>
-      <filter language="Turkish" name="snowballPorter"/>
+      <filter name="snowballPorter" language="Turkish"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
@@ -452,12 +452,158 @@
       <tokenizer name="whitespace"/>
     </analyzer>
   </fieldType>
-  <field name="_nest_path_" type="_nest_path_"/>
-  <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
+  <field name="1587__Thomas_Hobson_prosecuted_for_profiteering_in_wheat_sort" type="plongs"/>
+  <field name="1599__Thomas_Hobson_supports_a_petition_for_a_license_to_beg_sort" type="plongs"/>
+  <field name="1600__Thomas_Hobson_sued_for_debt_by_Robert_Hughes_sort" type="plongs"/>
+  <field name="1612__Thomas_Hobson_prosecuted_for_profiteering_in_wheat_sort" type="plongs"/>
+  <field name="1616__Thomas_Hobson_provides_a_description_of_a_customer_wanted_by_the_Vice-Chancellor_s_Court_sort" type="plongs"/>
+  <field name="1619__Thomas_Hobson_permitted_to_assist_in_sorting_and_carrying_away_the_goods_of_Jonas_Nash__deceased_sort" type="plongs"/>
+  <field name="1621-2__Thomas_Hobson_sued_by_former_employee_John_Rooke_for_withholding_wages_sort" type="plongs"/>
+  <field name="1622-3__Thomas_Hobson_disputes_with_Thomas_Oliver__chandler_sort" type="plongs"/>
+  <field name="1625__Thomas_Hobson_s_business_operations_affected_by_plague_sort" type="plongs"/>
+  <field name="1625__Thomas_Hobson_takes_responsibility_for_the_court_appearance_of_Robert_Speed_sort" type="plongs"/>
+  <field name="1626__Thomas_Hobson_is_the_largest_benefactor_towards_existing_almshouses_and_a_new_workhouse_sort" type="plongs"/>
+  <field name="1626__Thomas_Hobson_pursued_for_the_debts_of_his_son__John__died_1619__sort" type="plongs"/>
+  <field name="1629-31__Thomas_Hobson_pursued_for_the_debts_of_his_son__John__died_1619__sort" type="plongs"/>
+  <field name="1630-1__Thomas_Hobson_pursued_by_William_Empson_in_two_simultaneous_cases_sort" type="plongs"/>
+  <field name="1630__Thomas_Hobson_compensates_a_customer_for_the_loss_of_linen_he_had_been_paid_to_transport_sort" type="plongs"/>
+  <field name="1631__location_of_a_garden_once_owned_by_Thomas_Hobson_sort" type="plongs"/>
+  <field name="Ancient_India_and_Iran_Trust_sort" type="plongs"/>
+  <field name="Astronomical_Images_sort" type="plongs"/>
+  <field name="BSA_Mycenae_Excavation_Records_sort" type="plongs"/>
+  <field name="BSA_Mycenae_SPHS_sort" type="plongs"/>
+  <field name="Bateson_Archive_sort" type="plongs"/>
+  <field name="Cairo_Genizah_sort" type="plongs"/>
+  <field name="Cambridge_Bookbindings_sort" type="plongs"/>
+  <field name="Cambridge_University_Archives_sort" type="plongs"/>
+  <field name="Caricatures_sort" type="plongs"/>
+  <field name="Cavendish_Laboratory_sort" type="plongs"/>
+  <field name="Chinese_Works_sort" type="plongs"/>
+  <field name="Christ_s_College_sort" type="plongs"/>
+  <field name="Christian_Works_sort" type="plongs"/>
+  <field name="Civilian_Internment_sort" type="plongs"/>
+  <field name="Clare_College_sort" type="plongs"/>
+  <field name="Codex_Zacynthius_sort" type="plongs"/>
+  <field name="Corpus_Christi_College_sort" type="plongs"/>
+  <field name="Curious_Objects_sort" type="plongs"/>
+  <field name="Darwin-Hooker_Letters_sort" type="plongs"/>
+  <field name="Darwin_Manuscripts_sort" type="plongs"/>
+  <field name="David_Jones_sort" type="plongs"/>
+  <field name="Dead_Books_sort" type="plongs"/>
+  <field name="Department_of_Engineering_sort" type="plongs"/>
+  <field name="Digital_Thessaly_sort" type="plongs"/>
+  <field name="Dorothy_Needham_sort" type="plongs"/>
+  <field name="Downing_College_sort" type="plongs"/>
+  <field name="Drawings_sort" type="plongs"/>
+  <field name="Ethiopian_Manuscripts_sort" type="plongs"/>
+  <field name="Exhibition_Items_sort" type="plongs"/>
+  <field name="Explosive_Wace_sort" type="plongs"/>
+  <field name="Fairbank_Papers_sort" type="plongs"/>
+  <field name="Forman_and_Napier_Casebooks_sort" type="plongs"/>
+  <field name="Ghost_Words_sort" type="plongs"/>
+  <field name="Giacomo_Leopardi_sort" type="plongs"/>
+  <field name="Girton_College_sort" type="plongs"/>
+  <field name="Hebrew_Manuscripts_sort" type="plongs"/>
+  <field name="History_of_the_New_Museums_sort" type="plongs"/>
+  <field name="IIIFImageURL" type="text_general"/>
+  <field name="Islamic_Manuscripts_sort" type="plongs"/>
+  <field name="Japanese_Works_sort" type="plongs"/>
+  <field name="Joseph_Needham_sort" type="plongs"/>
+  <field name="Kettle_s_Yard_sort" type="plongs"/>
+  <field name="King_s_College_sort" type="plongs"/>
+  <field name="La_voz_del_campesino_sort" type="plongs"/>
+  <field name="Landscape_Histories_from_the_Air_sort" type="plongs"/>
+  <field name="Landscapes_and_monuments_sort" type="plongs"/>
+  <field name="Lewis-Gibson_sort" type="plongs"/>
+  <field name="Lines_of_Thought_sort" type="plongs"/>
+  <field name="Macclesfield_Collection_sort" type="plongs"/>
+  <field name="Magdalene_College_sort" type="plongs"/>
+  <field name="Maps_sort" type="plongs"/>
+  <field name="Marshall_Library_sort" type="plongs"/>
+  <field name="Medieval_Medical_Recipes_sort" type="plongs"/>
+  <field name="Medieval_and_Early_Modern_Greek_Manuscripts_sort" type="plongs"/>
+  <field name="Michaelides_Fragments_sort" type="plongs"/>
+  <field name="Mingana-Lewis_Palimpsest_sort" type="plongs"/>
+  <field name="Montaigne_s_Library_sort" type="plongs"/>
+  <field name="Music_sort" type="plongs"/>
+  <field name="National_Maritime_Museum_Manuscripts_sort" type="plongs"/>
+  <field name="National_Maritime_Museum_Print_Works_sort" type="plongs"/>
+  <field name="Newnham_College_sort" type="plongs"/>
+  <field name="Newton_Papers_sort" type="plongs"/>
+  <field name="Notebooks_sort" type="plongs"/>
+  <field name="Oliver_Rackham_sort" type="plongs"/>
+  <field name="Papers_of_George_Biddell_Airy_sort" type="plongs"/>
+  <field name="Papers_of_John_Pond_sort" type="plongs"/>
+  <field name="Papers_of_Nevil_Maskelyne_sort" type="plongs"/>
+  <field name="Papers_of_the_Board_of_Longitude_sort" type="plongs"/>
+  <field name="Pembroke_College_sort" type="plongs"/>
+  <field name="Peterhouse_sort" type="plongs"/>
+  <field name="Plans_sort" type="plongs"/>
+  <field name="Poultry_Notebooks_sort" type="plongs"/>
+  <field name="Queens__College_sort" type="plongs"/>
+  <field name="Rabbit_Notebooks_sort" type="plongs"/>
+  <field name="Rare_Books_and_Manuscripts_sort" type="plongs"/>
+  <field name="Relhan_Collection_sort" type="plongs"/>
+  <field name="Royal_Asiatic_Society_sort" type="plongs"/>
+  <field name="Royal_Commonwealth_Society_150_sort" type="plongs"/>
+  <field name="Royal_Commonwealth_Society_sort" type="plongs"/>
+  <field name="Royal_Library_sort" type="plongs"/>
+  <field name="Royal_Observatory_Greenwich_Drawings_and_Paintings_sort" type="plongs"/>
+  <field name="Sanskrit_Manuscripts_sort" type="plongs"/>
+  <field name="Sassoon_Journals_sort" type="plongs"/>
+  <field name="Schroder_Collection__Rupert_Brooke__sort" type="plongs"/>
+  <field name="Scriptorium_sort" type="plongs"/>
+  <field name="Shahnama_Project_sort" type="plongs"/>
+  <field name="Sidney_Sussex_College_sort" type="plongs"/>
+  <field name="Site_Photographs_sort" type="plongs"/>
+  <field name="Skilliter_Centre_sort" type="plongs"/>
+  <field name="Small_Finds_Photographs_sort" type="plongs"/>
+  <field name="Southern_African_Collections_sort" type="plongs"/>
+  <field name="Spanish_Chapbooks_sort" type="plongs"/>
+  <field name="St_Catharine_s_College_sort" type="plongs"/>
+  <field name="St_John_s_College_sort" type="plongs"/>
+  <field name="Sterne_and_Sterneana_sort" type="plongs"/>
+  <field name="Sweet_Pea_Notebooks_sort" type="plongs"/>
+  <field name="Tennyson_sort" type="plongs"/>
+  <field name="The_Rising_Tide_sort" type="plongs"/>
+  <field name="Thomas_Gray_Manuscripts_sort" type="plongs"/>
+  <field name="Tomb_Photographs_sort" type="plongs"/>
+  <field name="Transit_of_Venus_sort" type="plongs"/>
+  <field name="Treasures_of_the_Library_sort" type="plongs"/>
+  <field name="Trinity_Hall_sort" type="plongs"/>
+  <field name="University_Library_sort" type="plongs"/>
+  <field name="Walking_with_Constable_sort" type="plongs"/>
+  <field name="Waterloo_sort" type="plongs"/>
+  <field name="Western_Medieval_Manuscripts_sort" type="plongs"/>
+  <field name="Westminster_College_sort" type="plongs"/>
+  <field name="_root_" type="string" docValues="false" indexed="true" stored="true"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
-  <field name="_version_" type="plong" indexed="false" stored="false"/>
-  <field name="collection" type="text_general" multiValued="true" indexed="true"/>
-  <field name="creations-century" type="text_general" multiValued="true" indexed="true"/>
+  <field name="_version_" type="plong" default="0" multiValued="false" indexed="false" stored="false"/>
+  <field name="abstract" type="text_general"/>
+  <field name="accMats" type="text_general"/>
+  <field name="acquisitionTexts" type="text_general"/>
+  <field name="acquisitions-dateDisplay" type="text_general"/>
+  <field name="additions" type="text_general"/>
+  <field name="altIdentifiers" type="text_general"/>
+  <field name="alternativeTitles" type="text_general" multiValued="true" indexed="true"/>
+  <field name="associated" type="text_general"/>
+  <field name="authors" type="text_general" multiValued="true" indexed="true"/>
+  <field name="bibliographies" type="text_general"/>
+  <field name="bindings" type="text_general"/>
+  <field name="ca._1590__Thomas_Hobson_s_bill_for_Reignold_Bridges_sort" type="plongs"/>
+  <field name="ca._1625-6__Thomas_Hobson_junior_sues_for_damages_after_imprisonment_for_debt_sort" type="plongs"/>
+  <field name="ca._1625-9__Thomas_Hobson_is_tenaciously_pursued_for_debt_sort" type="plongs"/>
+  <field name="calendarnum" type="text_general"/>
+  <field name="collation" type="text_general"/>
+  <field name="collection" type="text_general" docValues="false" multiValued="true" indexed="true"/>
+  <field name="conditions" type="text_general"/>
+  <field name="creations-century" type="text_general" docValues="false" multiValued="true" indexed="true"/>
+  <field name="creations-dateDisplay" type="text_general"/>
+  <field name="creations-places" type="text_general" multiValued="true" indexed="true"/>
+  <field name="dataRevisions" type="text_general"/>
+  <field name="dataSources" type="text_general"/>
+  <field name="decorations" type="text_general"/>
+  <field name="descriptiveMetadata" type="text_general"/>
   <field name="descriptiveMetadata.ID" type="text_general"/>
   <field name="descriptiveMetadata.abstract" type="text_general"/>
   <field name="descriptiveMetadata.abstract.display" type="booleans"/>
@@ -565,6 +711,7 @@
   <field name="descriptiveMetadata.creations-places" type="text_general"/>
   <field name="descriptiveMetadata.creations.display" type="booleans"/>
   <field name="descriptiveMetadata.creations.seq" type="plongs"/>
+  <field name="descriptiveMetadata.creations.value.century" type="text_general"/>
   <field name="descriptiveMetadata.creations.value.dateDisplay.display" type="booleans"/>
   <field name="descriptiveMetadata.creations.value.dateDisplay.displayForm" type="text_general"/>
   <field name="descriptiveMetadata.creations.value.dateDisplay.label" type="text_general"/>
@@ -582,6 +729,8 @@
   <field name="descriptiveMetadata.creations.value.places.value.seq" type="plongs"/>
   <field name="descriptiveMetadata.creations.value.places.value.shortForm" type="text_general"/>
   <field name="descriptiveMetadata.creations.value.type" type="text_general"/>
+  <field name="descriptiveMetadata.creations.value.yearEnd" type="pints"/>
+  <field name="descriptiveMetadata.creations.value.yearStart" type="pints"/>
   <field name="descriptiveMetadata.dataRevisions.display" type="booleans"/>
   <field name="descriptiveMetadata.dataRevisions.displayForm" type="text_general"/>
   <field name="descriptiveMetadata.dataRevisions.label" type="text_general"/>
@@ -818,15 +967,39 @@
   <field name="descriptiveMetadata.uniformTitle.label" type="text_general"/>
   <field name="descriptiveMetadata.uniformTitle.seq" type="plongs"/>
   <field name="descriptiveMetadata.watermarkStatement" type="text_general"/>
+  <field name="descriptiveTitles" type="text_general"/>
   <field name="displayForm" type="text_general"/>
+  <field name="document" type="text_general"/>
+  <field name="documentThumbnailOrientation" type="text_general"/>
+  <field name="documentThumbnailUrl" type="text_general"/>
+  <field name="donors" type="text_general"/>
   <field name="embeddable" type="booleans"/>
+  <field name="excerpts" type="text_general" indexed="true" stored="false"/>
+  <field name="extent" type="text_general"/>
+  <field name="fileID" type="text_general" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="filiations" type="text_general"/>
+  <field name="firstPage" type="booleans"/>
+  <field name="foliation" type="text_general"/>
+  <field name="form" type="text_general"/>
+  <field name="formerOwners" type="text_general"/>
+  <field name="fundings" type="text_general"/>
+  <field name="hasImage" type="booleans"/>
+  <field name="hasPage" type="booleans"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="imageHeight" type="plongs"/>
+  <field name="imageWidth" type="plongs"/>
+  <field name="itemURL" type="text_general"/>
+  <field name="label" type="text_general"/>
+  <field name="languageStrings" type="text_general" multiValued="true" indexed="true"/>
+  <field name="lastPage" type="booleans"/>
+  <field name="layouts" type="text_general"/>
   <field name="listItemPages.dmdID" type="text_general"/>
   <field name="listItemPages.fileID" type="text_general"/>
   <field name="listItemPages.listItemText" type="text_general"/>
   <field name="listItemPages.startPage" type="plongs"/>
   <field name="listItemPages.startPageLabel" type="text_general"/>
   <field name="listItemPages.title" type="text_general"/>
+  <field name="logicalStructures" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.descriptiveMetadataID" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.endPageLabel" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.endPagePosition" type="plongs"/>
@@ -869,74 +1042,79 @@
   <field name="logicalStructures.startPageID" type="text_general"/>
   <field name="logicalStructures.startPageLabel" type="text_general"/>
   <field name="logicalStructures.startPagePosition" type="plongs"/>
+  <field name="material" type="text_general"/>
+  <field name="musicNotations" type="text_general"/>
+  <field name="notes" type="text_general" />
   <field name="numberOfPages" type="plongs"/>
+  <field name="origins" type="text_general"/>
+  <field name="pageHasTranscription" type="booleans"/>
+  <field name="pageHasTranslation" type="booleans"/>
+  <field name="pageXMLTranscriptionURL" type="text_general"/>
+  <field name="pageXMLTranslationURL" type="text_general"/>
+  <field name="pages" type="text_general"/>
   <field name="pages.IIIFImageURL" type="text_general"/>
   <field name="pages.abstract" type="text_general"/>
-  <field name="pages.accMats" type="text_general"/>
-  <field name="pages.acquisitionTexts" type="text_general"/>
-  <field name="pages.acquisitions-dateDisplay" type="text_general"/>
-  <field name="pages.additions" type="text_general"/>
-  <field name="pages.altIdentifiers" type="text_general"/>
-  <field name="pages.alternativeTitles" type="text_general" multiValued="true" indexed="true"/><!-- create generic titles field -->
   <field name="pages.associated" type="text_general"/>
-  <field name="pages.authors" type="text_general" multiValued="true" indexed="true"/>
-  <field name="pages.bibliographies" type="text_general"/>
-  <field name="pages.bindings" type="text_general"/>
-  <field name="pages.calendarnum" type="text_general"/>
-  <field name="pages.collation" type="text_general"/>
-  <field name="pages.conditions" type="text_general"/>
-  <field name="pages.creations-century" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.authors" type="text_general"/>
+  <field name="pages.creations-century" type="text_general"/>
   <field name="pages.creations-dateDisplay" type="text_general"/>
-  <!-- create year field -->
-  <field name="pages.creations-places" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.creations-places" type="text_general"/>
   <field name="pages.dataRevisions" type="text_general"/>
-  <field name="pages.dataSources" type="text_general"/>
-  <field name="pages.decorations" type="text_general"/>
-  <field name="pages.descriptiveTitles" type="text_general"/>
   <field name="pages.donors" type="text_general"/>
-  <field name="pages.excerpts" type="text_general"/>
   <field name="pages.extent" type="text_general"/>
-  <field name="pages.filiations" type="text_general"/>
-  <field name="pages.foliation" type="text_general"/>
-  <field name="pages.form" type="text_general"/>
-  <field name="pages.formerOwners" type="text_general"/>
-  <field name="pages.fundings" type="text_general"/>
+  <field name="pages.id" type="text_general"/>
   <field name="pages.imageHeight" type="plongs"/>
   <field name="pages.imageWidth" type="plongs"/>
   <field name="pages.label" type="text_general"/>
-  <field name="pages.languageStrings" type="text_general" multiValued="true" indexed="true"/>
-  <field name="pages.layouts" type="text_general"/>
+  <field name="pages.languageStrings" type="text_general"/>
   <field name="pages.material" type="text_general"/>
-  <field name="pages.musicNotations" type="text_general"/>
-  <field name="pages.notes" type="text_general"/>
-  <field name="pages.origins" type="text_general"/>
+  <field name="pages.pageHasTranscription" type="booleans"/>
+  <field name="pages.pageHasTranslation" type="booleans"/>
+  <field name="pages.pageXMLTranscriptionURL" type="text_general"/>
   <field name="pages.physID" type="text_general"/>
-  <field name="pages.physdesc" type="text_general"/>
   <field name="pages.physicalLocation" type="text_general"/>
-  <field name="pages.places" type="text_general"/>
   <field name="pages.provenances" type="text_general"/>
-  <field name="pages.publications-dateDisplay" type="text_general"/>
-  <field name="pages.publications-places" type="text_general"/>
-  <field name="pages.publications-publishers" type="text_general"/>
-  <field name="pages.recipients" type="text_general" multiValued="true" indexed="true"/>
-  <field name="pages.scribes" type="text_general"/>
-  <field name="pages.scripts" type="text_general"/>
   <field name="pages.sequence" type="plongs"/>
-  <field name="pages.shelfLocator" type="text_general" multiValued="true" indexed="true"/>
-  <field name="pages.subjects" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.shelfLocator" type="text_general"/>
+  <field name="pages.subjects" type="text_general"/>
   <field name="pages.surfaceID" type="text_general"/>
   <field name="pages.thumbnailImageOrientation" type="text_general"/>
-  <field name="pages.title" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.title" type="text_general"/>
   <field name="pages.transcriptionDiplomaticURL" type="text_general"/>
-  <field name="pages.transcription_content" type="text_general" multiValued="false" indexed="true"/><!-- large="true" ? -->
-  <field name="pages.translationURL" type="text_general"/>
-  <field name="pages.translation_content" type="text_general" multiValued="false" indexed="true"/><!-- large="true" ? -->
-  <field name="pages.uniformTitle" type="text_general" multiValued="true" indexed="true"/>
+  <field name="pages.transcription_content" type="text_general"/>
+  <field name="pages.yearEnd" type="pints"/>
+  <field name="pages.yearStart" type="pints"/>
+  <field name="physID" type="text_general"/>
+  <field name="physdesc" type="text_general"/>
+  <field name="physicalLocation" type="text_general"/>
+  <field name="places" type="text_general"/>
+  <field name="provenances" type="text_general"/>
+  <field name="publications-dateDisplay" type="text_general"/>
+  <field name="publications-places" type="text_general"/>
+  <field name="publications-publishers" type="text_general"/>
+  <field name="recipients" type="text_general" multiValued="true" indexed="true"/>
+  <field name="scribes" type="text_general"/>
+  <field name="scripts" type="text_general"/>
+  <field name="sequence" type="plongs"/>
+  <field name="shelfLocator" type="text_general"/>
   <field name="sourceData" type="text_general"/>
+  <field name="subjects" type="text_general" indexed="true" docValues="false"/>
+  <field name="surfaceID" type="text_general"/>
   <field name="textDirection" type="text_general"/>
+  <field name="textual_content" type="text_general" multiValued="true" indexed="true" stored="false"/>
+  <field name="thumbnailImageOrientation" type="text_general"/>
+  <field name="title" type="text_general"/>
+  <field name="transcriptionDiplomaticURL" type="text_general"/>
+  <field name="transcription_content" type="text_general" multiValued="false" indexed="true" stored="false"/>
+  <field name="translationURL" type="text_general"/>
+  <field name="translation_content" type="text_general" multiValued="false" indexed="true" stored="false"/>
+  <field name="uniformTitle" type="text_general" multiValued="true" indexed="true"/>
   <field name="useDiplomaticTranscriptions" type="booleans"/>
   <field name="useTranscriptions" type="booleans"/>
   <field name="useTranslations" type="booleans"/>
+  <field name="yearEnd" type="pints"/>
+  <field name="yearStart" type="pints"/>
+  <field name="years" type="pints"/>
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
@@ -1006,70 +1184,64 @@
   <dynamicField name="*_d" type="pdouble" indexed="true" stored="true"/>
   <dynamicField name="*_t" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <dynamicField name="*_p" type="location" indexed="true" stored="true"/>
-
-  <!-- Copy fields into _text_ to be findable with generic keyword search -->
-
-  <copyField source="pages.abstract" dest="_text_" type="text_general"/>
-  <copyField source="pages.acquisitionTexts" dest="_text_" type="text_general"/>
-  <copyField source="pages.acquisitions-dateDisplay" dest="_text_" type="text_general"/>
-  <copyField source="pages.additions" dest="_text_" type="text_general"/>
-  <copyField source="pages.altIdentifiers" dest="_text_" type="text_general"/>
-  <copyField source="pages.alternativeTitles" dest="_text_" type="text_general"/>
-  <copyField source="pages.associated" dest="_text_" type="text_general"/>
-  <copyField source="pages.authors" dest="_text_" type="text_general"/>
-  <copyField source="pages.bibliographies" dest="_text_" type="text_general"/>
-  <copyField source="pages.bindings" dest="_text_" type="text_general"/>
-  <copyField source="pages.calendarnum" dest="_text_" type="text_general"/>
-  <copyField source="pages.collation" dest="_text_" type="text_general"/>
-  <copyField source="pages.conditions" dest="_text_" type="text_general"/>
-  <copyField source="pages.creations-dateDisplay" dest="_text_" type="text_general"/>
-  <copyField source="pages.creations-places" dest="_text_" type="text_general"/>
-  <copyField source="pages.decorations" dest="_text_" type="text_general"/>
-  <copyField source="pages.descriptiveTitles" dest="_text_" type="text_general"/>
-  <copyField source="pages.donors" dest="_text_" type="text_general"/>
-  <copyField source="pages.excerpts" dest="_text_" type="text_general"/>
-  <copyField source="pages.extent" dest="_text_" type="text_general"/>
-  <copyField source="pages.filiations" dest="_text_" type="text_general"/>
-  <copyField source="pages.foliation" dest="_text_" type="text_general"/>
-  <copyField source="pages.form" dest="_text_" type="text_general"/>
-  <copyField source="pages.formerOwners" dest="_text_" type="text_general"/>
-  <!--<copyField source="pages.fundings" dest="_text_" type="text_general"/>--><!-- Not indexed in XTF -->
-  <!--<copyField source="pages.label" dest="_text_" maxChars="256"/>-->
-  <copyField source="pages.languageStrings" dest="_text_" type="text_general"/>
-  <copyField source="pages.layouts" dest="_text_" type="text_general"/>
-  <copyField source="pages.material" dest="_text_" type="text_general"/>
-  <copyField source="pages.musicNotations" dest="_text_" type="text_general"/>
-  <copyField source="pages.notes" dest="_text_" type="text_general"/>
-  <copyField source="pages.origins" dest="_text_" type="text_general"/>
-  <copyField source="pages.physdesc" dest="_text_" type="text_general"/>
-  <copyField source="pages.physicalLocation" dest="_text_" type="text_general"/>
-  <copyField source="pages.places" dest="_text_" type="text_general"/>
-  <copyField source="pages.provenances" dest="_text_" type="text_general"/>
-  <copyField source="pages.publications-dateDisplay" dest="_text_" type="text_general"/>
-  <copyField source="pages.publications-places" dest="_text_" type="text_general"/>
-  <copyField source="pages.publications-publishers" dest="_text_" type="text_general"/>
-  <copyField source="pages.recipients" dest="_text_" type="text_general"/>
-  <copyField source="pages.scribes" dest="_text_" type="text_general"/>
-  <copyField source="pages.scripts" dest="_text_" type="text_general"/>
-  <copyField source="pages.shelfLocator" dest="_text_" type="text_general"/>
-  <copyField source="pages.subjects" dest="_text_" type="text_general"/>
-  <copyField source="pages.title" dest="_text_" type="text_general"/>
-  <copyField source="pages.transcription_content" dest="_text_" maxChars="256000"/>
-  <copyField source="pages.translation_content" dest="_text_" maxChars="256000"/>
-  <copyField source="pages.uniformTitle" dest="_text_" type="text_general"/>
-  
+  <copyField source="abstract" dest="_text_"/>
+  <copyField source="acquisitionTexts" dest="_text_"/>
+  <copyField source="acquisitions-dateDisplay" dest="_text_"/>
+  <copyField source="additions" dest="_text_"/>
+  <copyField source="altIdentifiers" dest="_text_"/>
+  <copyField source="alternativeTitles" dest="_text_"/>
+  <copyField source="associated" dest="_text_"/>
+  <copyField source="authors" dest="_text_"/>
+  <copyField source="bibliographies" dest="_text_"/>
+  <copyField source="bindings" dest="_text_"/>
+  <copyField source="calendarnum" dest="_text_"/>
+  <copyField source="collation" dest="_text_"/>
+  <copyField source="conditions" dest="_text_"/>
+  <copyField source="creations-dateDisplay" dest="_text_"/>
+  <copyField source="creations-places" dest="_text_"/>
+  <copyField source="decorations" dest="_text_"/>
+  <copyField source="descriptiveTitles" dest="_text_"/>
+  <copyField source="donors" dest="_text_"/>
+  <copyField source="excerpts" dest="_text_"/>
+  <copyField source="extent" dest="_text_"/>
+  <copyField source="filiations" dest="_text_"/>
+  <copyField source="foliation" dest="_text_"/>
+  <copyField source="form" dest="_text_"/>
+  <copyField source="formerOwners" dest="_text_"/>
+  <copyField source="languageStrings" dest="_text_"/>
+  <copyField source="layouts" dest="_text_"/>
+  <copyField source="material" dest="_text_"/>
+  <copyField source="musicNotations" dest="_text_"/>
+  <copyField source="notes" dest="_text_"/>
+  <copyField source="origins" dest="_text_"/>
+  <copyField source="physdesc" dest="_text_"/>
+  <copyField source="physicalLocation" dest="_text_"/>
+  <copyField source="places" dest="_text_"/>
+  <copyField source="provenances" dest="_text_"/>
+  <copyField source="publications-dateDisplay" dest="_text_"/>
+  <copyField source="publications-places" dest="_text_"/>
+  <copyField source="publications-publishers" dest="_text_"/>
+  <copyField source="recipients" dest="_text_"/>
+  <copyField source="scribes" dest="_text_"/>
+  <copyField source="scripts" dest="_text_"/>
+  <copyField source="shelfLocator" dest="_text_"/>
+  <copyField source="subjects" dest="_text_"/>
+  <copyField source="title" dest="_text_"/>
+  <copyField source="transcription_content" dest="_text_" maxChars="256000"/>
+  <copyField source="transcription_content" dest="textual_content" maxChars="256000"/>
+  <copyField source="translation_content" dest="_text_" maxChars="256000"/>
+  <copyField source="translation_content" dest="textual_content" maxChars="256000"/>
+  <copyField source="uniformTitle" dest="_text_"/>
+  <copyField source="yearEnd" dest="years"/>
+  <copyField source="yearStart" dest="years"/>
   <copyField source="descriptiveMetadata.associated.value.valueURI" dest="descriptiveMetadata.associated.value.valueURI_str" maxChars="256"/>
-  <copyField source="pages.label" dest="pages.label_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.title.displayForm" dest="descriptiveMetadata.title.displayForm_str" maxChars="256"/>
   <copyField source="logicalStructures.children.startPageLabel" dest="logicalStructures.children.startPageLabel_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.associated.value.authorityURI" dest="descriptiveMetadata.associated.value.authorityURI_str" maxChars="256"/>
   <copyField source="logicalStructures.children.label" dest="logicalStructures.children.label_str" maxChars="256"/>
   <copyField source="logicalStructures.endPageLabel" dest="logicalStructures.endPageLabel_str" maxChars="256"/>
-  <copyField source="pages.transcriptionDiplomaticURL" dest="pages.transcriptionDiplomaticURL_str" maxChars="256"/>
-  <copyField source="pages.physID" dest="pages.physID_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.languageStrings.value.displayForm" dest="descriptiveMetadata.languageStrings.value.displayForm_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.creations.value.dateDisplay.label" dest="descriptiveMetadata.creations.value.dateDisplay.label_str" maxChars="256"/>
-  <copyField source="pages.IIIFImageURL" dest="pages.IIIFImageURL_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.associated.listDisplay" dest="descriptiveMetadata.associated.listDisplay_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.associated.value.role" dest="descriptiveMetadata.associated.value.role_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.thumbnailOrientation" dest="descriptiveMetadata.thumbnailOrientation_str" maxChars="256"/>
@@ -1092,7 +1264,6 @@
   <copyField source="logicalStructures.label" dest="logicalStructures.label_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.watermarkStatement" dest="descriptiveMetadata.watermarkStatement_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.creations.value.dateDisplay.displayForm" dest="descriptiveMetadata.creations.value.dateDisplay.displayForm_str" maxChars="256"/>
-  <copyField source="pages.thumbnailImageOrientation" dest="pages.thumbnailImageOrientation_str" maxChars="256"/>
   <copyField source="textDirection" dest="textDirection_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.ID" dest="descriptiveMetadata.ID_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.associated.value.shortForm" dest="descriptiveMetadata.associated.value.shortForm_str" maxChars="256"/>
@@ -1263,7 +1434,7 @@
   <copyField source="logicalStructures.children.children.children.children.children.descriptiveMetadataID" dest="logicalStructures.children.children.children.children.children.descriptiveMetadataID_str" maxChars="256"/>
   <copyField source="logicalStructures.children.children.children.children.children.startPageID" dest="logicalStructures.children.children.children.children.children.startPageID_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.docAuthority" dest="descriptiveMetadata.docAuthority_str" maxChars="256"/>
-  <copyField source="pages.translationURL" dest="pages.translationURL_str" maxChars="256"/>
+  <copyField source="translationURL" dest="translationURL_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.calendarnum.label" dest="descriptiveMetadata.calendarnum.label_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.recipients.value.type" dest="descriptiveMetadata.recipients.value.type_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.publications.value.publishers.label" dest="descriptiveMetadata.publications.value.publishers.label_str" maxChars="256"/>
@@ -1278,51 +1449,95 @@
   <copyField source="descriptiveMetadata.publications.value.places.value.fullForm" dest="descriptiveMetadata.publications.value.places.value.fullForm_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.publications.value.places.value.displayForm" dest="descriptiveMetadata.publications.value.places.value.displayForm_str" maxChars="256"/>
   <copyField source="displayForm" dest="displayForm_str" maxChars="256"/>
-  <copyField source="pages.fundings" dest="pages.fundings_str" maxChars="256"/>
-  <copyField source="pages.altIdentifiers" dest="pages.altIdentifiers_str" maxChars="256"/>
-  <copyField source="pages.physicalLocation" dest="pages.physicalLocation_str" maxChars="256"/>
-  <copyField source="pages.shelfLocator" dest="pages.shelfLocator_str" maxChars="256"/>
-  <copyField source="pages.title" dest="pages.title_str" maxChars="256"/>
-  <copyField source="pages.donors" dest="pages.donors_str" maxChars="256"/>
-  <copyField source="pages.authors" dest="pages.authors_str" maxChars="256"/>
+  <copyField source="fundings" dest="fundings_str" maxChars="256"/>
+  <copyField source="altIdentifiers" dest="altIdentifiers_str" maxChars="256"/>
+  <copyField source="notes" dest="notes_str" maxChars="256"/>
+  <copyField source="bibliographies" dest="bibliographies_str" maxChars="256"/>
+  <copyField source="scripts" dest="scripts_str" maxChars="256"/>
+  <copyField source="decorations" dest="decorations_str" maxChars="256"/>
+  <copyField source="layouts" dest="layouts_str" maxChars="256"/>
+  <copyField source="acquisitionTexts" dest="acquisitionTexts_str" maxChars="256"/>
+  <copyField source="additions" dest="additions_str" maxChars="256"/>
+  <copyField source="bindings" dest="bindings_str" maxChars="256"/>
+  <copyField source="dataSources" dest="dataSources_str" maxChars="256"/>
+  <copyField source="form" dest="form_str" maxChars="256"/>
+  <copyField source="excerpts" dest="excerpts_str" maxChars="256"/>
+  <copyField source="uniformTitle" dest="uniformTitle_str" maxChars="256"/>
+  <copyField source="alternativeTitles" dest="alternativeTitles_str" maxChars="256"/>
+  <copyField source="descriptiveTitles" dest="descriptiveTitles_str" maxChars="256"/>
+  <copyField source="formerOwners" dest="formerOwners_str" maxChars="256"/>
+  <copyField source="conditions" dest="conditions_str" maxChars="256"/>
+  <copyField source="scribes" dest="scribes_str" maxChars="256"/>
+  <copyField source="foliation" dest="foliation_str" maxChars="256"/>
+  <copyField source="collation" dest="collation_str" maxChars="256"/>
+  <copyField source="origins" dest="origins_str" maxChars="256"/>
+  <copyField source="filiations" dest="filiations_str" maxChars="256"/>
+  <copyField source="physdesc" dest="physdesc_str" maxChars="256"/>
+  <copyField source="accMats" dest="accMats_str" maxChars="256"/>
+  <copyField source="musicNotations" dest="musicNotations_str" maxChars="256"/>
+  <copyField source="recipients" dest="recipients_str" maxChars="256"/>
+  <copyField source="places" dest="places_str" maxChars="256"/>
+  <copyField source="publications-publishers" dest="publications-publishers_str" maxChars="256"/>
+  <copyField source="publications-places" dest="publications-places_str" maxChars="256"/>
+  <copyField source="collection" dest="collection_str" maxChars="256"/>
+  <copyField source="creations-century" dest="creations-century_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata.creations.value.century" dest="descriptiveMetadata.creations.value.century_str" maxChars="256"/>
+  <copyField source="id" dest="id_str" maxChars="256"/>
+  <copyField source="logicalStructures" dest="logicalStructures_str" maxChars="256"/>
+  <copyField source="pages" dest="pages_str" maxChars="256"/>
+  <copyField source="descriptiveMetadata" dest="descriptiveMetadata_str" maxChars="256"/>
+  <copyField source="extent" dest="extent_str" maxChars="256"/>
+  <copyField source="languageStrings" dest="languageStrings_str" maxChars="256"/>
+  <copyField source="physicalLocation" dest="physicalLocation_str" maxChars="256"/>
+  <copyField source="shelfLocator" dest="shelfLocator_str" maxChars="256"/>
+  <copyField source="subjects" dest="subjects_str" maxChars="1024"/>
+  <copyField source="creations-places" dest="creations-places_str" maxChars="256"/>
+  <copyField source="dataRevisions" dest="dataRevisions_str" maxChars="256"/>
+  <copyField source="label" dest="label_str" maxChars="256"/>
+  <copyField source="abstract" dest="abstract_str" maxChars="256" indexed="true" stored="false"/>
+  <copyField source="title" dest="title_str" maxChars="256"/>
+  <copyField source="creations-dateDisplay" dest="creations-dateDisplay_str" maxChars="256"/>
+  <copyField source="material" dest="material_str" maxChars="256"/>
+  <copyField source="IIIFImageURL" dest="IIIFImageURL_str" maxChars="256"/>
+  <copyField source="associated" dest="associated_str" maxChars="256"/>
+  <copyField source="donors" dest="donors_str" maxChars="256"/>
+  <copyField source="physID" dest="physID_str" maxChars="256"/>
+  <copyField source="provenances" dest="provenances_str" maxChars="256"/>
+  <copyField source="thumbnailImageOrientation" dest="thumbnailImageOrientation_str" maxChars="256"/>
+  <copyField source="authors" dest="authors_str" maxChars="256"/>
+  <copyField source="transcription_content" dest="transcription_content_str" maxChars="256"/>
+  <copyField source="transcriptionDiplomaticURL" dest="transcriptionDiplomaticURL_str" maxChars="256"/>
+  <copyField source="surfaceID" dest="surfaceID_str" maxChars="256"/>
+  <copyField source="pageXMLTranscriptionURL" dest="pageXMLTranscriptionURL_str" maxChars="256"/>
+  <copyField source="pages.creations-century" dest="pages.creations-century_str" maxChars="256"/>
+  <copyField source="pages.id" dest="pages.id_str" maxChars="256"/>
+  <copyField source="pages.creations-dateDisplay" dest="pages.creations-dateDisplay_str" maxChars="256"/>
+  <copyField source="pages.label" dest="pages.label_str" maxChars="256"/>
   <copyField source="pages.languageStrings" dest="pages.languageStrings_str" maxChars="256"/>
   <copyField source="pages.creations-places" dest="pages.creations-places_str" maxChars="256"/>
   <copyField source="pages.extent" dest="pages.extent_str" maxChars="256"/>
-  <copyField source="pages.notes" dest="pages.notes_str" maxChars="256"/>
-  <copyField source="pages.abstract" dest="pages.abstract_str" maxChars="256"/>
   <copyField source="pages.associated" dest="pages.associated_str" maxChars="256"/>
-  <copyField source="pages.subjects" dest="pages.subjects_str" indexed="true" maxChars="256"/>
   <copyField source="pages.dataRevisions" dest="pages.dataRevisions_str" maxChars="256"/>
-  <copyField source="pages.bibliographies" dest="pages.bibliographies_str" maxChars="256"/>
+  <copyField source="pages.thumbnailImageOrientation" dest="pages.thumbnailImageOrientation_str" maxChars="256"/>
   <copyField source="pages.material" dest="pages.material_str" maxChars="256"/>
-  <copyField source="pages.scripts" dest="pages.scripts_str" maxChars="256"/>
-  <copyField source="pages.decorations" dest="pages.decorations_str" maxChars="256"/>
-  <copyField source="pages.layouts" dest="pages.layouts_str" maxChars="256"/>
+  <copyField source="pages.title" dest="pages.title_str" maxChars="256"/>
+  <copyField source="pages.donors" dest="pages.donors_str" maxChars="256"/>
+  <copyField source="pages.physID" dest="pages.physID_str" maxChars="256"/>
+  <copyField source="pages.authors" dest="pages.authors_str" maxChars="256"/>
+  <copyField source="pages.IIIFImageURL" dest="pages.IIIFImageURL_str" maxChars="256"/>
+  <copyField source="pages.abstract" dest="pages.abstract_str" maxChars="256"/>
+  <copyField source="pages.subjects" dest="pages.subjects_str" maxChars="256"/>
+  <copyField source="pages.physicalLocation" dest="pages.physicalLocation_str" maxChars="256"/>
   <copyField source="pages.provenances" dest="pages.provenances_str" maxChars="256"/>
-  <copyField source="pages.acquisitionTexts" dest="pages.acquisitionTexts_str" maxChars="256"/>
-  <copyField source="pages.additions" dest="pages.additions_str" maxChars="256"/>
-  <copyField source="pages.bindings" dest="pages.bindings_str" maxChars="256"/>
-  <copyField source="pages.dataSources" dest="pages.dataSources_str" maxChars="256"/>
-  <copyField source="pages.form" dest="pages.form_str" maxChars="256"/>
-  <copyField source="pages.excerpts" dest="pages.excerpts_str" maxChars="256"/>
-  <copyField source="pages.uniformTitle" dest="pages.uniformTitle_str" maxChars="256"/>
-  <copyField source="pages.alternativeTitles" dest="pages.alternativeTitles_str" maxChars="256"/>
-  <copyField source="pages.descriptiveTitles" dest="pages.descriptiveTitles_str" maxChars="256"/>
-  <copyField source="pages.formerOwners" dest="pages.formerOwners_str" maxChars="256"/>
-  <copyField source="pages.conditions" dest="pages.conditions_str" maxChars="256"/>
-  <copyField source="pages.scribes" dest="pages.scribes_str" maxChars="256"/>
-  <copyField source="pages.foliation" dest="pages.foliation_str" maxChars="256"/>
-  <copyField source="pages.collation" dest="pages.collation_str" maxChars="256"/>
-  <copyField source="pages.origins" dest="pages.origins_str" maxChars="256"/>
-  <copyField source="pages.filiations" dest="pages.filiations_str" maxChars="256"/>
-  <copyField source="pages.physdesc" dest="pages.physdesc_str" maxChars="256"/>
-  <copyField source="pages.accMats" dest="pages.accMats_str" maxChars="256"/>
-  <copyField source="pages.musicNotations" dest="pages.musicNotations_str" maxChars="256"/>
-  <copyField source="pages.recipients" dest="pages.recipients_str" maxChars="256"/>
-  <copyField source="pages.places" dest="pages.places_str" maxChars="256"/>
-  <copyField source="pages.publications-publishers" dest="pages.publications-publishers_str" maxChars="256"/>
-  <copyField source="pages.publications-places" dest="pages.publications-places_str" maxChars="256"/>
-  <copyField source="collection" dest="collection_str" indexed="true" maxChars="256" />
-  <copyField source="pages.creations-century" dest="pages.creations-century_str" indexed="true" maxChars="256"/>
-  <copyField source="creations-century" dest="creations-century_str" indexed="true" maxChars="256"/>
+  <copyField source="pages.shelfLocator" dest="pages.shelfLocator_str" maxChars="256"/>
+  <copyField source="pages.transcriptionDiplomaticURL" dest="pages.transcriptionDiplomaticURL_str" maxChars="256"/>
+  <copyField source="pages.transcription_content" dest="pages.transcription_content_str" maxChars="256"/>
+  <copyField source="pages.pageXMLTranscriptionURL" dest="pages.pageXMLTranscriptionURL_str" maxChars="256"/>
+  <copyField source="pages.surfaceID" dest="pages.surfaceID_str" maxChars="256"/>
+  <copyField source="fileID" dest="fileID_str" maxChars="256"/>
+  <copyField source="itemURL" dest="itemURL_str" maxChars="256"/>
+  <copyField source="pageXMLTranslationURL" dest="pageXMLTranslationURL_str" maxChars="256"/>
+  <copyField source="document" dest="document_str" maxChars="256"/>
+  <copyField source="documentThumbnailOrientation" dest="documentThumbnailOrientation_str" maxChars="256"/>
+  <copyField source="documentThumbnailUrl" dest="documentThumbnailUrl_str" maxChars="256"/>
 </schema>

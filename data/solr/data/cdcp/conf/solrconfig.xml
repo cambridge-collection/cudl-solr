@@ -667,7 +667,7 @@
   <requestHandler name="/select" class="solr.SearchHandler">
     <lst name="defaults">
       <str name="echoParams">explicit</str>
-      <int name="rows">10</int>
+      <int name="rows">20</int>
     </lst>
   </requestHandler>
 
@@ -684,17 +684,25 @@
   <initParams path="/update/**,/query,/select,/spell">
     <lst name="defaults">
       <str name="df">_text_</str>
-      <str name="defType">dismax</str>
-      <str name="qf">pages.acquisitionTexts pages.acquisitions-dateDisplay pages.additions pages.altIdentifiers pages.alternativeTitles^2 pages.associated pages.authors^1.15 pages.abstract pages.bibliographies pages.bindings pages.calendarnum pages.collation pages.conditions pages.creations-dateDisplay pages.creations-places pages.decorations pages.descriptiveTitles^2 pages.donors pages.excerpts pages.extent pages.filiations pages.foliation pages.form pages.formerOwners pages.layouts pages.languageStrings^0.75 pages.material pages.musicNotations pages.notes pages.origins pages.physdesc pages.physicalLocation pages.places pages.provenances pages.publications-dateDisplay pages.publications-places pages.publications-publishers pages.recipients^1.15 pages.scribes pages.scripts pages.shelfLocator^1.5 pages.subjects pages.title^2 pages.transcription_content^1 pages.translation_content^1 pages.uniformTitle^2</str>
+      <!-- TODO: Declare field list defaults -->
+      <str name="qf">acquisitionTexts acquisitions-dateDisplay additions altIdentifiers alternativeTitles^2 associated authors^2.5 abstract bibliographies bindings calendarnum collation conditions creations-dateDisplay creations-places decorations descriptiveTitles^2 donors excerpts extent filiations foliation form formerOwners layouts languageStrings^0.75 material musicNotations notes origins physdesc physicalLocation places provenances publications-dateDisplay publications-places publications-publishers recipients^1.15 scribes scripts shelfLocator^1.5 subjects title^2 transcription_content^1 translation_content^1 uniformTitle^2</str>
       <str name="q.op">AND</str><!-- I am assuming that all words must be found in the results -->
-      <str name="q.alt">*:*</str><!-- If q not present, return all records. q.alt needs to be used because wildcard field searches are not allowed with dismax -->
+      <str name="hl">true</str>
+      <str name="hl.fl">acquisitionTexts acquisitions-dateDisplay additions altIdentifiers alternativeTitles associated authors abstract bibliographies bindings calendarnum collation conditions creations-dateDisplay creations-places decorations descriptiveTitles donors excerpts extent filiations foliation form formerOwners layouts languageStrings material musicNotations notes origins physdesc physicalLocation places provenances publications-dateDisplay publications-places publications-publishers recipients scribes scripts shelfLocator subjects title transcription_content translation_content uniformTitle</str>
+      <str name="spellcheck">true</str>
       <str name="facet">true</str>
       <str name="facet.sort">count</str>
       <str name="facet.mincount">1</str>
-      <str name="facet.field">pages.subjects_str</str>
+      <!-- Move facet declarations to API -->
       <str name="facet.field">collection_str</str>
-      <str name="facet.field">pages.creations-century_str</str>
-      <str name="rows">20</str>
+      <str name="facet.field">subjects_str</str>
+      <str name="facet.field">creations-century_str</str>
+      <str name="facet.field">pageHasTranscription</str>
+      <str name="facet.field">pageHasTranslation</str>
+      <str name="facet.field">firstPage</str>
+      <str name="facet.field">lastPage</str>
+      <str name="facet.field">hasPage</str>
+      <str name="facet.field">hasImage</str>
     </lst>
   </initParams>
 
