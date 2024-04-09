@@ -6,5 +6,7 @@ services:
     container_name: sandboxf-cudl-solr
     ports:
       - 8983:8983
+    environment:
+      SOLR_JAVA_MEM: "-Xms1g -Xmx1g"
     volumes:
       - ./data/solr:/var/solr
