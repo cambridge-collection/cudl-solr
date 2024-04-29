@@ -1,8 +1,21 @@
 # Instructions
 
-1. Place solr json files in ./data/json/
-1. docker compose up -d --build
-1. Index files, e.g. `find /var/json -name '*.json' -exec /opt/solr/bin/post -c cdcp -params "split=/pages" {} \;` to index everything. This will likely take about 25 minutes. MS-ADD-*.xml makes a nice sample to do. It contains a wide variety of items but indexes quickly enough.
+## Local Build
+
+    docker compose up -d --build
+
+## AWS
+
+1. Use the image in our private ECR
+1. Set an environment variable called `SOLR_JAVA_MEM` for solr's memory usage. I tested the local implementation using `-Xms1g -Xmx1g` but can't guarantee that it's the optimal value.
+1. Copy the data from `./data/solr` to on EFS volume and mount that directory as `/var/solr` in the image. 
+
+**NOTE**
+
+`/var/solr` is the default location for solr conf/schema files. It's where solr will write all its indices and working files.
+
+Ideally, we'd store the schema/conf settings in a separate repository - to keep the application logic simpler.
+    
 
 ## Sample queries
 
