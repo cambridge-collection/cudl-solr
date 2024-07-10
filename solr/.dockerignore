@@ -1,0 +1,4 @@
+# Ignore data directories (ie indices/logs) in solr cores
+data/solr/data/*/data
+
+**/.DS_Store

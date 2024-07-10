@@ -2,11 +2,12 @@ version: "3"
 services:
   solr:
     build:
-      dockerfile: ./solr/Dockerfile
-    container_name: sandboxf-cudl-solr
+      context: ./solr
+      dockerfile: Dockerfile
+    container_name: cudl-solr
     ports:
       - 8983:8983
     environment:
       SOLR_JAVA_MEM: "-Xms1g -Xmx1g"
     volumes:
-      - ./data/solr:/var/solr
+      - ./external-vol:/var/solr

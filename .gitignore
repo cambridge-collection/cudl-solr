@@ -1,5 +1,4 @@
 .DS_Store
 /.idea
-/data/solr/logs
-/data/solr/data/cdcp/data
-
+/solr/data/solr/data/*/data/
+external-vol

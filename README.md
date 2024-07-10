@@ -2,7 +2,7 @@
 
 ## Local Build
 
-    docker compose up -d --build
+    docker compose up --force-recreate --build
 
 ## AWS
 

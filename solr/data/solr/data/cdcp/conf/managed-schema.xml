@@ -973,8 +973,10 @@
   <field name="descriptiveTitles" type="text_general"/>
   <field name="displayForm" type="text_general"/>
   <field name="document" type="text_general"/>
+  <field name="documentShelfLocator" type="text_general" indexed="true" stored="true"/>
   <field name="documentThumbnailOrientation" type="text_general"/>
   <field name="documentThumbnailUrl" type="text_general"/>
+  <field name="documentTitle" type="text_general" indexed="true" stored="true"/>
   <field name="donors" type="text_general"/>
   <field name="embeddable" type="booleans"/>
   <field name="excerpts" type="text_general" indexed="true" stored="false"/>
