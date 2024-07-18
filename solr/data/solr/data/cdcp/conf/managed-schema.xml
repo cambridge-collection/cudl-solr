@@ -581,29 +581,29 @@
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" default="0" multiValued="false" indexed="false" stored="false"/>
   <field name="abstract" type="text_general"/>
-  <field name="accMats" type="text_general"/>
+  <field name="accMats" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="acquisitionTexts" type="text_general"/>
   <field name="acquisitions-dateDisplay" type="text_general"/>
-  <field name="additions" type="text_general"/>
+  <field name="additions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="altIdentifiers" type="text_general"/>
   <field name="alternativeTitles" type="text_general" multiValued="true" indexed="true"/>
   <field name="associated" type="text_general"/>
   <field name="authors" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="bibliographies" type="text_general"/>
-  <field name="bindings" type="text_general"/>
+  <field name="bindings" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="ca._1590__Thomas_Hobson_s_bill_for_Reignold_Bridges_sort" type="plongs"/>
   <field name="ca._1625-6__Thomas_Hobson_junior_sues_for_damages_after_imprisonment_for_debt_sort" type="plongs"/>
   <field name="ca._1625-9__Thomas_Hobson_is_tenaciously_pursued_for_debt_sort" type="plongs"/>
   <field name="calendarnum" type="text_general"/>
-  <field name="collation" type="text_general"/>
+  <field name="collation" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="collection" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
-  <field name="conditions" type="text_general"/>
+  <field name="conditions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="creations-century" type="text_general" docValues="false" multiValued="true" indexed="true"/>
   <field name="creations-dateDisplay" type="text_general"/>
   <field name="creations-places" type="text_general" multiValued="true" indexed="true"/>
   <field name="dataRevisions" type="text_general"/>
   <field name="dataSources" type="text_general"/>
-  <field name="decorations" type="text_general"/>
+  <field name="decorations" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="delete" type="text_general" indexed="false" stored="false"/>
   <field name="delete.query" type="text_general" indexed="false" stored="false"/>
   <field name="descriptiveMetadata" type="text_general"/>
@@ -999,13 +999,14 @@
   <field name="label" type="text_general"/>
   <field name="languageStrings" type="text_general" multiValued="true" indexed="true"/>
   <field name="lastPage" type="booleans"/>
-  <field name="layouts" type="text_general"/>
+  <field name="layouts" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="listItemPages.dmdID" type="text_general"/>
   <field name="listItemPages.fileID" type="text_general"/>
   <field name="listItemPages.listItemText" type="text_general"/>
   <field name="listItemPages.startPage" type="plongs"/>
   <field name="listItemPages.startPageLabel" type="text_general"/>
   <field name="listItemPages.title" type="text_general"/>
+  <field name="listItemText" type="text_general" indexed="true" stored="true"/>
   <field name="logicalStructures" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.descriptiveMetadataID" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.endPageLabel" type="text_general"/>
@@ -1053,7 +1054,7 @@
   <field name="musicNotations" type="text_general"/>
   <field name="notes" type="text_general"/>
   <field name="numberOfPages" type="plongs"/>
-  <field name="origins" type="text_general"/>
+  <field name="origins" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="pageHasTranscription" type="booleans"/>
   <field name="pageHasTranslation" type="booleans"/>
   <field name="pageXMLTranscriptionURL" type="text_general"/>
@@ -1200,13 +1201,9 @@
   <copyField source="associated" dest="_text_"/>
   <copyField source="authors" dest="_text_"/>
   <copyField source="bibliographies" dest="_text_"/>
-  <copyField source="bindings" dest="_text_"/>
   <copyField source="calendarnum" dest="_text_"/>
-  <copyField source="collation" dest="_text_"/>
-  <copyField source="conditions" dest="_text_"/>
   <copyField source="creations-dateDisplay" dest="_text_"/>
   <copyField source="creations-places" dest="_text_"/>
-  <copyField source="decorations" dest="_text_"/>
   <copyField source="descriptiveTitles" dest="_text_"/>
   <copyField source="donors" dest="_text_"/>
   <copyField source="excerpts" dest="_text_"/>
@@ -1217,7 +1214,7 @@
   <copyField source="form" dest="_text_"/>
   <copyField source="formerOwners" dest="_text_"/>
   <copyField source="languageStrings" dest="_text_"/>
-  <copyField source="layouts" dest="_text_"/>
+  <copyField source="listItemText" dest="_text_"/>
   <copyField source="material" dest="_text_"/>
   <copyField source="musicNotations" dest="_text_"/>
   <copyField source="notes" dest="_text_"/>
@@ -1550,4 +1547,5 @@
   <copyField source="documentThumbnailUrl" dest="documentThumbnailUrl_str" maxChars="256"/>
   <copyField source="key" dest="key_str" maxChars="256"/>
   <copyField source="delete.query" dest="delete.query_str" maxChars="256"/>
+  <copyField source="listItemText" dest="listItemText_str" maxChars="256"/>
 </schema>
