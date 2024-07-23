@@ -1195,7 +1195,6 @@
   <copyField source="abstract" dest="_text_"/>
   <copyField source="acquisitionTexts" dest="_text_"/>
   <copyField source="acquisitions-dateDisplay" dest="_text_"/>
-  <copyField source="additions" dest="_text_"/>
   <copyField source="altIdentifiers" dest="_text_"/>
   <copyField source="alternativeTitles" dest="_text_"/>
   <copyField source="associated" dest="_text_"/>
