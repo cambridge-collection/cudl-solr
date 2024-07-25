@@ -597,6 +597,7 @@
   <field name="calendarnum" type="text_general"/>
   <field name="collation" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="collection" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
+  <field name="collection-name" type="text_general"/>
   <field name="conditions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="creations-century" type="text_general" docValues="false" multiValued="true" indexed="true"/>
   <field name="creations-dateDisplay" type="text_general"/>
