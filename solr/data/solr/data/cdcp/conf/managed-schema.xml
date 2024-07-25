@@ -453,130 +453,7 @@
       <tokenizer name="whitespace"/>
     </analyzer>
   </fieldType>
-  <field name="1587__Thomas_Hobson_prosecuted_for_profiteering_in_wheat_sort" type="plongs"/>
-  <field name="1599__Thomas_Hobson_supports_a_petition_for_a_license_to_beg_sort" type="plongs"/>
-  <field name="1600__Thomas_Hobson_sued_for_debt_by_Robert_Hughes_sort" type="plongs"/>
-  <field name="1612__Thomas_Hobson_prosecuted_for_profiteering_in_wheat_sort" type="plongs"/>
-  <field name="1616__Thomas_Hobson_provides_a_description_of_a_customer_wanted_by_the_Vice-Chancellor_s_Court_sort" type="plongs"/>
-  <field name="1619__Thomas_Hobson_permitted_to_assist_in_sorting_and_carrying_away_the_goods_of_Jonas_Nash__deceased_sort" type="plongs"/>
-  <field name="1621-2__Thomas_Hobson_sued_by_former_employee_John_Rooke_for_withholding_wages_sort" type="plongs"/>
-  <field name="1622-3__Thomas_Hobson_disputes_with_Thomas_Oliver__chandler_sort" type="plongs"/>
-  <field name="1625__Thomas_Hobson_s_business_operations_affected_by_plague_sort" type="plongs"/>
-  <field name="1625__Thomas_Hobson_takes_responsibility_for_the_court_appearance_of_Robert_Speed_sort" type="plongs"/>
-  <field name="1626__Thomas_Hobson_is_the_largest_benefactor_towards_existing_almshouses_and_a_new_workhouse_sort" type="plongs"/>
-  <field name="1626__Thomas_Hobson_pursued_for_the_debts_of_his_son__John__died_1619__sort" type="plongs"/>
-  <field name="1629-31__Thomas_Hobson_pursued_for_the_debts_of_his_son__John__died_1619__sort" type="plongs"/>
-  <field name="1630-1__Thomas_Hobson_pursued_by_William_Empson_in_two_simultaneous_cases_sort" type="plongs"/>
-  <field name="1630__Thomas_Hobson_compensates_a_customer_for_the_loss_of_linen_he_had_been_paid_to_transport_sort" type="plongs"/>
-  <field name="1631__location_of_a_garden_once_owned_by_Thomas_Hobson_sort" type="plongs"/>
-  <field name="Ancient_India_and_Iran_Trust_sort" type="plongs"/>
-  <field name="Astronomical_Images_sort" type="plongs"/>
-  <field name="BSA_Mycenae_Excavation_Records_sort" type="plongs"/>
-  <field name="BSA_Mycenae_SPHS_sort" type="plongs"/>
-  <field name="Bateson_Archive_sort" type="plongs"/>
-  <field name="Cairo_Genizah_sort" type="plongs"/>
-  <field name="Cambridge_Bookbindings_sort" type="plongs"/>
-  <field name="Cambridge_University_Archives_sort" type="plongs"/>
-  <field name="Caricatures_sort" type="plongs"/>
-  <field name="Cavendish_Laboratory_sort" type="plongs"/>
-  <field name="Chinese_Works_sort" type="plongs"/>
-  <field name="Christ_s_College_sort" type="plongs"/>
-  <field name="Christian_Works_sort" type="plongs"/>
-  <field name="Civilian_Internment_sort" type="plongs"/>
-  <field name="Clare_College_sort" type="plongs"/>
-  <field name="Codex_Zacynthius_sort" type="plongs"/>
-  <field name="Corpus_Christi_College_sort" type="plongs"/>
-  <field name="Curious_Objects_sort" type="plongs"/>
-  <field name="Darwin-Hooker_Letters_sort" type="plongs"/>
-  <field name="Darwin_Manuscripts_sort" type="plongs"/>
-  <field name="David_Jones_sort" type="plongs"/>
-  <field name="Dead_Books_sort" type="plongs"/>
-  <field name="Department_of_Engineering_sort" type="plongs"/>
-  <field name="Digital_Thessaly_sort" type="plongs"/>
-  <field name="Dorothy_Needham_sort" type="plongs"/>
-  <field name="Downing_College_sort" type="plongs"/>
-  <field name="Drawings_sort" type="plongs"/>
-  <field name="Ethiopian_Manuscripts_sort" type="plongs"/>
-  <field name="Exhibition_Items_sort" type="plongs"/>
-  <field name="Explosive_Wace_sort" type="plongs"/>
-  <field name="Fairbank_Papers_sort" type="plongs"/>
-  <field name="Forman_and_Napier_Casebooks_sort" type="plongs"/>
-  <field name="Ghost_Words_sort" type="plongs"/>
-  <field name="Giacomo_Leopardi_sort" type="plongs"/>
-  <field name="Girton_College_sort" type="plongs"/>
-  <field name="Hebrew_Manuscripts_sort" type="plongs"/>
-  <field name="History_of_the_New_Museums_sort" type="plongs"/>
   <field name="IIIFImageURL" type="text_general"/>
-  <field name="Islamic_Manuscripts_sort" type="plongs"/>
-  <field name="Japanese_Works_sort" type="plongs"/>
-  <field name="Joseph_Needham_sort" type="plongs"/>
-  <field name="Kettle_s_Yard_sort" type="plongs"/>
-  <field name="King_s_College_sort" type="plongs"/>
-  <field name="La_voz_del_campesino_sort" type="plongs"/>
-  <field name="Landscape_Histories_from_the_Air_sort" type="plongs"/>
-  <field name="Landscapes_and_monuments_sort" type="plongs"/>
-  <field name="Lewis-Gibson_sort" type="plongs"/>
-  <field name="Lines_of_Thought_sort" type="plongs"/>
-  <field name="Macclesfield_Collection_sort" type="plongs"/>
-  <field name="Magdalene_College_sort" type="plongs"/>
-  <field name="Maps_sort" type="plongs"/>
-  <field name="Marshall_Library_sort" type="plongs"/>
-  <field name="Medieval_Medical_Recipes_sort" type="plongs"/>
-  <field name="Medieval_and_Early_Modern_Greek_Manuscripts_sort" type="plongs"/>
-  <field name="Michaelides_Fragments_sort" type="plongs"/>
-  <field name="Mingana-Lewis_Palimpsest_sort" type="plongs"/>
-  <field name="Montaigne_s_Library_sort" type="plongs"/>
-  <field name="Music_sort" type="plongs"/>
-  <field name="National_Maritime_Museum_Manuscripts_sort" type="plongs"/>
-  <field name="National_Maritime_Museum_Print_Works_sort" type="plongs"/>
-  <field name="Newnham_College_sort" type="plongs"/>
-  <field name="Newton_Papers_sort" type="plongs"/>
-  <field name="Notebooks_sort" type="plongs"/>
-  <field name="Oliver_Rackham_sort" type="plongs"/>
-  <field name="Papers_of_George_Biddell_Airy_sort" type="plongs"/>
-  <field name="Papers_of_John_Pond_sort" type="plongs"/>
-  <field name="Papers_of_Nevil_Maskelyne_sort" type="plongs"/>
-  <field name="Papers_of_the_Board_of_Longitude_sort" type="plongs"/>
-  <field name="Pembroke_College_sort" type="plongs"/>
-  <field name="Peterhouse_sort" type="plongs"/>
-  <field name="Plans_sort" type="plongs"/>
-  <field name="Poultry_Notebooks_sort" type="plongs"/>
-  <field name="Queens__College_sort" type="plongs"/>
-  <field name="Rabbit_Notebooks_sort" type="plongs"/>
-  <field name="Rare_Books_and_Manuscripts_sort" type="plongs"/>
-  <field name="Relhan_Collection_sort" type="plongs"/>
-  <field name="Royal_Asiatic_Society_sort" type="plongs"/>
-  <field name="Royal_Commonwealth_Society_150_sort" type="plongs"/>
-  <field name="Royal_Commonwealth_Society_sort" type="plongs"/>
-  <field name="Royal_Library_sort" type="plongs"/>
-  <field name="Royal_Observatory_Greenwich_Drawings_and_Paintings_sort" type="plongs"/>
-  <field name="Sanskrit_Manuscripts_sort" type="plongs"/>
-  <field name="Sassoon_Journals_sort" type="plongs"/>
-  <field name="Schroder_Collection__Rupert_Brooke__sort" type="plongs"/>
-  <field name="Scriptorium_sort" type="plongs"/>
-  <field name="Shahnama_Project_sort" type="plongs"/>
-  <field name="Sidney_Sussex_College_sort" type="plongs"/>
-  <field name="Site_Photographs_sort" type="plongs"/>
-  <field name="Skilliter_Centre_sort" type="plongs"/>
-  <field name="Small_Finds_Photographs_sort" type="plongs"/>
-  <field name="Southern_African_Collections_sort" type="plongs"/>
-  <field name="Spanish_Chapbooks_sort" type="plongs"/>
-  <field name="St_Catharine_s_College_sort" type="plongs"/>
-  <field name="St_John_s_College_sort" type="plongs"/>
-  <field name="Sterne_and_Sterneana_sort" type="plongs"/>
-  <field name="Sweet_Pea_Notebooks_sort" type="plongs"/>
-  <field name="Tennyson_sort" type="plongs"/>
-  <field name="The_Rising_Tide_sort" type="plongs"/>
-  <field name="Thomas_Gray_Manuscripts_sort" type="plongs"/>
-  <field name="Tomb_Photographs_sort" type="plongs"/>
-  <field name="Transit_of_Venus_sort" type="plongs"/>
-  <field name="Treasures_of_the_Library_sort" type="plongs"/>
-  <field name="Trinity_Hall_sort" type="plongs"/>
-  <field name="University_Library_sort" type="plongs"/>
-  <field name="Walking_with_Constable_sort" type="plongs"/>
-  <field name="Waterloo_sort" type="plongs"/>
-  <field name="Western_Medieval_Manuscripts_sort" type="plongs"/>
-  <field name="Westminster_College_sort" type="plongs"/>
   <field name="_root_" type="string" docValues="false" indexed="true" stored="true"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" default="0" multiValued="false" indexed="false" stored="false"/>
@@ -585,25 +462,45 @@
   <field name="acquisitionTexts" type="text_general"/>
   <field name="acquisitions-dateDisplay" type="text_general"/>
   <field name="additions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
+  <field name="aiit_sort" type="plongs"/>
   <field name="altIdentifiers" type="text_general"/>
   <field name="alternativeTitles" type="text_general" multiValued="true" indexed="true"/>
   <field name="associated" type="text_general"/>
+  <field name="astronomicalimages_sort" type="plongs"/>
   <field name="authors" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <field name="batesonarchive_sort" type="plongs"/>
   <field name="bibliographies" type="text_general"/>
   <field name="bindings" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
-  <field name="ca._1590__Thomas_Hobson_s_bill_for_Reignold_Bridges_sort" type="plongs"/>
-  <field name="ca._1625-6__Thomas_Hobson_junior_sues_for_damages_after_imprisonment_for_debt_sort" type="plongs"/>
-  <field name="ca._1625-9__Thomas_Hobson_is_tenaciously_pursued_for_debt_sort" type="plongs"/>
   <field name="calendarnum" type="text_general"/>
+  <field name="cambridgebindings_sort" type="plongs"/>
+  <field name="cambridgebroadsides_sort" type="plongs"/>
+  <field name="campesino_sort" type="plongs"/>
+  <field name="caricatures_sort" type="plongs"/>
+  <field name="casebooks_sort" type="plongs"/>
+  <field name="cavendish_sort" type="plongs"/>
+  <field name="chinese_sort" type="plongs"/>
+  <field name="christian_sort" type="plongs"/>
+  <field name="christs_sort" type="plongs"/>
+  <field name="civilianinternment_sort" type="plongs"/>
+  <field name="clare_sort" type="plongs"/>
+  <field name="codexzacynthius_sort" type="plongs"/>
   <field name="collation" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="collection" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
   <field name="collection-name" type="text_general"/>
   <field name="conditions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
+  <field name="constable_sort" type="plongs"/>
+  <field name="corpuschristicollege_sort" type="plongs"/>
   <field name="creations-century" type="text_general" docValues="false" multiValued="true" indexed="true"/>
   <field name="creations-dateDisplay" type="text_general"/>
   <field name="creations-places" type="text_general" multiValued="true" indexed="true"/>
+  <field name="cuarchives_sort" type="plongs"/>
+  <field name="curiousobjects_sort" type="plongs"/>
+  <field name="darwin_mss_sort" type="plongs"/>
+  <field name="darwinhooker_sort" type="plongs"/>
   <field name="dataRevisions" type="text_general"/>
   <field name="dataSources" type="text_general"/>
+  <field name="davidjones_sort" type="plongs"/>
+  <field name="deadbooks_sort" type="plongs"/>
   <field name="decorations" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="delete" type="text_general" indexed="false" stored="false"/>
   <field name="delete.query" type="text_general" indexed="false" stored="false"/>
@@ -972,6 +869,7 @@
   <field name="descriptiveMetadata.uniformTitle.seq" type="plongs"/>
   <field name="descriptiveMetadata.watermarkStatement" type="text_general"/>
   <field name="descriptiveTitles" type="text_general"/>
+  <field name="digitalthessaly_sort" type="plongs"/>
   <field name="displayForm" type="text_general"/>
   <field name="document" type="text_general"/>
   <field name="documentShelfLocator" type="text_general" indexed="true" stored="true"/>
@@ -979,9 +877,16 @@
   <field name="documentThumbnailUrl" type="text_general"/>
   <field name="documentTitle" type="text_general" indexed="true" stored="true"/>
   <field name="donors" type="text_general"/>
+  <field name="dorothyneedham_sort" type="plongs"/>
+  <field name="downing_sort" type="plongs"/>
   <field name="embeddable" type="booleans"/>
+  <field name="engineering_sort" type="plongs"/>
+  <field name="ethiopianmanuscripts_sort" type="plongs"/>
   <field name="excerpts" type="text_general" indexed="true" stored="true"/>
+  <field name="exhibitions_sort" type="plongs"/>
+  <field name="explosivewace_sort" type="plongs"/>
   <field name="extent" type="text_general"/>
+  <field name="fairbank_sort" type="plongs"/>
   <field name="fileID" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <field name="file_id" type="text_general" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="filiations" type="text_general"/>
@@ -990,17 +895,33 @@
   <field name="form" type="text_general"/>
   <field name="formerOwners" type="text_general"/>
   <field name="fundings" type="text_general"/>
+  <field name="genizah_sort" type="plongs"/>
+  <field name="ghostwords_sort" type="plongs"/>
+  <field name="girton_sort" type="plongs"/>
+  <field name="greekmanuscripts_sort" type="plongs"/>
   <field name="hasImage" type="booleans"/>
   <field name="hasPage" type="booleans"/>
+  <field name="hebrew_sort" type="plongs"/>
+  <field name="herbarium_sort" type="plongs"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="imageHeight" type="plongs"/>
   <field name="imageWidth" type="plongs"/>
+  <field name="islamic_sort" type="plongs"/>
   <field name="itemURL" type="text_general"/>
+  <field name="japanese_sort" type="plongs"/>
+  <field name="kettlesyard_sort" type="plongs"/>
   <field name="key" type="text_general"/>
+  <field name="kings_sort" type="plongs"/>
+  <field name="kingsrarebooksandmanuscripts_sort" type="plongs"/>
   <field name="label" type="text_general"/>
+  <field name="landscapehistories_sort" type="plongs"/>
+  <field name="landscapes_sort" type="plongs"/>
   <field name="languageStrings" type="text_general" multiValued="true" indexed="true"/>
   <field name="lastPage" type="booleans"/>
   <field name="layouts" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
+  <field name="leopardi_sort" type="plongs"/>
+  <field name="lewisgibson_sort" type="plongs"/>
+  <field name="linesofthought_sort" type="plongs"/>
   <field name="listItemPages.dmdID" type="text_general"/>
   <field name="listItemPages.fileID" type="text_general"/>
   <field name="listItemPages.listItemText" type="text_general"/>
@@ -1051,8 +972,32 @@
   <field name="logicalStructures.startPageID" type="text_general"/>
   <field name="logicalStructures.startPageLabel" type="text_general"/>
   <field name="logicalStructures.startPagePosition" type="plongs"/>
+  <field name="macclesfield_sort" type="plongs"/>
+  <field name="magdalenecollege_sort" type="plongs"/>
+  <field name="maps_sort" type="plongs"/>
+  <field name="marshall_sort" type="plongs"/>
   <field name="material" type="text_general"/>
+  <field name="medieval_sort" type="plongs"/>
+  <field name="medievalmedicalrecipes_sort" type="plongs"/>
+  <field name="michaelides_sort" type="plongs"/>
+  <field name="minganalewis_sort" type="plongs"/>
+  <field name="montaignelibrary_sort" type="plongs"/>
   <field name="musicNotations" type="text_general"/>
+  <field name="music_sort" type="plongs"/>
+  <field name="mycenae_bsa_myc_sort" type="plongs"/>
+  <field name="mycenae_bsa_sphs_sort" type="plongs"/>
+  <field name="mycenae_drawings_sort" type="plongs"/>
+  <field name="mycenae_notebooks_sort" type="plongs"/>
+  <field name="mycenae_plans_sort" type="plongs"/>
+  <field name="mycenae_site_photographs_sort" type="plongs"/>
+  <field name="mycenae_small_finds_photographs_sort" type="plongs"/>
+  <field name="mycenae_tomb_photographs_sort" type="plongs"/>
+  <field name="needham_sort" type="plongs"/>
+  <field name="newmuseums_sort" type="plongs"/>
+  <field name="newnham_sort" type="plongs"/>
+  <field name="newton_sort" type="plongs"/>
+  <field name="nmm_mss_sort" type="plongs"/>
+  <field name="nmm_print_sort" type="plongs"/>
   <field name="notes" type="text_general"/>
   <field name="numberOfPages" type="plongs"/>
   <field name="origins" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
@@ -1093,34 +1038,95 @@
   <field name="pages.transcription_content" type="text_general"/>
   <field name="pages.yearEnd" type="pints"/>
   <field name="pages.yearStart" type="pints"/>
+  <field name="paperstocks_sort" type="plongs"/>
+  <field name="pembroke_sort" type="plongs"/>
+  <field name="peterhouse_sort" type="plongs"/>
   <field name="physID" type="text_general"/>
   <field name="physdesc" type="text_general"/>
   <field name="physicalLocation" type="text_general"/>
   <field name="places" type="text_general"/>
+  <field name="poultrynotebooks_sort" type="plongs"/>
   <field name="provenances" type="text_general"/>
   <field name="publications-dateDisplay" type="text_general"/>
   <field name="publications-places" type="text_general"/>
   <field name="publications-publishers" type="text_general"/>
+  <field name="queens_sort" type="plongs"/>
+  <field name="rabbitnotebooks_sort" type="plongs"/>
+  <field name="rackham_sort" type="plongs"/>
+  <field name="ras_sort" type="plongs"/>
+  <field name="rcs150_sort" type="plongs"/>
+  <field name="rcs_sort" type="plongs"/>
   <field name="recipients" type="text_general" multiValued="true" indexed="true"/>
+  <field name="relhan_sort" type="plongs"/>
+  <field name="rgo14_sort" type="plongs"/>
+  <field name="rgo4_sort" type="plongs"/>
+  <field name="rgo5_sort" type="plongs"/>
+  <field name="rgo6_sort" type="plongs"/>
+  <field name="rogart_sort" type="plongs"/>
+  <field name="royallibrary_sort" type="plongs"/>
+  <field name="sandbachtinne_sort" type="plongs"/>
+  <field name="sanskrit_sort" type="plongs"/>
+  <field name="sassoon_sort" type="plongs"/>
+  <field name="schroder_sort" type="plongs"/>
   <field name="scribes" type="text_general"/>
+  <field name="scriptorium_sort" type="plongs"/>
   <field name="scripts" type="text_general"/>
   <field name="sequence" type="plongs"/>
+  <field name="shahnama_sort" type="plongs"/>
   <field name="shelfLocator" type="text_general" indexed="true" stored="true"/>
+  <field name="sidneysussex_sort" type="plongs"/>
+  <field name="skillitercentre_sort" type="plongs"/>
   <field name="sourceData" type="text_general"/>
+  <field name="southernafricancollections_sort" type="plongs"/>
+  <field name="spanishchapbooks_sort" type="plongs"/>
+  <field name="stcatharines_sort" type="plongs"/>
+  <field name="sterne_sort" type="plongs"/>
+  <field name="stjohns_sort" type="plongs"/>
   <field name="subjects" type="text_general" indexed="true" docValues="false"/>
   <field name="surfaceID" type="text_general"/>
+  <field name="sweetpeanotebooks_sort" type="plongs"/>
+  <field name="tennyson_sort" type="plongs"/>
   <field name="textDirection" type="text_general"/>
   <field name="textual_content" type="text_general" multiValued="true" indexed="true" stored="false"/>
+  <field name="therisingtide_sort" type="plongs"/>
+  <field name="thomasgray_sort" type="plongs"/>
+  <field name="thomashobson_10_sort" type="plongs"/>
+  <field name="thomashobson_11_sort" type="plongs"/>
+  <field name="thomashobson_12_sort" type="plongs"/>
+  <field name="thomashobson_13_sort" type="plongs"/>
+  <field name="thomashobson_14_sort" type="plongs"/>
+  <field name="thomashobson_15_sort" type="plongs"/>
+  <field name="thomashobson_16_sort" type="plongs"/>
+  <field name="thomashobson_17_sort" type="plongs"/>
+  <field name="thomashobson_18_sort" type="plongs"/>
+  <field name="thomashobson_19_sort" type="plongs"/>
+  <field name="thomashobson_1_sort" type="plongs"/>
+  <field name="thomashobson_2_sort" type="plongs"/>
+  <field name="thomashobson_3_sort" type="plongs"/>
+  <field name="thomashobson_4_sort" type="plongs"/>
+  <field name="thomashobson_5_sort" type="plongs"/>
+  <field name="thomashobson_6_sort" type="plongs"/>
+  <field name="thomashobson_7_sort" type="plongs"/>
+  <field name="thomashobson_8_sort" type="plongs"/>
+  <field name="thomashobson_9_sort" type="plongs"/>
   <field name="thumbnailImageOrientation" type="text_general"/>
   <field name="title" type="text_general" stored="true"/>
+  <field name="tov_sort" type="plongs"/>
+  <field name="trainingworkshops1_sort" type="plongs"/>
+  <field name="trainingworkshops3_sort" type="plongs"/>
   <field name="transcriptionDiplomaticURL" type="text_general"/>
   <field name="transcription_content" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <field name="translationURL" type="text_general"/>
   <field name="translation_content" type="text_general" multiValued="false" indexed="true" stored="true"/>
+  <field name="treasures_sort" type="plongs"/>
+  <field name="trinityhall_sort" type="plongs"/>
   <field name="uniformTitle" type="text_general" multiValued="true" indexed="true"/>
+  <field name="universitylibrary_sort" type="plongs"/>
   <field name="useDiplomaticTranscriptions" type="booleans"/>
   <field name="useTranscriptions" type="booleans"/>
   <field name="useTranslations" type="booleans"/>
+  <field name="waterloo_sort" type="plongs"/>
+  <field name="westminster_sort" type="plongs"/>
   <field name="yearEnd" type="pints"/>
   <field name="yearStart" type="pints"/>
   <field name="years" type="pints"/>
