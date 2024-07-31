@@ -980,6 +980,7 @@
   <field name="material" type="text_general"/>
   <field name="medieval_sort" type="plongs"/>
   <field name="medievalmedicalrecipes_sort" type="plongs"/>
+  <field name="metadata" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="michaelides_sort" type="plongs"/>
   <field name="minganalewis_sort" type="plongs"/>
   <field name="montaignelibrary_sort" type="plongs"/>
@@ -1202,55 +1203,94 @@
   <dynamicField name="*_t" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <dynamicField name="*_p" type="location" indexed="true" stored="true"/>
   <copyField source="abstract" dest="_text_"/>
+  <copyField source="abstract" dest="metadata"/>
   <copyField source="acquisitionTexts" dest="_text_"/>
+  <copyField source="acquisitionTexts" dest="metadata"/>
   <copyField source="acquisitions-dateDisplay" dest="_text_"/>
+  <copyField source="acquisitions-dateDisplay" dest="metadata"/>
   <copyField source="altIdentifiers" dest="_text_"/>
+  <copyField source="altIdentifiers" dest="metadata"/>
   <copyField source="alternativeTitles" dest="_text_"/>
+  <copyField source="alternativeTitles" dest="metadata"/>
   <copyField source="associated" dest="_text_"/>
+  <copyField source="associated" dest="metadata"/>
   <copyField source="associated" dest="name"/>
   <copyField source="authors" dest="_text_"/>
+  <copyField source="authors" dest="metadata"/>
   <copyField source="authors" dest="name"/>
   <copyField source="bibliographies" dest="_text_"/>
+  <copyField source="bibliographies" dest="metadata"/>
   <copyField source="calendarnum" dest="_text_"/>
+  <copyField source="calendarnum" dest="metadata"/>
   <copyField source="creations-dateDisplay" dest="_text_"/>
+  <copyField source="creations-dateDisplay" dest="metadata"/>
   <copyField source="creations-places" dest="_text_"/>
+  <copyField source="creations-places" dest="metadata"/>
   <copyField source="creations-places" dest="origin-place"/>
   <copyField source="descriptiveTitles" dest="_text_"/>
+  <copyField source="descriptiveTitles" dest="metadata"/>
   <copyField source="donors" dest="_text_"/>
+  <copyField source="donors" dest="metadata"/>
   <copyField source="donors" dest="name"/>
   <copyField source="excerpts" dest="_text_"/>
+  <copyField source="excerpts" dest="metadata"/>
   <copyField source="extent" dest="_text_"/>
+  <copyField source="extent" dest="metadata"/>
   <copyField source="fileID" dest="file_id"/>
   <copyField source="filiations" dest="_text_"/>
+  <copyField source="filiations" dest="metadata"/>
   <copyField source="foliation" dest="_text_"/>
+  <copyField source="foliation" dest="metadata"/>
   <copyField source="form" dest="_text_"/>
+  <copyField source="form" dest="metadata"/>
   <copyField source="formerOwners" dest="_text_"/>
+  <copyField source="formerOwners" dest="metadata"/>
   <copyField source="languageStrings" dest="_text_"/>
+  <copyField source="languageStrings" dest="metadata"/>
   <copyField source="listItemText" dest="_text_"/>
+  <copyField source="listItemText" dest="metadata"/>
   <copyField source="material" dest="_text_"/>
+  <copyField source="material" dest="metadata"/>
   <copyField source="musicNotations" dest="_text_"/>
+  <copyField source="musicNotations" dest="metadata"/>
   <copyField source="notes" dest="_text_"/>
+  <copyField source="notes" dest="metadata"/>
   <copyField source="origins" dest="_text_"/>
+  <copyField source="origins" dest="metadata"/>
   <copyField source="physdesc" dest="_text_"/>
+  <copyField source="physdesc" dest="metadata"/>
   <copyField source="physicalLocation" dest="_text_"/>
+  <copyField source="physicalLocation" dest="metadata"/>
   <copyField source="places" dest="_text_"/>
+  <copyField source="places" dest="metadata"/>
   <copyField source="provenances" dest="_text_"/>
+  <copyField source="provenances" dest="metadata"/>
   <copyField source="publications-dateDisplay" dest="_text_"/>
+  <copyField source="publications-dateDisplay" dest="metadata"/>
   <copyField source="publications-places" dest="_text_"/>
+  <copyField source="publications-places" dest="metadata"/>
   <copyField source="publications-places" dest="origin-place"/>
   <copyField source="publications-publishers" dest="_text_"/>
+  <copyField source="publications-publishers" dest="metadata"/>
   <copyField source="recipients" dest="_text_"/>
+  <copyField source="recipients" dest="metadata"/>
   <copyField source="scribes" dest="_text_"/>
+  <copyField source="scribes" dest="metadata"/>
   <copyField source="scribes" dest="name"/>
   <copyField source="scripts" dest="_text_"/>
+  <copyField source="scripts" dest="metadata"/>
   <copyField source="shelfLocator" dest="_text_"/>
+  <copyField source="shelfLocator" dest="metadata"/>
   <copyField source="subjects" dest="_text_"/>
+  <copyField source="subjects" dest="metadata"/>
   <copyField source="title" dest="_text_"/>
+  <copyField source="title" dest="metadata"/>
   <copyField source="transcription_content" dest="_text_" maxChars="256000"/>
   <copyField source="transcription_content" dest="textual_content" maxChars="256000"/>
   <copyField source="translation_content" dest="_text_" maxChars="256000"/>
   <copyField source="translation_content" dest="textual_content" maxChars="256000"/>
   <copyField source="uniformTitle" dest="_text_"/>
+  <copyField source="uniformTitle" dest="metadata"/>
   <copyField source="yearEnd" dest="years"/>
   <copyField source="yearStart" dest="years"/>
   <copyField source="descriptiveMetadata.associated.value.valueURI" dest="descriptiveMetadata.associated.value.valueURI_str" maxChars="256"/>
