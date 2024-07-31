@@ -702,7 +702,7 @@
       <str name="facet.field">collection_str</str>
       <str name="facet.field">subjects_str</str>
       <str name="facet.field">languageStrings_str</str>
-      <str name="facet.field">creations-places_str</str>
+      <str name="facet.field">origin-place_str</str>
       <str name="facet.field">creations-century_str</str>
       <str name="facet.field">pageHasTranscription</str>
       <str name="facet.field">pageHasTranslation</str>
