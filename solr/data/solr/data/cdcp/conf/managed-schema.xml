@@ -929,6 +929,7 @@
   <field name="listItemPages.startPageLabel" type="text_general"/>
   <field name="listItemPages.title" type="text_general"/>
   <field name="listItemText" type="text_general" indexed="true" stored="true"/>
+  <field name="origin-place" type="text_general" multiValued="true" stored="true" indexed="true"/>
   <field name="logicalStructures" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.descriptiveMetadataID" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.endPageLabel" type="text_general"/>
@@ -1210,6 +1211,7 @@
   <copyField source="calendarnum" dest="_text_"/>
   <copyField source="creations-dateDisplay" dest="_text_"/>
   <copyField source="creations-places" dest="_text_"/>
+  <copyField source="creations-places" dest="origin-place"/>
   <copyField source="descriptiveTitles" dest="_text_"/>
   <copyField source="donors" dest="_text_"/>
   <copyField source="excerpts" dest="_text_"/>
@@ -1231,6 +1233,7 @@
   <copyField source="provenances" dest="_text_"/>
   <copyField source="publications-dateDisplay" dest="_text_"/>
   <copyField source="publications-places" dest="_text_"/>
+  <copyField source="publications-places" dest="origin-place"/>
   <copyField source="publications-publishers" dest="_text_"/>
   <copyField source="recipients" dest="_text_"/>
   <copyField source="scribes" dest="_text_"/>
@@ -1490,6 +1493,7 @@
   <copyField source="places" dest="places_str" maxChars="256"/>
   <copyField source="publications-publishers" dest="publications-publishers_str" maxChars="256"/>
   <copyField source="publications-places" dest="publications-places_str" maxChars="256"/>
+  <copyField source="publications-places" dest="origin-place_str" maxChars="256"/>
   <copyField source="collection" dest="collection_str" maxChars="256"/>
   <copyField source="creations-century" dest="creations-century_str" maxChars="256"/>
   <copyField source="descriptiveMetadata.creations.value.century" dest="descriptiveMetadata.creations.value.century_str" maxChars="256"/>
@@ -1503,6 +1507,7 @@
   <copyField source="shelfLocator" dest="shelfLocator_str" maxChars="256"/>
   <copyField source="subjects" dest="subjects_str" maxChars="1024"/>
   <copyField source="creations-places" dest="creations-places_str" maxChars="256"/>
+  <copyField source="creations-places" dest="origin-place_str" maxChars="256"/>
   <copyField source="dataRevisions" dest="dataRevisions_str" maxChars="256"/>
   <copyField source="label" dest="label_str" maxChars="256"/>
   <copyField source="abstract" dest="abstract_str" maxChars="256"/>
