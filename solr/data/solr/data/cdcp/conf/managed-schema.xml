@@ -464,7 +464,7 @@
   <field name="additions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="aiit_sort" type="plongs"/>
   <field name="altIdentifiers" type="text_general"/>
-  <field name="alternativeTitles" type="text_general" multiValued="true" indexed="true"/>
+  <field name="alternativeTitles" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="associated" type="text_general"/>
   <field name="astronomicalimages_sort" type="plongs"/>
   <field name="authors" type="text_general" multiValued="true" indexed="true" stored="true"/>
@@ -876,7 +876,7 @@
   <field name="documentThumbnailOrientation" type="text_general"/>
   <field name="documentThumbnailUrl" type="text_general"/>
   <field name="documentTitle" type="text_general" indexed="true" stored="true"/>
-  <field name="donors" type="text_general"/>
+  <field name="donors" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="dorothyneedham_sort" type="plongs"/>
   <field name="downing_sort" type="plongs"/>
   <field name="embeddable" type="booleans"/>
@@ -916,7 +916,7 @@
   <field name="label" type="text_general"/>
   <field name="landscapehistories_sort" type="plongs"/>
   <field name="landscapes_sort" type="plongs"/>
-  <field name="languageStrings" type="text_general" multiValued="true" indexed="true"/>
+  <field name="languageStrings" type="text_general" multiValued="true" stored="true" indexed="true"/>
   <field name="lastPage" type="booleans"/>
   <field name="layouts" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="leopardi_sort" type="plongs"/>
@@ -1068,7 +1068,7 @@
   <field name="sanskrit_sort" type="plongs"/>
   <field name="sassoon_sort" type="plongs"/>
   <field name="schroder_sort" type="plongs"/>
-  <field name="scribes" type="text_general"/>
+  <field name="scribes" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="scriptorium_sort" type="plongs"/>
   <field name="scripts" type="text_general"/>
   <field name="sequence" type="plongs"/>
