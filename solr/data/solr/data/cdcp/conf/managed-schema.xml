@@ -932,7 +932,6 @@
   <field name="listItemPages.startPageLabel" type="text_general"/>
   <field name="listItemPages.title" type="text_general"/>
   <field name="listItemText" type="text_general" indexed="true" stored="true"/>
-  <field name="origin-place" type="text_general" multiValued="true" stored="true" indexed="true"/>
   <field name="logicalStructures" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.descriptiveMetadataID" type="text_general"/>
   <field name="logicalStructures.children.children.children.children.children.endPageLabel" type="text_general"/>
@@ -997,15 +996,16 @@
   <field name="mycenae_site_photographs_sort" type="plongs"/>
   <field name="mycenae_small_finds_photographs_sort" type="plongs"/>
   <field name="mycenae_tomb_photographs_sort" type="plongs"/>
+  <field name="name" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="needham_sort" type="plongs"/>
   <field name="newmuseums_sort" type="plongs"/>
   <field name="newnham_sort" type="plongs"/>
   <field name="newton_sort" type="plongs"/>
   <field name="nmm_mss_sort" type="plongs"/>
   <field name="nmm_print_sort" type="plongs"/>
-  <field name="name" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="notes" type="text_general"/>
   <field name="numberOfPages" type="plongs"/>
+  <field name="origin-place" type="text_general" multiValued="true" stored="true" indexed="true"/>
   <field name="origins" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="pageHasTranscription" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="pageHasTranslation" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
