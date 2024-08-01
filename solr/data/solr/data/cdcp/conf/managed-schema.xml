@@ -899,8 +899,8 @@
   <field name="ghostwords_sort" type="plongs"/>
   <field name="girton_sort" type="plongs"/>
   <field name="greekmanuscripts_sort" type="plongs"/>
-  <field name="hasImage" type="booleans"/>
-  <field name="hasPage" type="booleans"/>
+  <field name="hasImage" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
+  <field name="hasPage" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="hebrew_sort" type="plongs"/>
   <field name="herbarium_sort" type="plongs"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
@@ -917,7 +917,7 @@
   <field name="landscapehistories_sort" type="plongs"/>
   <field name="landscapes_sort" type="plongs"/>
   <field name="languageStrings" type="text_general" multiValued="true" stored="true" indexed="true"/>
-  <field name="lastPage" type="booleans"/>
+  <field name="lastPage" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="layouts" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="leopardi_sort" type="plongs"/>
   <field name="lewisgibson_sort" type="plongs"/>
@@ -1004,8 +1004,8 @@
   <field name="notes" type="text_general"/>
   <field name="numberOfPages" type="plongs"/>
   <field name="origins" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
-  <field name="pageHasTranscription" type="booleans"/>
-  <field name="pageHasTranslation" type="booleans"/>
+  <field name="pageHasTranscription" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
+  <field name="pageHasTranslation" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="pageXMLTranscriptionURL" type="text_general"/>
   <field name="pageXMLTranslationURL" type="text_general"/>
   <field name="pages" type="text_general"/>
