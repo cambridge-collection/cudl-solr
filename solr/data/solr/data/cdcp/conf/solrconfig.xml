@@ -706,10 +706,7 @@
       <str name="facet.field">facet-origin-place</str>
       <str name="facet.field">facet-languages</str>
       <str name="facet.field">facet-creations-century</str>
-      <str name="facet.field">itemLevel</str>
-      <str name="facet.field">facet-lastPage</str>
       <str name="facet.field">facet-hasPage</str>
-      <str name="facet.field">facet-hasImage</str>
     </lst>
   </initParams>
 
