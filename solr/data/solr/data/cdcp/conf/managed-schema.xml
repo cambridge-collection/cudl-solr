@@ -890,7 +890,6 @@
   <field name="fileID" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <field name="file_id" type="text_general" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="filiations" type="text_general"/>
-  <field name="firstPage" type="booleans"/>
   <field name="foliation" type="text_general"/>
   <field name="form" type="text_general"/>
   <field name="formerOwners" type="text_general"/>
@@ -907,6 +906,7 @@
   <field name="imageHeight" type="plongs"/>
   <field name="imageWidth" type="plongs"/>
   <field name="islamic_sort" type="plongs"/>
+  <field name="itemLevel" type="booleans"/>
   <field name="itemURL" type="text_general"/>
   <field name="japanese_sort" type="plongs"/>
   <field name="kettlesyard_sort" type="plongs"/>
