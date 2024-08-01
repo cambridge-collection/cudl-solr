@@ -906,6 +906,8 @@
   <field name="imageHeight" type="plongs"/>
   <field name="imageWidth" type="plongs"/>
   <field name="islamic_sort" type="plongs"/>
+  <field name="itemAppearsInMultipleCollections" type="booleans"/>
+  <field name="itemCollectionCount" type="plongs"/>
   <field name="itemLevel" type="booleans"/>
   <field name="itemURL" type="text_general"/>
   <field name="japanese_sort" type="plongs"/>
