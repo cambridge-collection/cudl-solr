@@ -699,17 +699,17 @@
       <str name="facet.sort">count</str>
       <str name="facet.mincount">1</str>
       <!-- Move facet declarations to API -->
-      <str name="facet.field">collection_str</str>
-      <str name="facet.field">subjects_str</str>
-      <str name="facet.field">languageStrings_str</str>
-      <str name="facet.field">origin-place_str</str>
-      <str name="facet.field">creations-century_str</str>
-      <str name="facet.field">pageHasTranscription</str>
-      <str name="facet.field">pageHasTranslation</str>
-      <str name="facet.field">firstPage</str>
-      <str name="facet.field">lastPage</str>
-      <str name="facet.field">hasPage</str>
-      <str name="facet.field">hasImage</str>
+      <str name="facet.field">facet-collection</str>
+      <str name="facet.field">facet-subjects</str>
+      <str name="facet.field">facet-pageHasTranscription</str>
+      <str name="facet.field">facet-pageHasTranslation</str>
+      <str name="facet.field">facet-origin-place</str>
+      <str name="facet.field">facet-languages</str>
+      <str name="facet.field">facet-creations-century</str>
+      <str name="facet.field">itemLevel</str>
+      <str name="facet.field">facet-lastPage</str>
+      <str name="facet.field">facet-hasPage</str>
+      <str name="facet.field">facet-hasImage</str>
     </lst>
   </initParams>
 

@@ -919,6 +919,7 @@
   <field name="landscapehistories_sort" type="plongs"/>
   <field name="landscapes_sort" type="plongs"/>
   <field name="languageStrings" type="text_general" multiValued="true" stored="true" indexed="true"/>
+  <field name="languages" type="text_general"/>
   <field name="lastPage" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="layouts" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="leopardi_sort" type="plongs"/>
@@ -1180,6 +1181,7 @@
   <dynamicField name="*_txt_th" type="text_th" indexed="true" stored="true"/>
   <dynamicField name="*_txt_tr" type="text_tr" indexed="true" stored="true"/>
   <dynamicField name="*_point" type="point" indexed="true" stored="true"/>
+  <dynamicField name="facet-*" type="strings" docValues="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
   <dynamicField name="*_srpt" type="location_rpt" indexed="true" stored="true"/>
   <dynamicField name="attr_*" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <dynamicField name="*_dts" type="pdates" indexed="true" stored="true"/>
@@ -1541,8 +1543,11 @@
   <copyField source="publications-publishers" dest="publications-publishers_str" maxChars="256"/>
   <copyField source="publications-places" dest="publications-places_str" maxChars="256"/>
   <copyField source="publications-places" dest="origin-place_str" maxChars="256"/>
+  <copyField source="publications-places" dest="facet-origin-place" maxChars="256"/>
   <copyField source="collection" dest="collection_str" maxChars="256"/>
+  <copyField source="collection" dest="facet-collection" maxChars="256"/>
   <copyField source="creations-century" dest="creations-century_str" maxChars="256"/>
+  <copyField source="creations-century" dest="facet-creations-century" maxChars="256"/>
   <copyField source="descriptiveMetadata.creations.value.century" dest="descriptiveMetadata.creations.value.century_str" maxChars="256"/>
   <copyField source="id" dest="id_str" maxChars="256"/>
   <copyField source="logicalStructures" dest="logicalStructures_str" maxChars="256"/>
@@ -1550,11 +1555,14 @@
   <copyField source="descriptiveMetadata" dest="descriptiveMetadata_str" maxChars="256"/>
   <copyField source="extent" dest="extent_str" maxChars="256"/>
   <copyField source="languageStrings" dest="languageStrings_str" maxChars="256"/>
+  <copyField source="languageStrings" dest="facet-languageStrings" maxChars="256"/>
   <copyField source="physicalLocation" dest="physicalLocation_str" maxChars="256"/>
   <copyField source="shelfLocator" dest="shelfLocator_str" maxChars="256"/>
   <copyField source="subjects" dest="subjects_str" maxChars="1024"/>
+  <copyField source="subjects" dest="facet-subjects" maxChars="1024"/>
   <copyField source="creations-places" dest="creations-places_str" maxChars="256"/>
   <copyField source="creations-places" dest="origin-place_str" maxChars="256"/>
+  <copyField source="creations-places" dest="facet-origin-place" maxChars="256"/>
   <copyField source="dataRevisions" dest="dataRevisions_str" maxChars="256"/>
   <copyField source="label" dest="label_str" maxChars="256"/>
   <copyField source="abstract" dest="abstract_str" maxChars="256"/>
@@ -1607,4 +1615,10 @@
   <copyField source="key" dest="key_str" maxChars="256"/>
   <copyField source="delete.query" dest="delete.query_str" maxChars="256"/>
   <copyField source="listItemText" dest="listItemText_str" maxChars="256"/>
+  <copyField source="hasImage" dest="facet-hasImage" maxChars="256"/>
+  <copyField source="hasPage" dest="facet-hasPage" maxChars="256"/>
+  <copyField source="lastPage" dest="facet-lastPage" maxChars="256"/>
+  <copyField source="pageHasTranscription" dest="facet-pageHasTranscription" maxChars="256"/>
+  <copyField source="pageHasTranslation" dest="facet-pageHasTranslation" maxChars="256"/>
+  <copyField source="languages" dest="facet-languages" maxChars="256"/>
 </schema>
