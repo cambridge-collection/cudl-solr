@@ -486,7 +486,7 @@
   <field name="codexzacynthius_sort" type="plongs"/>
   <field name="collation" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="collection" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
-  <field name="collection-name" type="text_general"/>
+  <field name="collection-slug" type="text_general"/>
   <field name="conditions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="constable_sort" type="plongs"/>
   <field name="corpuschristicollege_sort" type="plongs"/>
@@ -1546,6 +1546,7 @@
   <copyField source="publications-places" dest="facet-origin-place" maxChars="256"/>
   <copyField source="collection" dest="collection_str" maxChars="256"/>
   <copyField source="collection" dest="facet-collection" maxChars="256"/>
+  <copyField source="collection-slug" dest="facet-collection-slug" maxChars="256"/>
   <copyField source="creations-century" dest="creations-century_str" maxChars="256"/>
   <copyField source="creations-century" dest="facet-creations-century" maxChars="256"/>
   <copyField source="descriptiveMetadata.creations.value.century" dest="descriptiveMetadata.creations.value.century_str" maxChars="256"/>

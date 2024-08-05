@@ -700,6 +700,7 @@
       <str name="facet.mincount">1</str>
       <!-- Move facet declarations to API -->
       <str name="facet.field">facet-collection</str>
+      <str name="facet.field">facet-collection-slug</str>
       <str name="facet.field">facet-subjects</str>
       <str name="facet.field">facet-pageHasTranscription</str>
       <str name="facet.field">facet-pageHasTranslation</str>
