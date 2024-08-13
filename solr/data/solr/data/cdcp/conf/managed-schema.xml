@@ -471,6 +471,8 @@
   <field name="batesonarchive_sort" type="plongs"/>
   <field name="bibliographies" type="text_general"/>
   <field name="bindings" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
+  <field name="browse_all_sort" type="strings" docValues="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
+  <field name="browse_sort" type="strings" docValues="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
   <field name="calendarnum" type="text_general"/>
   <field name="cambridgebindings_sort" type="plongs"/>
   <field name="cambridgebroadsides_sort" type="plongs"/>
