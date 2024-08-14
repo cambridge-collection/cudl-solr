@@ -1,6 +1,10 @@
 # Instructions
 
+The solr core configs and schemata are contained in `./solr`.
+
 ## Local Build
+
+Ensure you have a directory called `./external-vol` at the root of this repo. This directory will contain your solr config, indices and logs. When you launch the instance, the contents of `./solr` will be copied into `./external-vol`.
 
     docker compose up --force-recreate --build
 
