@@ -144,7 +144,7 @@
       <filter name="lowercase"/>
       <filter name="englishPossessive"/>
       <filter protected="protwords.txt" name="keywordMarker"/>
-      <filter name="porterStem"/>
+      <filter name="englishMinimalStem"/>
     </analyzer>
     <analyzer type="query">
       <tokenizer name="standard"/>
@@ -153,7 +153,7 @@
       <filter name="lowercase"/>
       <filter name="englishPossessive"/>
       <filter protected="protwords.txt" name="keywordMarker"/>
-      <filter name="porterStem"/>
+      <filter name="englishMinimalStem"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_en_splitting" class="solr.TextField" autoGeneratePhraseQueries="true" positionIncrementGap="100">
@@ -163,7 +163,8 @@
       <filter catenateWords="1" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph" splitOnCaseChange="1" catenateNumbers="1"/>
       <filter name="lowercase"/>
       <filter protected="protwords.txt" name="keywordMarker"/>
-      <filter name="porterStem"/>
+      <filter name="englishPossessive"/>
+      <filter name="englishMinimalStem"/>
       <filter name="flattenGraph"/>
     </analyzer>
     <analyzer type="query">
@@ -173,7 +174,8 @@
       <filter catenateWords="0" generateNumberParts="1" generateWordParts="1" catenateAll="0" name="wordDelimiterGraph" splitOnCaseChange="1" catenateNumbers="0"/>
       <filter name="lowercase"/>
       <filter protected="protwords.txt" name="keywordMarker"/>
-      <filter name="porterStem"/>
+      <filter name="englishPossessive"/>
+      <filter name="englishMinimalStem"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_en_splitting_tight" class="solr.TextField" autoGeneratePhraseQueries="true" positionIncrementGap="100">
@@ -184,6 +186,7 @@
       <filter generateWordParts="0" catenateNumbers="1" catenateWords="1" name="wordDelimiterGraph" generateNumberParts="0" catenateAll="0"/>
       <filter name="lowercase"/>
       <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="englishPossessive"/>
       <filter name="englishMinimalStem"/>
       <filter name="removeDuplicates"/>
       <filter name="flattenGraph"/>
@@ -195,6 +198,7 @@
       <filter generateWordParts="0" catenateNumbers="1" catenateWords="1" name="wordDelimiterGraph" generateNumberParts="0" catenateAll="0"/>
       <filter name="lowercase"/>
       <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="englishPossessive"/>
       <filter name="englishMinimalStem"/>
       <filter name="removeDuplicates"/>
     </analyzer>
@@ -280,7 +284,8 @@
       <filter class="solr.ASCIIFoldingFilterFactory" preserveOriginal="true"/>
       <filter ignoreCase="true" words="stopwords.txt" name="stop"/>
       <filter name="lowercase"/>
-      <filter name="porterStem"/>
+      <filter name="englishPossessive"/>
+      <filter name="englishMinimalStem"/>
     </analyzer>
     <analyzer type="query">
       <charFilter name="htmlStrip"/>
@@ -289,7 +294,8 @@
       <filter ignoreCase="true" words="stopwords.txt" name="stop"/>
       <filter ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph" expand="true"/>
       <filter name="lowercase"/>
-      <filter name="porterStem"/>
+      <filter name="englishPossessive"/>
+      <filter name="englishMinimalStem"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
