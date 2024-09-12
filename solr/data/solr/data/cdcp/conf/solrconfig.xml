@@ -704,7 +704,7 @@
       <!-- Once we know what fields we need to see in the result set for the viewer to function
            we can turn off everything else. This will result in the smallest dataset possible
       -->
-      <str name="fl">abstract,alternativeTitles,altIdentifiers,associated,authors,calendarnum,collection,creations-century,creations-dateDisplay,dataSources,descriptiveTitles,documentThumbnailOrientation,documentThumbnailUrl,documentShelfLocator,documentTitle,donors,embeddable,excerpts,extent,fileID,itemLevel,form,fundings,hasImage,hasPage,id,IIIFImageURL,imageHeight,imageWidth,itemAppearsInMultipleCollections,itemCollectionCount,itemURL,label,languages,languageStrings,lastPage,listItemText,material,numberOfPages,origin-place,pageHasTranscription,pageHasTranslation,pageXMLTranscriptionURL,pageXMLTranslationURL,physdesc,physicalLocation,physID,places,provenances,publications-dateDisplay,publications-publishers,recipients,scribes,scripts,sequence,shelfLocator,sourceData,subjects,surfaceID,textDirection,thumbnailImageOrientation,title,transcriptionDiplomaticURL,translationURL,uniformTitle,useDiplomaticTranscriptions,useTranscriptions,useTranslations,yearEnd,years,yearStart,*_sort</str><!-- All but translation_content, transcription_content returned -->
+      <str name="fl">abstract,alternativeTitles,altIdentifiers,associated,authors,calendarnum,collection,creations-century,creations-dateDisplay,dataSources,descriptiveTitles,documentThumbnailOrientation,documentThumbnailUrl,documentShelfLocator,documentTitle,donors,embeddable,excerpts,extent,fileID,itemLevel,form,fundings,hasImage,hasPage,id,IIIFImageURL,imageHeight,imageWidth,itemAppearsInMultipleCollections,itemCollectionCount,itemURL,label,languageStrings,lastPage,listItemText,material,numberOfPages,origin-place,pageHasTranscription,pageHasTranslation,pageXMLTranscriptionURL,pageXMLTranslationURL,physdesc,physicalLocation,physID,places,provenances,publications-dateDisplay,publications-publishers,recipients,scribes,scripts,sequence,shelfLocator,sourceData,subjects,surfaceID,textDirection,thumbnailImageOrientation,title,transcriptionDiplomaticURL,translationURL,uniformTitle,useDiplomaticTranscriptions,useTranscriptions,useTranslations,yearEnd,years,yearStart,*_sort</str><!-- All but translation_content, transcription_content returned -->
       <str name="spellcheck">true</str>
       <str name="hl.simple.pre"><![CDATA[<em class="match">]]></str>
       <str name="hl.simple.post"><![CDATA[</em>]]></str>
@@ -721,6 +721,7 @@
       <str name="facet.field">facet-languages</str>
       <str name="facet.field">facet-creations-century</str>
       <str name="facet.field">facet-hasPage</str>
+      <str name="hl.method">fastVector</str>
     </lst>
   </initParams>
 
