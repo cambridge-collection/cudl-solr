@@ -722,8 +722,7 @@
       <str name="facet.field">facet-creations-century</str>
       <str name="facet.field">facet-hasPage</str>
       <str name="facet.sort">index</str>
-      <str name="f.facet-subjects.facet.sort"></str>
-      <str name="">count</str>
+      <str name="f.facet-subjects.facet.sort">count</str>
       <str name="facet.limit">-1</str>
       <str name="hl.method">unified</str>
       <str name="hl.fragsize">1</str>
