@@ -1,22 +1,21 @@
 # Instructions
 
-The solr core configs and schemata are contained in `./solr`.
+The solr core configs and schemata are contained in `docker/data/solr/data`.
 
 ## Local Build
 
-Ensure you have a directory called `./external-vol` at the root of this repo. This directory will contain your solr config, indices and logs. When you launch the instance, the contents of `./solr` will be copied into `./external-vol`.
+Ensure you have a directory called `./external-vol` at the root of this repo. This directory will contain your solr config, indices and logs. When you launch the instance, the contents of `docker/data/solr` will be copied into `./external-vol`.
 
     docker compose up --force-recreate --build
 
 ## AWS
 
 1. Use the image in our private ECR
-1. Set an environment variable called `SOLR_JAVA_MEM` for solr's memory usage. I tested the local implementation using `-Xms1g -Xmx1g` but can't guarantee that it's the optimal value.
-1. Copy the data from `./data/solr` to on EFS volume and mount that directory as `/var/solr` in the image. 
+2. Mount an EFS volume directory onto `/var/solr`. The contents of `docker/data/solr` will be copied onto it when the image is mounted.
 
 **NOTE**
 
-`/var/solr` is the default location for solr conf/schema files. It's where solr will write all its indices and working files.
+`/var/solr` is the default location for solr conf/schema files. It's also where solr will write all its indices and working files.
 
 Ideally, we'd store the schema/conf settings in a separate repository - to keep the application logic simpler.
     
