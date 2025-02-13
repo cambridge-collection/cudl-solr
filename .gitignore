@@ -1,4 +1,4 @@
 .DS_Store
 /.idea
-/solr/data/solr/data/*/data/
+/docker/data/solr/data/*/data/
 external-vol
