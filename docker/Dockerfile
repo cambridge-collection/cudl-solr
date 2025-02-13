@@ -2,7 +2,7 @@ ARG SOLR_VERSION=9
 
 FROM solr:${SOLR_VERSION:?}
 # Copy schemata and configs for CUDL cores to tmp directory
-COPY --chown=solr --chmod=ug+w ./data/solr /tmp/solr
+COPY --chown=solr --chmod=771 ./data/solr /tmp/solr
 
 # Add script that copies cores from /tmp/solr to /var/solr to directory
 # that contains script that are run before solr is started.
