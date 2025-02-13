@@ -1,7 +1,7 @@
 services:
   solr:
     build:
-      context: ./solr
+      context: ./docker
       dockerfile: Dockerfile
     container_name: cudl-solr
     ports:
