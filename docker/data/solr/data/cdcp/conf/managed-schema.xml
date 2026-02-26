@@ -1629,6 +1629,7 @@
   <copyField source="hasImage" dest="facet-hasImage" maxChars="256"/>
   <copyField source="hasPage" dest="facet-hasPage" maxChars="256"/>
   <copyField source="lastPage" dest="facet-lastPage" maxChars="256"/>
+  <copyField source="itemLevel" dest="facet-itemLevel" maxChars="256"/>
   <copyField source="pageHasTranscription" dest="facet-pageHasTranscription" maxChars="256"/>
   <copyField source="pageHasTranslation" dest="facet-pageHasTranslation" maxChars="256"/>
   <copyField source="languages" dest="facet-languages" maxChars="256"/>
