@@ -914,6 +914,8 @@
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="imageHeight" type="plongs"/>
   <field name="imageWidth" type="plongs"/>
+  <field name="itemReleased" type="boolean" indexed="true"/>
+  <field name="itemStatus" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="islamic_sort" type="plongs"/>
   <field name="itemAppearsInMultipleCollections" type="booleans"/>
   <field name="itemCollectionCount" type="plongs"/>
@@ -1633,4 +1635,5 @@
   <copyField source="pageHasTranscription" dest="facet-pageHasTranscription" maxChars="256"/>
   <copyField source="pageHasTranslation" dest="facet-pageHasTranslation" maxChars="256"/>
   <copyField source="languages" dest="facet-languages" maxChars="256"/>
+  <copyField source="itemStatus" dest="facet-itemStatus" maxChars="256"/>
 </schema>
