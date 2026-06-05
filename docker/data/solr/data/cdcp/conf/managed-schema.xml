@@ -914,6 +914,7 @@
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="imageHeight" type="plongs"/>
   <field name="imageWidth" type="plongs"/>
+  <field name="isReleased" type="boolean" indexed="true"/>
   <field name="itemReleased" type="boolean" indexed="true"/>
   <field name="itemStatus" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="islamic_sort" type="plongs"/>
