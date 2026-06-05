@@ -463,6 +463,7 @@
   <field name="fileID" type="text_general" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="full" type="text_general"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="released" type="boolean" indexed="true"/>
   <field name="items._id" type="text_general"/>
   <field name="medium" type="text_general"/>
   <field name="name.full" type="text_general"/>
