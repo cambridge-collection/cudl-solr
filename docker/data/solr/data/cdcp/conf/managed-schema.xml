@@ -881,6 +881,7 @@
   <field name="digitalthessaly_sort" type="plongs"/>
   <field name="displayForm" type="text_general"/>
   <field name="document" type="text_general"/>
+  <field name="documentAbstract" type="text_general" indexed="true" stored="true"/>
   <field name="documentShelfLocator" type="text_general" indexed="true" stored="true"/>
   <field name="documentThumbnailOrientation" type="text_general"/>
   <field name="documentThumbnailUrl" type="text_general"/>
@@ -1638,4 +1639,7 @@
   <copyField source="pageHasTranslation" dest="facet-pageHasTranslation" maxChars="256"/>
   <copyField source="languages" dest="facet-languages" maxChars="256"/>
   <copyField source="itemStatus" dest="facet-itemStatus" maxChars="256"/>
+  <copyField source="arkcam-cudl_ss" dest="arkcampids_ss"/>
+  <copyField source="arkcam-tei_ss"  dest="arkcampids_ss"/>
+  <copyField source="arkcam-iiif_ss" dest="arkcampids_ss"/>
 </schema>
