@@ -563,4 +563,5 @@
   <copyField source="collections._id" dest="collections._id_str" maxChars="256"/>
   <copyField source="__FQN" dest="__FQN_str" maxChars="256"/>
   <copyField source="id" dest="fileID" maxChars="256"/>
+  <copyField source="id" dest="fileID_str" maxChars="256"/>
 </schema>
