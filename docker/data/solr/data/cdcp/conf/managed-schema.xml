@@ -1623,6 +1623,7 @@
   <copyField source="pages.pageXMLTranscriptionURL" dest="pages.pageXMLTranscriptionURL_str" maxChars="256"/>
   <copyField source="pages.surfaceID" dest="pages.surfaceID_str" maxChars="256"/>
   <copyField source="fileID" dest="fileID_str" maxChars="256"/>
+  <copyField source="fileID" dest="fileID_s" maxChars="256"/>
   <copyField source="itemURL" dest="itemURL_str" maxChars="256"/>
   <copyField source="pageXMLTranslationURL" dest="pageXMLTranslationURL_str" maxChars="256"/>
   <copyField source="document" dest="document_str" maxChars="256"/>
