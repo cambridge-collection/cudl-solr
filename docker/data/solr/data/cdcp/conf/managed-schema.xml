@@ -881,6 +881,7 @@
   <field name="digitalthessaly_sort" type="plongs"/>
   <field name="displayForm" type="text_general"/>
   <field name="document" type="text_general"/>
+  <field name="documentAbstract" type="text_general" indexed="true" stored="true"/>
   <field name="documentShelfLocator" type="text_general" indexed="true" stored="true"/>
   <field name="documentThumbnailOrientation" type="text_general"/>
   <field name="documentThumbnailUrl" type="text_general"/>
@@ -914,6 +915,9 @@
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="imageHeight" type="plongs"/>
   <field name="imageWidth" type="plongs"/>
+  <field name="isReleased" type="boolean" indexed="true"/>
+  <field name="itemReleased" type="boolean" indexed="true"/>
+  <field name="itemStatus" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="islamic_sort" type="plongs"/>
   <field name="itemAppearsInMultipleCollections" type="booleans"/>
   <field name="itemCollectionCount" type="plongs"/>
@@ -1100,6 +1104,7 @@
   <field name="subjects" type="text_general" indexed="true" stored="true" docValues="false"/>
   <field name="surfaceID" type="text_general"/>
   <field name="sweetpeanotebooks_sort" type="plongs"/>
+  <field name="teiSha256" type="string" indexed="true" stored="true" docValues="false" multiValued="false" required="false"/>
   <field name="tennyson_sort" type="plongs"/>
   <field name="textDirection" type="text_general"/>
   <field name="textual_content" type="text_general" multiValued="true" indexed="true" stored="true"/>
@@ -1618,6 +1623,7 @@
   <copyField source="pages.pageXMLTranscriptionURL" dest="pages.pageXMLTranscriptionURL_str" maxChars="256"/>
   <copyField source="pages.surfaceID" dest="pages.surfaceID_str" maxChars="256"/>
   <copyField source="fileID" dest="fileID_str" maxChars="256"/>
+  <copyField source="fileID" dest="fileID_s" maxChars="256"/>
   <copyField source="itemURL" dest="itemURL_str" maxChars="256"/>
   <copyField source="pageXMLTranslationURL" dest="pageXMLTranslationURL_str" maxChars="256"/>
   <copyField source="document" dest="document_str" maxChars="256"/>
@@ -1633,4 +1639,8 @@
   <copyField source="pageHasTranscription" dest="facet-pageHasTranscription" maxChars="256"/>
   <copyField source="pageHasTranslation" dest="facet-pageHasTranslation" maxChars="256"/>
   <copyField source="languages" dest="facet-languages" maxChars="256"/>
+  <copyField source="itemStatus" dest="facet-itemStatus" maxChars="256"/>
+  <copyField source="arkcam-cudl_ss" dest="arkcampids_ss"/>
+  <copyField source="arkcam-tei_ss"  dest="arkcampids_ss"/>
+  <copyField source="arkcam-iiif_ss" dest="arkcampids_ss"/>
 </schema>

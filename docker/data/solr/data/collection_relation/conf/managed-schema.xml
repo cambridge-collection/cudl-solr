@@ -460,10 +460,14 @@
   <field name="description.full._id" type="text_general"/>
   <field name="description.medium" type="text_general"/>
   <field name="description.short" type="text_general"/>
-  <field name="fileID" type="text_general" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="fileID" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
   <field name="full" type="text_general"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
-  <field name="isReleased" type="boolean" indexed="true"/>
+  <field name="edge_type_s" type="string" multiValued="false" indexed="true" stored="true"/>
+  <field name="collection_id_s" type="string" multiValued="false" indexed="true" stored="true"/>
+  <field name="member_item_id_s" type="string" multiValued="false" indexed="true" stored="true"/>
+  <field name="child_collection_id_s" type="string" multiValued="false" indexed="true" stored="true"/>
+  <field name="position_i" type="pint" multiValued="false" indexed="true" stored="true"/>
   <field name="items._id" type="text_general"/>
   <field name="medium" type="text_general"/>
   <field name="name.full" type="text_general"/>
@@ -472,7 +476,6 @@
   <field name="name.url-slug" type="text_general"/>
   <field name="short" type="text_general"/>
   <field name="sort" type="text_general"/>
-  <field name="status" type="string" indexed="true" stored="true"/>
   <field name="url-slug" type="text_general"/>
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
@@ -563,6 +566,4 @@
   <copyField source="collections._id" dest="collections._id_str" maxChars="256"/>
   <copyField source="__FQN" dest="__FQN_str" maxChars="256"/>
   <copyField source="id" dest="fileID" maxChars="256"/>
-  <copyField source="id" dest="fileID_str" maxChars="256"/>
-  <copyField source="id" dest="fileID_s" maxChars="256"/>
 </schema>
