@@ -469,47 +469,24 @@
   <field name="acquisitionTexts" type="text_general" indexed="true" stored="true"/>
   <field name="acquisitions-dateDisplay" type="text_general" indexed="true" stored="true"/>
   <field name="additions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
-  <field name="aiit_sort" type="plongs"/>
   <field name="altIdentifiers" type="text_general" indexed="true" stored="true"/>
   <field name="alternativeTitles" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="associated" type="text_general" indexed="true" stored="true"/>
-  <field name="astronomicalimages_sort" type="plongs"/>
   <field name="authors" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="batesonarchive_sort" type="plongs"/>
   <field name="bibliographies" type="text_general" indexed="true" stored="true"/>
   <field name="bindings" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="browse_all_sort" type="strings" docValues="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
   <field name="browse_sort" type="strings" docValues="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
   <field name="calendarnum" type="text_general" indexed="true" stored="true"/>
-  <field name="cambridgebindings_sort" type="plongs"/>
-  <field name="cambridgebroadsides_sort" type="plongs"/>
-  <field name="campesino_sort" type="plongs"/>
-  <field name="caricatures_sort" type="plongs"/>
-  <field name="casebooks_sort" type="plongs"/>
-  <field name="cavendish_sort" type="plongs"/>
-  <field name="chinese_sort" type="plongs"/>
-  <field name="christian_sort" type="plongs"/>
-  <field name="christs_sort" type="plongs"/>
-  <field name="civilianinternment_sort" type="plongs"/>
-  <field name="clare_sort" type="plongs"/>
-  <field name="codexzacynthius_sort" type="plongs"/>
   <field name="collation" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="collection" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
   <field name="collection-slug" type="text_general"/>
   <field name="conditions" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
-  <field name="constable_sort" type="plongs"/>
-  <field name="corpuschristicollege_sort" type="plongs"/>
   <field name="creations-century" type="text_general" docValues="false" multiValued="true" indexed="true"/>
   <field name="creations-dateDisplay" type="text_general" indexed="true" stored="true"/>
   <field name="creations-places" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="cuarchives_sort" type="plongs"/>
-  <field name="curiousobjects_sort" type="plongs"/>
-  <field name="darwin_mss_sort" type="plongs"/>
-  <field name="darwinhooker_sort" type="plongs"/>
   <field name="dataRevisions" type="text_general"/>
   <field name="dataSources" type="text_general"/>
-  <field name="davidjones_sort" type="plongs"/>
-  <field name="deadbooks_sort" type="plongs"/>
   <field name="decorations" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
   <field name="delete" type="text_general" indexed="false" stored="false"/>
   <field name="delete.query" type="text_general" indexed="false" stored="false"/>
@@ -878,7 +855,6 @@
   <field name="descriptiveMetadata.uniformTitle.seq" type="plongs"/>
   <field name="descriptiveMetadata.watermarkStatement" type="text_general"/>
   <field name="descriptiveTitles" type="text_general" indexed="true" stored="true"/>
-  <field name="digitalthessaly_sort" type="plongs"/>
   <field name="displayForm" type="text_general"/>
   <field name="document" type="text_general"/>
   <field name="documentAbstract" type="text_general" indexed="true" stored="true"/>
@@ -887,16 +863,9 @@
   <field name="documentThumbnailUrl" type="text_general"/>
   <field name="documentTitle" type="text_general" indexed="true" stored="true"/>
   <field name="donors" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="dorothyneedham_sort" type="plongs"/>
-  <field name="downing_sort" type="plongs"/>
   <field name="embeddable" type="booleans"/>
-  <field name="engineering_sort" type="plongs"/>
-  <field name="ethiopianmanuscripts_sort" type="plongs"/>
   <field name="excerpts" type="text_general" indexed="true" stored="true"/>
-  <field name="exhibitions_sort" type="plongs"/>
-  <field name="explosivewace_sort" type="plongs"/>
   <field name="extent" type="text_general" indexed="true" stored="true"/>
-  <field name="fairbank_sort" type="plongs"/>
   <field name="fileID" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <field name="file_id" type="text_general" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="filiations" type="text_general" indexed="true" stored="true"/>
@@ -904,40 +873,24 @@
   <field name="form" type="text_general" indexed="true" stored="true"/>
   <field name="formerOwners" type="text_general" indexed="true" stored="true"/>
   <field name="fundings" type="text_general"/>
-  <field name="genizah_sort" type="plongs"/>
-  <field name="ghostwords_sort" type="plongs"/>
-  <field name="girton_sort" type="plongs"/>
-  <field name="greekmanuscripts_sort" type="plongs"/>
   <field name="hasImage" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="hasPage" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
-  <field name="hebrew_sort" type="plongs"/>
-  <field name="herbarium_sort" type="plongs"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="imageHeight" type="plongs"/>
   <field name="imageWidth" type="plongs"/>
   <field name="isReleased" type="boolean" indexed="true"/>
   <field name="itemReleased" type="boolean" indexed="true"/>
   <field name="itemStatus" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
-  <field name="islamic_sort" type="plongs"/>
   <field name="itemAppearsInMultipleCollections" type="booleans"/>
   <field name="itemCollectionCount" type="plongs"/>
   <field name="itemLevel" type="booleans"/>
   <field name="itemURL" type="text_general"/>
-  <field name="japanese_sort" type="plongs"/>
-  <field name="kettlesyard_sort" type="plongs"/>
   <field name="key" type="text_general"/>
-  <field name="kings_sort" type="plongs"/>
-  <field name="kingsrarebooksandmanuscripts_sort" type="plongs"/>
   <field name="label" type="text_general"/>
-  <field name="landscapehistories_sort" type="plongs"/>
-  <field name="landscapes_sort" type="plongs"/>
   <field name="languageStrings" type="text_general" multiValued="true" stored="true" indexed="true"/>
   <field name="languages" type="text_general"/>
   <field name="lastPage" type="string" docValues="false" multiValued="false" indexed="true" stored="true"/>
   <field name="layouts" type="text_general" indexed="false" stored="false"/><!-- May contain list/item/locus -->
-  <field name="leopardi_sort" type="plongs"/>
-  <field name="lewisgibson_sort" type="plongs"/>
-  <field name="linesofthought_sort" type="plongs"/>
   <field name="listItemPages.dmdID" type="text_general"/>
   <field name="listItemPages.fileID" type="text_general"/>
   <field name="listItemPages.listItemText" type="text_general"/>
@@ -988,34 +941,10 @@
   <field name="logicalStructures.startPageID" type="text_general"/>
   <field name="logicalStructures.startPageLabel" type="text_general"/>
   <field name="logicalStructures.startPagePosition" type="plongs"/>
-  <field name="macclesfield_sort" type="plongs"/>
-  <field name="magdalenecollege_sort" type="plongs"/>
-  <field name="maps_sort" type="plongs"/>
-  <field name="marshall_sort" type="plongs"/>
   <field name="material" type="text_general" indexed="true" stored="true"/>
-  <field name="medieval_sort" type="plongs"/>
-  <field name="medievalmedicalrecipes_sort" type="plongs"/>
   <field name="metadata" type="text_general" multiValued="true" indexed="true" stored="false"/>
-  <field name="michaelides_sort" type="plongs"/>
-  <field name="minganalewis_sort" type="plongs"/>
-  <field name="montaignelibrary_sort" type="plongs"/>
   <field name="musicNotations" type="text_general" indexed="true" stored="true"/>
-  <field name="music_sort" type="plongs"/>
-  <field name="mycenae_bsa_myc_sort" type="plongs"/>
-  <field name="mycenae_bsa_sphs_sort" type="plongs"/>
-  <field name="mycenae_drawings_sort" type="plongs"/>
-  <field name="mycenae_notebooks_sort" type="plongs"/>
-  <field name="mycenae_plans_sort" type="plongs"/>
-  <field name="mycenae_site_photographs_sort" type="plongs"/>
-  <field name="mycenae_small_finds_photographs_sort" type="plongs"/>
-  <field name="mycenae_tomb_photographs_sort" type="plongs"/>
   <field name="name" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="needham_sort" type="plongs"/>
-  <field name="newmuseums_sort" type="plongs"/>
-  <field name="newnham_sort" type="plongs"/>
-  <field name="newton_sort" type="plongs"/>
-  <field name="nmm_mss_sort" type="plongs"/>
-  <field name="nmm_print_sort" type="plongs"/>
   <field name="notes" type="text_general"  indexed="true" stored="true"/>
   <field name="numberOfPages" type="plongs"/>
   <field name="origin-place" type="text_general" multiValued="true" stored="true" indexed="true"/>
@@ -1057,100 +986,40 @@
   <field name="pages.transcription_content" type="text_general"/>
   <field name="pages.yearEnd" type="pints"/>
   <field name="pages.yearStart" type="pints"/>
-  <field name="paperstocks_sort" type="plongs"/>
-  <field name="pembroke_sort" type="plongs"/>
-  <field name="peterhouse_sort" type="plongs"/>
   <field name="physID" type="text_general"/>
   <field name="physdesc" type="text_general" indexed="true" stored="true"/>
   <field name="physicalLocation" type="text_general" indexed="true" stored="true"/>
   <field name="places" type="text_general" indexed="true" stored="true"/>
-  <field name="poultrynotebooks_sort" type="plongs"/>
   <field name="provenances" type="text_general" indexed="true" stored="true"/>
   <field name="publications-dateDisplay" type="text_general" indexed="true" stored="true"/>
   <field name="publications-places" type="text_general" indexed="true" stored="true"/>
   <field name="publications-publishers" type="text_general" indexed="true" stored="true"/>
-  <field name="queens_sort" type="plongs"/>
-  <field name="rabbitnotebooks_sort" type="plongs"/>
-  <field name="rackham_sort" type="plongs"/>
-  <field name="ras_sort" type="plongs"/>
-  <field name="rcs150_sort" type="plongs"/>
-  <field name="rcs_sort" type="plongs"/>
   <field name="recipients" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="relhan_sort" type="plongs"/>
-  <field name="rgo14_sort" type="plongs"/>
-  <field name="rgo4_sort" type="plongs"/>
-  <field name="rgo5_sort" type="plongs"/>
-  <field name="rgo6_sort" type="plongs"/>
-  <field name="rogart_sort" type="plongs"/>
-  <field name="royallibrary_sort" type="plongs"/>
-  <field name="sandbachtinne_sort" type="plongs"/>
-  <field name="sanskrit_sort" type="plongs"/>
-  <field name="sassoon_sort" type="plongs"/>
-  <field name="schroder_sort" type="plongs"/>
   <field name="scribes" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="scriptorium_sort" type="plongs"/>
   <field name="scripts" type="text_general" indexed="true" stored="true"/>
   <field name="sequence" type="plongs"/>
-  <field name="shahnama_sort" type="plongs"/>
   <field name="shelfLocator" type="text_general" indexed="true" stored="true"/>
-  <field name="sidneysussex_sort" type="plongs"/>
-  <field name="skillitercentre_sort" type="plongs"/>
   <field name="sourceData" type="text_general"/>
-  <field name="southernafricancollections_sort" type="plongs"/>
-  <field name="spanishchapbooks_sort" type="plongs"/>
-  <field name="stcatharines_sort" type="plongs"/>
-  <field name="sterne_sort" type="plongs"/>
-  <field name="stjohns_sort" type="plongs"/>
   <field name="subjects" type="text_general" indexed="true" stored="true" docValues="false"/>
   <field name="surfaceID" type="text_general"/>
-  <field name="sweetpeanotebooks_sort" type="plongs"/>
   <field name="teiSha256" type="string" indexed="true" stored="true" docValues="false" multiValued="false" required="false"/>
-  <field name="tennyson_sort" type="plongs"/>
   <field name="textDirection" type="text_general"/>
   <field name="textual_content" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="therisingtide_sort" type="plongs"/>
-  <field name="thomasgray_sort" type="plongs"/>
-  <field name="thomashobson_10_sort" type="plongs"/>
-  <field name="thomashobson_11_sort" type="plongs"/>
-  <field name="thomashobson_12_sort" type="plongs"/>
-  <field name="thomashobson_13_sort" type="plongs"/>
-  <field name="thomashobson_14_sort" type="plongs"/>
-  <field name="thomashobson_15_sort" type="plongs"/>
-  <field name="thomashobson_16_sort" type="plongs"/>
-  <field name="thomashobson_17_sort" type="plongs"/>
-  <field name="thomashobson_18_sort" type="plongs"/>
-  <field name="thomashobson_19_sort" type="plongs"/>
-  <field name="thomashobson_1_sort" type="plongs"/>
-  <field name="thomashobson_2_sort" type="plongs"/>
-  <field name="thomashobson_3_sort" type="plongs"/>
-  <field name="thomashobson_4_sort" type="plongs"/>
-  <field name="thomashobson_5_sort" type="plongs"/>
-  <field name="thomashobson_6_sort" type="plongs"/>
-  <field name="thomashobson_7_sort" type="plongs"/>
-  <field name="thomashobson_8_sort" type="plongs"/>
-  <field name="thomashobson_9_sort" type="plongs"/>
   <field name="thumbnailImageOrientation" type="text_general"/>
   <field name="title" type="text_general" stored="true"/>
-  <field name="tov_sort" type="plongs"/>
-  <field name="trainingworkshops1_sort" type="plongs"/>
-  <field name="trainingworkshops3_sort" type="plongs"/>
   <field name="transcriptionDiplomaticURL" type="text_general"/>
   <field name="transcription_content" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <field name="translationURL" type="text_general"/>
   <field name="translation_content" type="text_general" multiValued="false" indexed="true" stored="true"/>
-  <field name="treasures_sort" type="plongs"/>
-  <field name="trinityhall_sort" type="plongs"/>
   <field name="uniformTitle" type="text_general" multiValued="true" indexed="true" stored="true"/>
-  <field name="universitylibrary_sort" type="plongs"/>
   <field name="useDiplomaticTranscriptions" type="booleans"/>
   <field name="useTranscriptions" type="booleans"/>
   <field name="useTranslations" type="booleans"/>
-  <field name="waterloo_sort" type="plongs"/>
-  <field name="westminster_sort" type="plongs"/>
   <field name="yearEnd" type="pints" multiValued="true" indexed="true" stored="true"/>
   <field name="yearStart" type="pints" multiValued="true" indexed="true" stored="true"/>
   <field name="years" type="pints" multiValued="true" indexed="true" stored="true"/>
   <field name="dateRange" type="date_range" multiValued="true" indexed="true" stored="true"/>
+  <dynamicField name="*_sort" type="plongs"/>
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
