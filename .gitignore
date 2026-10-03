@@ -2,3 +2,4 @@
 /.idea
 /docker/data/solr/data/*/data/
 external-vol
+__pycache__/
