@@ -19,6 +19,19 @@ Ensure you have a directory called `./external-vol` at the root of this repo. Th
 
 Ideally, we'd store the schema/conf settings in a separate repository - to keep the application logic simpler.
     
+## Soft commit interval
+
+The soft commit interval controls how often new documents become visible to searches. Each soft commit opens a new searcher, which starts with empty caches. Each core reads its interval from a Java system property:
+
+| Core | Property | Default |
+| --- | --- | --- |
+| `cdcp` | `solr.cdcp.autoSoftCommit.maxTime` | 10000 ms |
+| `collection`, `collection_relation` | `solr.autoSoftCommit.maxTime` | 3000 ms |
+
+`cdcp` has its own property so it can be refreshed less often during reindexes without slowing the smaller cores. To override it, pass it in `SOLR_OPTS`. For example, the staging and production terraform (`cudl-terraform`, `solr_container_def.tf`) sets:
+
+    SOLR_OPTS=-Dsolr.cdcp.autoSoftCommit.maxTime=60000
+
 
 ## Sample queries
 
