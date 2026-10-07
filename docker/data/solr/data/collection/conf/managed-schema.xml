@@ -544,6 +544,7 @@
   <dynamicField name="*_t" type="text_general" multiValued="false" indexed="true" stored="true"/>
   <dynamicField name="*_p" type="location" indexed="true" stored="true"/>
   <copyField source="name.full" dest="name.full_str" maxChars="256"/>
+  <copyField source="name.full" dest="name.full_s" maxChars="256"/>
   <copyField source="name.url-slug" dest="name.url-slug_str" maxChars="256"/>
   <copyField source="description.medium" dest="description.medium_str" maxChars="256"/>
   <copyField source="description.short" dest="description.short_str" maxChars="256"/>
