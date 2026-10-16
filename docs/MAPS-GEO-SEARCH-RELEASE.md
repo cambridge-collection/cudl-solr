@@ -95,12 +95,13 @@ The source is `shelfLocator`, e.g. `No.39 H 3`: a 4° block number, a letter A�
 3. **Data:** release the XSLT change and re-index the items in the map collections. Every page document of an item needs the fields, so re-index whole items.
 4. **cudl-viewer-ui:** release a new version (currently `4.3.1-SNAPSHOT`) with the new npm dependencies.
 5. **cudl-viewer:** set `cudl-viewer-ui.version` in `pom.xml` (currently `4.3.0`) to the new UI version, then release.
+6. **`cudl.ui.json5`:** add `"map"` to the map collections (see section 5). Until then no collection shows a map.
 
 The viewer copes with steps 1–3 not being done yet: the map shows no items, and every result says "Not on map". Old viewers ignore the new API endpoint and fields.
 
 ## 4. Configuration and infrastructure
 
-- **No new viewer properties.**
+- **No new viewer properties.** Which collections have a map is set per collection in `cudl.ui.json5` (see section 5).
 - **Do not commit local dev settings.** These belong only in a local `docker/cudl-global.properties`:
   - `searchURL=http://host.docker.internal:80/`
   - `cudl.ui.dev = true`
@@ -109,18 +110,24 @@ The viewer copes with steps 1–3 not being done yet: the map shows no items, an
   - The OpenStreetMap tile usage policy applies. It is fine for modest traffic; heavy use needs a hosted tile provider. Attribution is shown on the map.
 - **Privacy notice:** visitors' browsers request map tiles from OpenStreetMap. Consider mentioning this.
 
-## 5. Values to keep up to date
+## 5. Which collections have a map
 
-- **`MAP_COLLECTIONS` in `cudl-viewer-ui/src/js/pages/advanced-search-results.js`:** collections with more than 5 items with a location, with `{located, items}` counts. These decide where the map appears, whether it starts collapsed (fewer than half the items have a location), the note text and the facet icon. Recount when the data changes. Current values:
+A collection gets a map when its entry in `cudl.ui.json5` (next to `layout`) has `"map"`:
 
-| Collection | Located | Items |
-|---|---|---|
-| Maps | 1,053 | 1,078 |
-| Survey of India Maps | 479 | 481 |
-| Landscape Histories from the Air | 1,078 | 1,411 |
-| Walking with Constable | 23 | 65 |
+- `"map": true`: the map is shown, open, when the collection is the selected Collection facet.
+- `"map": {"collapsed": true}`: the map starts closed, with a note that many items have no recorded location. Use it when fewer than half the collection's items have a location.
+- No `"map"`, or `"map": false`: no map. This is the default, so collections without the setting are unaffected, and older viewers ignore it.
 
-- **`ITEM_LOCATIONS_MAX_ROWS` in `cudl-search/frontend/main.py` (5,000):** the most locations returned for one map. Increase it if collections grow.
+Turn it on only for collections with more than a handful of items with a location. Current values:
+
+| Collection | `cudl.ui.json5` entry | Setting | Items with a location |
+|---|---|---|---|
+| Maps | `collections/maps.collection.json` | `"map": true` | 1,053 of 1,078 |
+| Survey of India Maps | `collections/surveyofindiamaps.collection.json` | `"map": true` | 479 of 481 |
+| Landscape Histories from the Air | `collections/landscapehistories.collection.json` | `"map": true` | 1,078 of 1,411 |
+| Walking with Constable | `collections/constable.collection.json` | `"map": {"collapsed": true}` | 23 of 65 |
+
+**`ITEM_LOCATIONS_MAX_ROWS` in `cudl-search/frontend/main.py` (5,000):** the most locations returned for one map. Increase it if collections grow.
 
 ## 6. Checks after release
 
