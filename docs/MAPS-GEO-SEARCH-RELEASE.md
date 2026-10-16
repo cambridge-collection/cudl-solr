@@ -1,6 +1,8 @@
 # Map search: release changes
 
-Map-based search for CUDL: a map on the search results page for collections whose items have locations, a "Search this area" filter, and "Show on map" for each result.
+Map-based search for CUDL: a map on the search results page for collections whose items have locations, a "Search this area" filter, and "Show on map" for each result. Collection pages can also show a map of their items, with a List | Map switch, "Filter to this area" and "Show on map" on each item.
+
+Each map is switched on per collection in `cudl.ui.json5` (section 5); nothing is hard-coded.
 
 The code is on branch `feat/maps-geo-search` in four repos. The published data does **not** yet contain the location fields, so the data pipeline change in section 2 is needed before anything appears on the map.
 
@@ -10,8 +12,13 @@ The code is on branch `feat/maps-geo-search` in four repos. The published data d
 |---|---|---|
 | cudl-solr | `d329e8d` | `coverage_p`, `coverage_srpt`, `origin_p`, `origin_srpt` added to the default `fl` in `cdcp/conf/solrconfig.xml`. No schema change: the fields use the existing `*_p` and `*_srpt` dynamic fields. |
 | cudl-search | `089a1f3` | `GET /items` accepts `bbox=west,south,east,north`. New `GET /items/locations` endpoint. |
-| cudl-viewer | `5a75fa6e` | `bbox` search parameter, `coverage`/`origin` in `/search/JSON*`, new `/search/locationsJSON`. `docker-compose.yml`: `extra_hosts` for local development only. |
+| cudl-viewer | `a7b5bb10` | `bbox` search parameter, `coverage`/`origin` in `/search/JSON*`, new `/search/locationsJSON`. `docker-compose.yml`: `extra_hosts` for local development only. |
+| cudl-viewer | `2fdd498f` | Reads `"map"` from `cudl.ui.json5` and passes the map collections to the search results page. |
+| cudl-viewer | `feeea27f` | `/collections/{id}/itemJSON` takes `bbox` and returns each item's `coverage`/`origin`. Builds on the collection filter already on `main`. |
+| cudl-viewer | `a87bab43` | Reads `"collectionMap"` from `cudl.ui.json5` for collection pages. |
 | cudl-viewer-ui | `2dabeee` | Leaflet map panel on the search results page. New dependencies: `leaflet` ^1.9.4, `leaflet.markercluster` ^1.5.3. |
+| cudl-viewer-ui | `4bd3eab` | Map collections come from the page context instead of a hard-coded list. |
+| cudl-viewer-ui | `2e5ce92` | Filter bar and List \| Map view on collection pages. |
 
 ### Location fields
 
@@ -95,7 +102,7 @@ The source is `shelfLocator`, e.g. `No.39 H 3`: a 4° block number, a letter A�
 3. **Data:** release the XSLT change and re-index the items in the map collections. Every page document of an item needs the fields, so re-index whole items.
 4. **cudl-viewer-ui:** release a new version (currently `4.3.1-SNAPSHOT`) with the new npm dependencies.
 5. **cudl-viewer:** set `cudl-viewer-ui.version` in `pom.xml` (currently `4.3.0`) to the new UI version, then release.
-6. **`cudl.ui.json5`:** add `"map"` to the map collections (see section 5). Until then no collection shows a map.
+6. **`cudl.ui.json5`:** add `"map"` and `"collectionMap"` to the map collections (see section 5). Until then no collection shows a map.
 
 The viewer copes with steps 1–3 not being done yet: the map shows no items, and every result says "Not on map". Old viewers ignore the new API endpoint and fields.
 
@@ -112,20 +119,27 @@ The viewer copes with steps 1–3 not being done yet: the map shows no items, an
 
 ## 5. Which collections have a map
 
-A collection gets a map when its entry in `cudl.ui.json5` (next to `layout`) has `"map"`:
+Two settings on a collection's entry in `cudl.ui.json5` (next to `layout`) switch the maps on. They are independent: a collection can have either, both or neither.
 
-- `"map": true`: the map is shown, open, when the collection is the selected Collection facet.
-- `"map": {"collapsed": true}`: the map starts closed, with a note that many items have no recorded location. Use it when fewer than half the collection's items have a location.
-- No `"map"`, or `"map": false`: no map. This is the default, so collections without the setting are unaffected, and older viewers ignore it.
+| Setting | Controls |
+|---|---|
+| `"map"` | The map on the search results page, when the collection is the selected Collection facet. |
+| `"collectionMap"` | The map on the collection's own page: the List \| Map switch, and "Show on map" on each item. |
 
-Turn it on only for collections with more than a handful of items with a location. Current values:
+Each takes the same values:
 
-| Collection | `cudl.ui.json5` entry | Setting | Items with a location |
+- `true`: the map is on.
+- `{"collapsed": true}`: the map is on, with a note that many items have no recorded location. On the search page the map also starts closed. Use it when fewer than half the collection's items have a location.
+- Absent, or `false`: no map. This is the default, so collections without the settings are unaffected, and older viewers ignore them.
+
+Turn them on only for collections with more than a handful of items with a location. Current values:
+
+| Collection | `cudl.ui.json5` entry | `map` and `collectionMap` | Items with a location |
 |---|---|---|---|
-| Maps | `collections/maps.collection.json` | `"map": true` | 1,053 of 1,078 |
-| Survey of India Maps | `collections/surveyofindiamaps.collection.json` | `"map": true` | 479 of 481 |
-| Landscape Histories from the Air | `collections/landscapehistories.collection.json` | `"map": true` | 1,078 of 1,411 |
-| Walking with Constable | `collections/constable.collection.json` | `"map": {"collapsed": true}` | 23 of 65 |
+| Maps | `collections/maps.collection.json` | `true` | 1,053 of 1,078 |
+| Survey of India Maps | `collections/surveyofindiamaps.collection.json` | `true` | 479 of 481 |
+| Landscape Histories from the Air | `collections/landscapehistories.collection.json` | `true` | 1,078 of 1,411 |
+| Walking with Constable | `collections/constable.collection.json` | `{"collapsed": true}` | 23 of 65 |
 
 **`ITEM_LOCATIONS_MAX_ROWS` in `cudl-search/frontend/main.py` (5,000):** the most locations returned for one map. Increase it if collections grow.
 
@@ -141,6 +155,9 @@ Turn it on only for collections with more than a handful of items with a locatio
 - [ ] Collection = Landscape Histories: orange points. Collection = Walking with Constable: the map starts collapsed, with the amber note.
 - [ ] "Show on map" zooms to and highlights the item. Results without a location say "Not on map · no location recorded".
 - [ ] Other collections show no map, and the Collection facet shows the map icon only for the four map collections.
+- [ ] `/collections/maps`: a List | Map switch. Map view shows the collection's items; "Filter to this area" filters the list. Items show "Show on map", or "Not on map" when they have no location.
+- [ ] `/collections/constable`: the map view shows the note that many items have no location.
+- [ ] A collection without `"collectionMap"` has the filter bar but no List | Map switch.
 
 ## 7. Known limitations and open items
 
