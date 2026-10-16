@@ -16,9 +16,9 @@ The code is on branch `feat/maps-geo-search` in four repos. The published data d
 | cudl-viewer | `2fdd498f` | Reads `"map"` from `cudl.ui.json5` and passes the map collections to the search results page. |
 | cudl-viewer | `feeea27f` | `/collections/{id}/itemJSON` takes `bbox` and returns each item's `coverage`/`origin`. Builds on the collection filter already on `main`. |
 | cudl-viewer | `a87bab43` | Reads `"collectionMap"` from `cudl.ui.json5` for collection pages. |
-| cudl-viewer-ui | `2dabeee` | Leaflet map panel on the search results page. New dependencies: `leaflet` ^1.9.4, `leaflet.markercluster` ^1.5.3. |
-| cudl-viewer-ui | `4bd3eab` | Map collections come from the page context instead of a hard-coded list. |
-| cudl-viewer-ui | `2e5ce92` | Filter bar and List \| Map view on collection pages. |
+| cudl-viewer-ui | `97cf3d1` | Leaflet map panel on the search results page. New dependencies: `leaflet` ^1.9.4, `leaflet.markercluster` ^1.5.3. |
+| cudl-viewer-ui | `27718d9` | Map collections come from the page context instead of a hard-coded list. |
+| cudl-viewer-ui | `dc93eb4` | List \| Map view on collection pages, added to the filter bar already on `main`. |
 
 ### Location fields
 
@@ -100,8 +100,8 @@ The source is `shelfLocator`, e.g. `No.39 H 3`: a 4° block number, a letter A�
 1. **cudl-solr:** deploy the updated `solrconfig.xml` and reload the `cdcp` core.
 2. **cudl-search:** deploy the API.
 3. **Data:** release the XSLT change and re-index the items in the map collections. Every page document of an item needs the fields, so re-index whole items.
-4. **cudl-viewer-ui:** release a new version (currently `4.3.1-SNAPSHOT`) with the new npm dependencies.
-5. **cudl-viewer:** set `cudl-viewer-ui.version` in `pom.xml` (currently `4.3.0`) to the new UI version, then release.
+4. **cudl-viewer-ui:** release a new version (currently `4.3.2-SNAPSHOT`) with the new npm dependencies.
+5. **cudl-viewer:** set `cudl-viewer-ui.version` in `pom.xml` (currently `4.3.1`) to the new UI version, then release.
 6. **`cudl.ui.json5`:** add `"map"` and `"collectionMap"` to the map collections (see section 5). Until then no collection shows a map.
 
 The viewer copes with steps 1–3 not being done yet: the map shows no items, and every result says "Not on map". Old viewers ignore the new API endpoint and fields.
