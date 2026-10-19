@@ -716,8 +716,9 @@
       <str name="facet">true</str>
       <str name="facet.sort">index</str>
       <str name="facet.mincount">1</str>
-      <!-- Move facet declarations to API -->
       <str name="facet.field">facet-collection</str>
+      <str name="facet.field">facet-collection-0</str>
+      <str name="facet.field">facet-collection-prefixes-1</str>
       <str name="facet.field">facet-subjects</str>
       <str name="facet.field">facet-pageHasTranscription</str>
       <str name="facet.field">facet-pageHasTranslation</str>
@@ -727,7 +728,10 @@
       <str name="facet.field">facet-hasPage</str>
       <str name="facet.field">facet-itemStatus</str>
       <str name="facet.field">facet-itemLevel</str>
+      <str name="facet.field">facet-collectionCount</str>
       <str name="f.facet-subjects.facet.sort">count</str>
+      <str name="f.facet-collection-0.facet.limit">-1</str>
+      <str name="f.facet-collection-prefixes-1.facet.limit">-1</str>
       <str name="facet.limit">-1</str>
       <str name="hl.method">unified</str>
       <str name="hl.fragsize">1</str>
